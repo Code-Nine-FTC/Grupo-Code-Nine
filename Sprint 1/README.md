@@ -17,15 +17,21 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
 <br>
 <h2> 🗒 Backlog da Sprint</h2> <a name="backlog"></a>
 
-|   Id  | Itens a serem desenvolvidos |   User Story   | Prioridade |  Descrição  |
-| :----: | :--------: | :--------: | :--------------: | :----: |
-|   #01   |   Wireframe do produto     | "Eu, como usuário, gostaria de um protótipo do site para ter como base de como ficará" | Alta |   Protótipo do projeto, uma prévia de como as páginas do website ser ão desenvolvida   |
-|   #02   |   Backlog     | "Eu, como usuário, gostaria acompanhar as etapas a serem desenvolvidas" | Alta |   Listagem dos itens e sua descrição para apresentação   |
+|   Id  | Itens a serem desenvolvidos  | Prioridade |  Descrição  |
+| :----: | :--------: | :--------: | :--------------: |
+|   #01   |   Wireframe do produto     | Alta |   Protótipo do projeto, uma prévia de como as páginas do website ser ão desenvolvida |
+|   #02   |   Backlog     | Alta |   Listagem dos itens e sua descrição para apresentação   |
+|   #03   |   Pesquisa das informações sobre nefrologia     | Média |   Procura das informações necessárias   |
+|   #04   |   Pesquisa dos dados     | Média |  Pesquisa sobre os dados para os gráficos   |
+|   #05   |   Criação e documentação no GitHub     | Média |   Criação, documentação e apresentação do projeto em suas versões no GitHub   |
+
 <br>
 
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
  Um protótipo do projeto, um demonstrativo das telas e de como irá funcionar.
  <br>
+ <img src="https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/af2b1cb0-12e3-421b-819e-232c5de31756" width="300px">
+
 
  <a name="video"></a>
 
@@ -33,10 +39,8 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
 https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/894ae6e1-37b3-489d-8fc9-3adfc97ec373
 
  
-<br>
 
 
-<img scr="./Imagens/Imagens sp1/Sprint 1 img.png" width="300px">
 <br>
 <h2> ❄️Integrantes do Grupo </h2><a name="integrantes"></a>
 
