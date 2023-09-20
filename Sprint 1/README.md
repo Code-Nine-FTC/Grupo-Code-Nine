@@ -36,9 +36,9 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
  <a name="video"></a>
 
 
-https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/894ae6e1-37b3-489d-8fc9-3adfc97ec373
 
- 
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/e6990e43-de9f-4e90-a558-1742e1c7dc56
+
 
 
 <br>
