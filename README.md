@@ -1,30 +1,40 @@
+<img src="./Imagens/CIANP.png">
 <br>
-
 <h1 style=text-align; c>1º Semestre - DSM - São José dos Campos - FATEC Profº Jessen Vidal
 </h1>
+<br>
+<h2> 🔗 Índice</h2>
+
+- [Sobre o Projeto](#sobre)
+- [Metodologias Utilizadas](#metodologias)
+- [Visão do Produto](#visao)
+- [Tecnologias Utilizadas](#tecnologias)
+- [Sprints](#sprints)
+- [Backlog do Produto](#backlog)
+- [Integrantes](#integrantes)
 
 
 <br>
 
-<h2> 📘Sobre o Projeto </h2>
+<h2> 📘Sobre o Projeto </h2><a name="sobre"></a>
 Desenvolvido por alunos da FATEC Profº Jessen Vidal - São José dos Campos. Para a API (Aprendizagem por Projeto Integrado).
 
 >Esse projeto foi desenvolvido com a finalidade de conscientizar, ampliar e facilitar a comunicação de pacientes e famílias que possuem Doença renal crônica(DRC). 
 <br>
-<h2>🌟Metodologia Utilizada</h2>
+<h2>🌟Metodologia Utilizada</h2><a name="metodologias"></a>
 
 O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método ágil adaptativo, iterativo, flexível e eficaz.
 >Entre as ferramentas utilizadas no Scrum, uma é a divisão do projeto em **Sprints**. Para selecionar quais seriam as entregas das nossas Sprints, primeiro definimos nosso **MVP**, priorizando as tarefas que trariam maior entrega de valor para o cliente. Então, a partir das Tarefas foi construído o **Backlog do Produto**,  o qual foi aprovado pelo cliente e dividido em 4 Backlog de Sprint.
 >
 <br>
-<h2>☀Visão do Produto</h2>
+<h2>☀Visão do Produto</h2><a name="visao"></a>
 
->Para pessoas que procuram se manter informadas sobre nefro pediatria. O projeto **CIANP (Centro de Informações e Ajuda Nefro-Pediátrica)** tem como objetivo trazer informações e dados relevantes à quem procura sobre esse assunto tão pouco comentado. As informações estão muito dispersas na internet, o **CIANP** trás facilidade nessa busca e apoio para encontrar o local mais adequado para o tratamento necessário para saúde da criança. Compartilhamento de suas histórias está incluso a todos aqueles que buscam um conforto a mais nesse momento delicado.
+>Para pessoas que procuram se manter informadas sobre nefro pediatria. O projeto **CIANP (Centro de Informações e Ajuda Nefro-Pediátrica)** tem como objetivo trazer informações e dados relevantes à quem procura sobre esse assunto tão pouco comentado. As informações estão muito dispersas na internet, o **CIANP** traz facilidade nessa busca e apoio para encontrar o local mais adequado para o tratamento necessário para saúde da criança. Compartilhamento de suas histórias está incluso a todos aqueles que buscam um conforto a mais nesse momento delicado.
 <br>
 
 <br>
 
-<h2> 💻Recursos Utilizados </h2>
+<h2> 💻 Tecnologias Utilizados </h2><a name="tecnologias"></a>
 
 <div align="center">
   <a href="https://discord.com/"><img src="https://img.shields.io/badge/Discord-4a1fa8?style=for-the-badge&logo=discord&logoColor=black&color=5620B8">
@@ -36,44 +46,43 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
   <a href="https://slack.com/intl/pt-br"><img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white&color=5620B8"/>
   <a href="https://www.microsoft.com/pt-br/microsoft-365/excel/?rtc=1"><img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white&color=5620B8"/>
   <a href="https://www.microsoft.com/pt-br/microsoft-teams/log-in"><img src="https://img.shields.io/badge/Microsoft_Teams-6264A7?style=for-the-badge&logo=microsoft-teams&logoColor=white&color=5620B8"/>
-
 </div>
 <br>
     
-<h2> 📅Sprints </h2>
+<h2> 📅Sprints </h2><a name="sprints"></a>
 
 | Sprint |   Início   |  Entrega   |                                      Relatório                                      | Status |
 | :----: | :--------: | :--------: | :---------------------------------------------------------------------------------: | :----: |
-|   01   | 04/09/2023 | 24/09/2023 |                                                                                       |    ❌   |
-|   02   | 25/09/2023 | 15/10/2023 |                                                                                       |    ❌   |
-|   03   | 16/10/2023 | 05/11/2023 |                                                                                       |    ❌   |
-|   04   | 06/11/2023 | 26/11/2023 |                                                                                       |    ❌   |
+|   01   | 04/09/2023 | 24/09/2023 | <a href="./Sprint 1/README.md"> 1° Relatório </a> |    ❌   |
+|   02   | 25/09/2023 | 15/10/2023 | Em breve |    ❌   |
+|   03   | 16/10/2023 | 05/11/2023 | Em breve |    ❌   |
+|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ❌   |
 <br>
 
-<h2> 🗒Product Backlog </h2>
+<h2> 🗒Product Backlog </h2><a name="backlog"></a>
 
 |   Id  | Itens a serem desenvolvidos |   User Story   | Prioridade |  Sprint  |
 | :----: | :--------: | :--------: | :--------------: | :----: |
-|   #01   |   Wireframe do produto                                 | "Eu como usuário, gostaria de um protótipo do site para ter como base de como ficará"                          | Alta |   1   |
-|   #02   |   Backlog                                              | "Eu como usuário, gostaria acompanhar as etapas a serem desenvolvidas" | Alta |   1   |
-|   #03   |   Página Home                                          | "Eu como usuário, gostaria de receber uma prévia do assunto para saber do que se trata o site"   | Alta |   2   |
-|   #04   |   Página de conscientização/informacional              | "Eu como usuário, gostaria de me manter informada sobre o assunto sempre que possível" | Alta |   2   |
-|   #05   |   Página de compartilhamento de contatos e hospitais   | "Eu como usuário, gostaria de saber sobre hospitais e médicos capacitados" | Alta |   2   |
-|   #06   |   Página de cuidados e sintomas       | "Eu como usuário, gostaria de saber sobre os sintomas apresentados e cuidados necessários" | Alta |   2   |
-|   #07   |   Página do blog | "Eu como usuário, gostaria de compartilhar minhas histórias e saber sobre notícias relevantes" | Alta |   2   |
-|   #08   |   Registro e login  | "Eu como usuário, gostaria de uma forma segura de compartilhar minhas histórias e manter um registro delas" | Alta |   3 | 
-|   #09   |   Inserção das informações                             | "Eu como usuário, gostaria de receber as informações certas" | Alta |   3   |
-|   #10   |   Criação das imagens a serem utilizadas               | "Eu como usuário, gostaria de uma forma fácil e intuitiva de ver as informações do site" | Média |   3   |
-|   #11   |   Formatação e estilização do site  | "Eu como usuário, gostaria de ver informações de uma forma boa e legível" | Baixo |   3   |
-|   #12   |   Raspagem dos dados utilizados  | "Eu como usuário, gostaria de obter os dados para análises posteriores" | Média |   3   |
-|   #13   |   Correção de erros  | "Eu como usuário, gostaria de navegar pelo site sem problemas e erros"  | Média |   4   | 
-|   #14   |   Otimizações  | "Eu como usuário, gostaria de um site fácil e simples de navegar" |  Baixa  |    4   |
-|   #12   |   Melhora nas informações inseridas  | "Eu como usuário, gostaria de ver informações limpas, sem obstáculos na leitura" | Média |   4   |
-|   #15   |   Melhorias segundo às criticas | "Eu como usuário, gostaria do site pronto sem erros" |  Alta  |    4   |
-|   #16   |   Testes finais | "Eu como usuário, gostaria do site que atendam as necessidades" | Média |   4   |
+|   #01   |   Wireframe do produto                                 | "Eu, como cliente, gostaria de um protótipo do site para ter como base de como ficará"                          | Alta |   1   |
+|   #02   |   Backlog                                              | "Eu, como cliente, gostaria acompanhar as etapas a serem desenvolvidas" | Alta |   1   |
+|   #03   |   Página Home                                          | "Eu, como cliente, gostaria de receber uma prévia do assunto para saber do que se trata o site"   | Alta |   2   |
+|   #04   |   Página de conscientização/informacional              | "Eu, como cliente, gostaria de me manter informada sobre o assunto sempre que possível" | Alta |   2   |
+|   #05   |   Página de compartilhamento de contatos e hospitais   | "Eu, como cliente, gostaria de saber sobre hospitais e médicos capacitados" | Alta |   2   |
+|   #06   |   Página de cuidados e sintomas       | "Eu, como cliente, gostaria de saber sobre os sintomas apresentados e cuidados necessários" | Alta |   2   |
+|   #07   |   Página do blog | "Eu, como cliente, gostaria de compartilhar minhas histórias e saber sobre notícias relevantes" | Alta |   2   |
+|   #08   |   Registro e login  | "Eu, como cliente, gostaria de uma forma segura de compartilhar minhas histórias e manter um registro delas" | Alta |   3 | 
+|   #09   |   Inserção das informações                             | "Eu, como cliente, gostaria de receber as informações certas" | Alta |   3   |
+|   #10   |   Criação das imagens a serem utilizadas               | "Eu, como cliente, gostaria de uma forma fácil e intuitiva de ver as informações do site" | Média |   3   |
+|   #11   |   Formatação e estilização do site  | "Eu, como cliente, gostaria de ver informações de uma forma boa e legível" | Baixo |   3   |
+|   #12   |   Raspagem dos dados utilizados  | "Eu, como cliente, gostaria de obter os dados para análises posteriores" | Média |   3   |
+|   #13   |   Correção de erros  | "Eu, como cliente, gostaria de navegar pelo site sem problemas e erros"  | Média |   4   | 
+|   #14   |   Otimizações  | "Eu, como cliente, gostaria de um site fácil e simples de navegar" |  Baixa  |    4   |
+|   #12   |   Melhora nas informações inseridas  | "Eu, como cliente, gostaria de ver informações limpas, sem obstáculos na leitura" | Média |   4   |
+|   #15   |   Melhorias segundo às criticas | "Eu, como cliente, gostaria do site pronto sem erros" |  Alta  |    4   |
+|   #16   |   Testes finais | "Eu, como cliente, gostaria do site que atendam as necessidades" | Média |   4   |
 <br>
 
-<h2> ❄️Integrantes do Grupo </h2>
+<h2> ❄️Integrantes do Grupo </h2><a name="integrantes"></a>
 
 |          |   Nome   |  Função  |  GitHub  | LinKedin |
 | :------: | :------: | :------: | :------: | :------: |
