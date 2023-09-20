@@ -24,7 +24,7 @@ Desenvolvido por alunos da FATEC Profº Jessen Vidal - São José dos Campos. Pa
 <h2>🌟Metodologia Utilizada</h2><a name="metodologias"></a>
 
 O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método ágil adaptativo, iterativo, flexível e eficaz.
->Entre as ferramentas utilizadas no Scrum, uma é a divisão do projeto em **Sprints**. Para selecionar quais seriam as entregas das nossas Sprints, primeiro definimos nosso **MVP**, priorizando as tarefas que trariam maior entrega de valor para o cliente. Então, a partir das Tarefas foi construído o **Backlog do Produto**,  o qual foi aprovado pelo cliente e dividido em 4 Backlog de Sprint.
+>Entre as ferramentas utilizadas no Scrum, uma é a divisão do projeto em **Sprints**. Para selecionar quais seriam as entregas das nossas Sprints, primeiro definimos nosso **MVP**, priorizando as tarefas que trariam maior entrega de valor para o cliente. Então, a partir das Tarefas foi construído o **Backlog do Produto**,  o qual foi aprovado pelo cliente e dividido em 4 Backlogs de Sprint.
 >
 <br>
 <h2>☀Visão do Produto</h2><a name="visao"></a>
@@ -82,6 +82,12 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 |   #16   |   Testes finais | "Eu, como cliente, gostaria do site que atendam as necessidades" | Média |   4   |
 <br>
 
+<h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
+
+![MVP](https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/eb5fd921-011a-4e6c-9fa6-c87fc7b2b3c2)
+
+
+<br>
 <h2> ❄️Integrantes do Grupo </h2><a name="integrantes"></a>
 
 |          |   Nome   |  Função  |  GitHub  | LinKedin |
@@ -91,7 +97,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 | <img src="https://avatars.githubusercontent.com/u/142221546?v=4" alt="foto de perfil" height="64px" width="64px">         | Leonardo Parra       |  Developer        | <a href="https://github.com/LeonardoParraGodoi"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/dfmaciel"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
 | <img src="https://avatars.githubusercontent.com/u/79583088?v=4"  alt="foto de perfil" height="64px" width="64px">         |   Yuri   |  Scrum Master        | <a href="https://github.com/yuribragga"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
 | <img src="https://avatars.githubusercontent.com/u/142221511?v=4" alt="foto de perfil" height="64px" width="64px">         |   Fabio  |  Developer        | <a href="https://github.com/fabiokleber"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>        |
-| <img src="https://avatars.githubusercontent.com/u/142221456?v=4" alt="foto de perfil" height="64px" width="64px">         |   Pedro  |  Developer        | <a href="https://github.com/OliveiraPedro09"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>          | 
+| <img src="https://avatars.githubusercontent.com/u/142221456?v=4" alt="foto de perfil" height="64px" width="64px">         |   Pedro  |  Developer        | <a href="https://github.com/OliveiraPedro09"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/pedrooliv9"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>          | 
 | <img src="https://avatars.githubusercontent.com/u/142221532?v=4" alt="foto de perfil" height="64px" width="64px">         |   Renato |  Developer        | <a href="https://github.com/Renato-Cruz-Jr"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
-| <img src="https://avatars.githubusercontent.com/u/142222197?v=4" alt="foto de perfil" height="64px" width="64px">         |   Marlon | Product Owner         | <a href="https://github.com/Marlon-AS"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
+| <img src="https://avatars.githubusercontent.com/u/142222197?v=4" alt="foto de perfil" height="64px" width="64px">         |   Marlon | Product Owner         | <a href="https://github.com/Marlon-AS"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="www.linkedin.com/in/marlon-araújo-b4a4b6292"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
 | <img src="https://avatars.githubusercontent.com/u/142225044?v=4" alt="foto de perfil" height="64px" width="64px">         |   Leonardo Lopes    |   Developer       | <a href="https://github.com/leonardo-lopes23"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
