@@ -26,7 +26,13 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
  Um protótipo do projeto, um demonstrativo das telas e de como irá funcionar.
  <br>
-<img src="./Vídeos sp 1/wireframe-figma.mp4"><a name="video"></a>
+
+ <a name="video"></a>
+
+
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/894ae6e1-37b3-489d-8fc9-3adfc97ec373
+
+ 
 <br>
 
 
