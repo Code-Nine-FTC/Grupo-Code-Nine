@@ -175,7 +175,7 @@ form .cad2 {
     width: 100%;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background: linear-gradient(45deg, #000000, #000000);
     transform: scaleX(0);
     transition: all .3s ease-in-out;
     transform-origin: left;
@@ -187,7 +187,7 @@ form .cad2 {
     width: 100%;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background: linear-gradient(45deg, #000000, #000000);
     transform: scaleX(0);
     transition: all .3s ease-in-out;
     transform-origin: left;
@@ -220,4 +220,9 @@ form .cad2 {
     color: rgba(0, 0, 0, 0.5);
 }
 
-
+.texto{
+    text-align: center;
+    margin-top: 30px;
+    font-size: larger;
+    font-weight: bold;
+}
