@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300&display=swap');
 
 * {
     margin: 0;
     border: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Figtree", sans-serif;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 
 main.container {
     background: rgb(255, 255, 255);
-    min-width: 370px;
+    min-width: 340px;
     min-height: 35vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -34,14 +35,8 @@ main h2 {
 }
 
 main h2::before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 25px;
-    bottom: 3px;
-    left: 0;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #12ad1f, #ff0000);
+    position: center;
+    
 }
 
 form {
@@ -64,7 +59,7 @@ form .input-field:first-child {
     width: 100%;
     bottom: -5px;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(2, 2, 2, 0.6);
 }
 
 .input-field .underline::after {
@@ -74,10 +69,9 @@ form .input-field:first-child {
     width: 100%;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(45deg, #21794a, #0f6336);
+    background: linear-gradient(45deg, #000000, #000000);
     transform: scaleX(0);
-    transition: all .3s ease-in-out;
-    transform-origin: left;
+    
 }
 
 .input-field input:focus ~ .underline::after {
@@ -86,8 +80,8 @@ form .input-field:first-child {
 
 .input-field input {
     outline: none;
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+    color: rgba(34, 25, 25, 0.7);
     width: 100%;
 }
 
@@ -133,6 +127,97 @@ form input[type="submit"]:hover {
     cursor: pointer;
     margin-top: 1rem;
 }
+main.container2 {
+    background: white;
+    min-width: 320px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.cad2{
+    position: relative;
+}
 
+.cad1 {
+    position: relative;
+}
+
+form .cad1:first-child {
+    margin-bottom: 1.5rem;
+}
+form .cad2 {
+    margin-bottom: 1.5rem;
+}
+
+.cad1 .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.cad2 .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.cad2.underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+.cad1.underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+.cad1 input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+.cad2 input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+
+.cad1 input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+.cad2 input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.cad1 input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+.cad2 input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
 
 
