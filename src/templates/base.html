@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+<header>
+    <div id="navbar">
+        <div class="esquerda">
+            <div id="logo">
+                <img src="{{url_for('static', filename='logocianp.png')}}">
+                <h1 id="textologo">CIANP</h1>
+            </div>
+        </div>
+        <ul class="listanav">
+            <li><button class="botoesnav"><a href="/">Home</a></button></li>
+            <li><button class="botoesnav"><a href="/informacoes">Informações</a></button></li>
+            <li><button class="botoesnav"><a href="/localizacoes">Localizações</a></button></li>
+            <li><button class="botoesnav"><a href="/forum">Fórum</a></button></li>
+        </ul>
+    </div>
+</header>
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="rodape">
+            <div class="gitacess">
+                <a id="linkgit" href="https://github.com/Code-Nine-FTC/Grupo-Code-Nine" target="_blank"> Acesse nosso GitHub </a>
+                <img id="gitlogo" src="{{url_for('static', filename='icongit.png')}}">
+            </div>
+        <h5 id="direitos">©Todos os direitos reservados. Code Nine ™</h5>
+        </div>
+    </footer>
+</body>
+</html>
