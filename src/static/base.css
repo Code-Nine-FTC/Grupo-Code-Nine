@@ -8,7 +8,7 @@ body {
     height: 120px;
     display: flex;
     align-items: center;
-    background-color: #2FD27A;
+    background-color: #2cce78ec;
     justify-content: flex-end;
 }
 
@@ -35,7 +35,7 @@ body {
     margin-right: 10px;
 }
 .botoesnav:hover {
-	background-color:#5cbf2a;
+	background-color:#2FD27A;
 }
  
 ul li a{
@@ -56,7 +56,7 @@ ul li a{
 
 #textologo {
     padding-left: 10%;
-    color: #ffffff;
+    color: #000000;
     font-weight: bolder;
     font-size: 40px;
 }
@@ -65,8 +65,8 @@ footer{
     position: fixed;
     height: 80px;
     bottom: 0;
-    background-color: #2FD27A;
-    color:#ffffff;  
+    background-color: #2cce78ec;
+    color:#0f0f0f;  
     width: 100%;
 }
 
@@ -90,7 +90,7 @@ footer{
 }
 
 #linkgit {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     outline:     none;
     text-decoration: none;
     font-size: 15px;
