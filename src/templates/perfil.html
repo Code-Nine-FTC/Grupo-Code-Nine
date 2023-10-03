@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Minha Página</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+Informações
+{% endblock %}
+
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='perfil.css') }}"
+{% endblock %}
+
+{% block content %}
+<main id="content">
     <div class="container">
         <label for="upload" class="image-upload">
             <img id="user-image" src="#" alt="" />
@@ -21,5 +25,6 @@
         <button id="logout">Sair</button>
         </div>
     </div>
-</body>
-</html>
+</main>
+
+{% endblock %}
