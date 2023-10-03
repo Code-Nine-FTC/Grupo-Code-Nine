@@ -1,9 +1,8 @@
 #sidebar {
     background-color: #D9D9D9;
-    width: 18%;
+    width: fit-content;
     height: 850px;
-    margin-top: 0;
-    
+    padding-right: 10px;
 }
 
 .sideitens {
@@ -50,6 +49,27 @@
     width: 100%;
 }
 
+.perguntas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#direitaperguntas {
+    margin-left: 0;
+}
+
+#conteudoperguntas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
 h1{
-    color: rgb(0, 136, 255);
+    font-size: 62px;
+}
+
+.respostasinformacoes {
+    font-size: 20px;
 }

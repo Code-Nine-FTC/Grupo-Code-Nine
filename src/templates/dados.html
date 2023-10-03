@@ -8,8 +8,21 @@ Estatísticas
 rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
 {% endblock %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
-
 {% block content %}
-<h1>Aqui será exibido o conteúdo da página</h1>
+
+<div id="sidebar">
+    <ul class="sideitens">
+        <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='vector.png')}}">
+            <b class="topicbar" id="infosidebar">Informações</b></li>
+        <hr class="testehr">
+        <li class="liside"><img class="sideicons" src="{{url_for('static', filename='chaticon.png')}}">
+            <a class="topicbar" href="/info">Perguntas frequentes</a></li>
+        <hr class="testehr">
+        <li class="liside"><img class="sideicons" src="{{url_for('static', filename='dataicon.png')}}">
+            <a class="topicbar" href="/dados">Dados oficiais</a></li>
+    </ul>
+
+
+</div>
+
 {% endblock %}
