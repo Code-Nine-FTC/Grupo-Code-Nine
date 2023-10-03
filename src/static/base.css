@@ -46,6 +46,7 @@ ul li a{
 
 .esquerda {
     margin-right: auto;
+    
 }
 
 #logo {
@@ -64,6 +65,9 @@ ul li a{
     color: #000000;
     font-weight: bolder;
     font-size: 35px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 15px;
 }
 
 footer{

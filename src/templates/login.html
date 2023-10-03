@@ -3,7 +3,10 @@
 Login
 {% endblock %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}"
+{% endblock %}
+
 
 {% block content %}
     <main class="container">

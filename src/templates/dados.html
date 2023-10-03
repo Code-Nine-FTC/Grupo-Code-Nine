@@ -4,6 +4,10 @@
 Estatísticas
 {% endblock %}
 
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
+{% endblock %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
 
 {% block content %}

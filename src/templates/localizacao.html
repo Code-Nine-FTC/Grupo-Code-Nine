@@ -4,7 +4,9 @@
 Localizações
 {% endblock %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}">
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}"
+{% endblock %}
 
 {% block content %}
 <h1>Tela localizacões</h1>
