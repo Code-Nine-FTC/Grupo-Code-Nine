@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#user-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #b3a4a4;
+    transition: background-color 0.3s;
+}
+
+#upload {
+    display:none;
+}
+
+.image-upload:hover #user-image {
+    background-color: #e0e0e0;
+}
+
+#save-button:hover {
+    background-color: #0056b3;
+}
+#name-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #00c500;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#save-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#logout {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#save-button:hover {
+    background-color: #0056b3;
+}
+
+#titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00c500;
+}
