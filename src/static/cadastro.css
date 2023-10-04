@@ -225,3 +225,18 @@ form .cad2 {
     font-size: larger;
     font-weight: bold;
 }
+
+.registre{
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #8f1818,   #8f1818    );
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
