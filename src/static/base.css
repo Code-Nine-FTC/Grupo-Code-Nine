@@ -72,8 +72,8 @@ ul li a{
 }
 
 footer{
-    position: fixed;
     height: 60px;
+    position: relative;
     bottom: 0;
     background-color: #2cce78ec;
     color:#0f0f0f;  
@@ -85,6 +85,7 @@ footer{
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+
 }
 .gitacess {
     display: flex;  

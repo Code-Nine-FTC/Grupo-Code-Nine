@@ -73,3 +73,21 @@ h1{
 .respostasinformacoes {
     font-size: 20px;
 }
+
+.dados {
+    display: flex;
+    justify-content: flex-start;
+    align-items: cente
+}
+
+#direitadados {
+    margin-left: 0;
+}
+
+#conteudodados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}

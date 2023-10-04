@@ -9,20 +9,29 @@ rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
 {% endblock %}
 
 {% block content %}
-
-<div id="sidebar">
-    <ul class="sideitens">
-        <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='vector.png')}}">
-            <b class="topicbar" id="infosidebar">Informações</b></li>
-        <hr class="testehr">
-        <li class="liside"><img class="sideicons" src="{{url_for('static', filename='chaticon.png')}}">
-            <a class="topicbar" href="/info">Perguntas frequentes</a></li>
-        <hr class="testehr">
-        <li class="liside"><img class="sideicons" src="{{url_for('static', filename='dataicon.png')}}">
-            <a class="topicbar" href="/dados">Dados oficiais</a></li>
-    </ul>
-
-
-</div>
+<main class="dados">
+    <div id="sidebar">
+        <ul class="sideitens">
+            <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='vector.png')}}">
+                <b class="topicbar" id="infosidebar">Informações</b></li>
+            <hr class="testehr">
+            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='chaticon.png')}}">
+                <a class="topicbar" href="/info">Perguntas frequentes</a></li>
+            <hr class="testehr">
+            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='dataicon.png')}}">
+                <a class="topicbar" href="/dados">Dados oficiais</a></li>
+        </ul>
+    </div>
+    <div id="direitadados">
+        <div id="conteudodados">
+            <h1>Informações</h1>
+            <h2>A doença renal tem cura?</h2>
+            <p class="respostasinformacoes">Infelizmente, não existe cura para a doença renal crônica, embora o tratamento possa 
+            retardar ou interromper a progressão da doença e impedir o desenvolvimento de outras condições graves.
+            O uso de medicamentos e o controle da dieta podem ser prescritos. Nos casos mais extremos, pode ser necessária
+            a realização de sessões de diálise ou o transplante renal, como terapêutica definitiva de substituição da função renal.
+        </div>
+    </div>
+</main>
 
 {% endblock %}
