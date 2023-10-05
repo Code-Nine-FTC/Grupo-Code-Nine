@@ -8,7 +8,6 @@
 - [Backlog do Produto](#backlog)
 - [MVP (Minimum Viable Product)](#mvp)
 - [Vídeo demonstrativo do Wireframe](#video)
-- [Integrantes](#integrantes)
 
 
 <br>
@@ -35,6 +34,5 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
 <h2>🎬Vídeo demonstrativo</h2>
  <a name="video"></a>
 
->Esta é a primeira versão do demonstrativo (protóripo) do site:
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/19fea184-e580-4823-b36b-351b3c7da971
 
-<video src="/Sprint 1/Vídeos sp 1/Wireframe(2).mp4">
