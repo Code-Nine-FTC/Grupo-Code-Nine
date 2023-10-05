@@ -1,4 +1,4 @@
-<img src="./Imagens/CIANP.png">
+<img src="/Imagens/CIANP.png">
 <br>
 <h1 style=text-align; c>1º Semestre - DSM - São José dos Campos - FATEC Profº Jessen Vidal
 </h1>

@@ -1,4 +1,4 @@
-<img src="./Imagens sp1/CIANP.png">
+<img src="/Sprint 1/Imagens sp1/CIANP.png">
 <br>
 <h1>Primeira Sprint</h1>
 <br>
@@ -30,28 +30,11 @@ Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e 
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
  Um protótipo do projeto, um demonstrativo das telas e de como irá funcionar.
  <br>
- <img src="https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/af2b1cb0-12e3-421b-819e-232c5de31756" width="300px">
+ <img src="/Sprint 1/Imagens sp1/Sprint 1 img.png" width="300px">
 
 <h2>🎬Vídeo demonstrativo</h2>
  <a name="video"></a>
 
 >Esta é a primeira versão do demonstrativo (protóripo) do site:
 
-https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/e6990e43-de9f-4e90-a558-1742e1c7dc56
-
-
-
-<br>
-<h2> ❄️Integrantes do Grupo </h2><a name="integrantes"></a>
-
-|          |   Nome   |  Função  |  GitHub  | LinKedin |
-| :------: | :------: | :------: | :------: | :------: |
-| <img src="https://avatars.githubusercontent.com/u/104574671?v=4" alt="foto de perfil" height="64px" width="64px">         |   Davi Maciel  |  Developer        | <a href="https://github.com/DfMaciel"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/dfmaciel"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>          |
-| <img src="https://avatars.githubusercontent.com/u/142221848?v=4" alt="foto de perfil" height="64px" width="64px">         |   Jonas Miguel |  Developer        | <a href="https://github.com/Jonasoliver"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/jonas-miguel-ol"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>          |
-| <img src="https://avatars.githubusercontent.com/u/142221546?v=4" alt="foto de perfil" height="64px" width="64px">         | Leonardo Parra       |  Developer        | <a href="https://github.com/LeonardoParraGodoi"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/dfmaciel"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
-| <img src="https://avatars.githubusercontent.com/u/79583088?v=4"  alt="foto de perfil" height="64px" width="64px">         |   Yuri Braga  |  Scrum Master        | <a href="https://github.com/yuribragga"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="https://www.linkedin.com/in/yuri-braga/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
-| <img src="https://avatars.githubusercontent.com/u/142221511?v=4" alt="foto de perfil" height="64px" width="64px">         |   Fabio Kléber |  Developer        | <a href="https://github.com/fabiokleber"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>        |
-| <img src="https://avatars.githubusercontent.com/u/142221456?v=4" alt="foto de perfil" height="64px" width="64px">         |   Pedro Oliveira |  Developer        | <a href="https://github.com/OliveiraPedro09"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="www.linkedin.com/in/pedrooliv9"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>          | 
-| <img src="https://avatars.githubusercontent.com/u/142221532?v=4" alt="foto de perfil" height="64px" width="64px">         |   Renato Júnior |  Developer        | <a href="https://github.com/Renato-Cruz-Jr"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href="linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
-| <img src="https://avatars.githubusercontent.com/u/142222197?v=4" alt="foto de perfil" height="64px" width="64px">         |   Marlon Araújo | Product Owner         | <a href="https://github.com/Marlon-AS"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
-| <img src="https://avatars.githubusercontent.com/u/142225044?v=4" alt="foto de perfil" height="64px" width="64px">         |   Leonardo Lopes    |   Developer       | <a href="https://github.com/leonardo-lopes23"><img src="https://img.shields.io/badge/GitHub-13196a?style=for-the-badge&logo=github&logoColor=white">         | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>         |
+<video src="/Sprint 1/Vídeos sp 1/Wireframe(2).mp4">
