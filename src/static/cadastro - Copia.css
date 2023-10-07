@@ -14,24 +14,10 @@
     justify-content: center;
 } */
 
-.maincadastro {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    margin: auto;
-}   
-
-#formulario {
-    width: 30vw;
-    height: 43vh;
-    padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-}
-
-#formulario2 {
-    width: 30vw;
-    height: 36vh;
+main.container {
+    background: rgb(255, 255, 255);
+    min-width: 340px;
+    min-height: 35vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -58,7 +44,7 @@ form {
 }
 
 form .input-field:first-child {
-    margin-bottom: 1.5rem;  
+    margin-bottom: 1.5rem;
 }
 
 .input-field .underline::before {
@@ -69,7 +55,7 @@ form .input-field:first-child {
     bottom: -5px;
     left: 0;
     background: rgba(2, 2, 2, 0.6);
-} 
+}
 
 .input-field .underline::after {
     content: '';
@@ -81,7 +67,7 @@ form .input-field:first-child {
     background: linear-gradient(45deg, #000000, #000000);
     transform: scaleX(0);
     
-} */
+}
 
 .input-field input:focus ~ .underline::after {
     transform: scaleX(1);
@@ -116,15 +102,6 @@ form input[type="submit"]:hover {
     background: linear-gradient(to right, #2FD27A, #2FD27A);
 }
 
-.registre:hover {
-    letter-spacing: 0.5px;
-    background: linear-gradient(to right, #2FD27A, #2FD27A);
-}
-
-footer{
-    margin-top: 0 !important; 
-}
-
 /* .footer {
     display: flex;
     flex-direction: column;
@@ -145,16 +122,14 @@ footer{
     cursor: pointer;
     margin-top: 1rem;
 } */
-
-/* main.container2 {
+main.container2 {
     background: white;
     min-width: 320px;
     min-height: 40vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-} */
-
+}
 .cad2{
     position: relative;
 }
@@ -195,7 +170,10 @@ form .cad2 {
     width: 100%;
     bottom: -5px;
     left: 0;
+    background: linear-gradient(45deg, #000000, #000000);
+    transform: scaleX(0);
     transition: all .3s ease-in-out;
+    transform-origin: left;
 }
 .cad1.underline::before {
     content: '';
@@ -204,7 +182,17 @@ form .cad2 {
     width: 100%;
     bottom: -5px;
     left: 0;
+    background: linear-gradient(45deg, #000000, #000000);
+    transform: scaleX(0);
     transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+.cad1 input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+.cad2 input:focus ~ .underline::after {
+    transform: scaleX(1);
 }
 
 .cad1 input {

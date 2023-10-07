@@ -9,25 +9,26 @@ rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}"
 
 
 {% block content %}
-    <main class="container">
+    <main class="maincadastro">
+        <div id="formulario2">
         <h2>Login</h2>
-        <form action="">
-            <div class="input-field">
-                <input type="text" name="username" id="username"
-                    placeholder="Insira seu nome de usuário">
-                <div class="underline"></div>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password" id="password"
-                    placeholder="Insira sua senha">
-                <div class="underline"></div>
-            </div>
+            <form action="">
+                <div class="input-field">
+                    <input class="action" type="text" name="username" id="username"
+                        placeholder="Insira seu nome de usuário">
+                    <div class="underline"></div>
+                </div>
+                <div class="input-field">
+                    <input class="action" type="password" name="password" id="password"
+                        placeholder="Insira sua senha">
+                    <div class="underline"></div>
+                </div>
 
-            <input type="submit" value="Continue">
-            <div class="texto">Ou</div>
-            <a class="registre" href="/cadastro">Registre-se</a></li>
-        </form>
-
+                <input class="action" type="submit" value="Continue">
+                <div class="texto">Ou</div>
+                <a class="registre" href="/cadastro">Registre-se</a></li>
+            </form>
+        </div>
     </main>
 
 {% endblock %}

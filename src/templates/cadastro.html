@@ -8,36 +8,37 @@ rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}"
 {% endblock %}
 
 {% block content %}
-    <main class="container2">
-        <h2>Cadastro</h2>
-        <form action="">
-            <div class="cad1">
-                <input type="text" name="username" id="username"
-                    placeholder="Seu nome de usuário">
+    <main class="maincadastro">
+        <div id="formulario">
+            <h2>Cadastro</h2>
+            <form class="action" action="">
+                <div class="cad1">
+                    <input class="action" type="text" name="username" id="username"
+                        placeholder="Seu nome de usuário">
+                        <div class="underline"></div>
+                </div>
+                <div class="cad2">
+                    <input class="action" type="email" name="email" id="email"
+                        placeholder="Coloque seu email">
+                        <div class="underline"></div>
+                </div>
+                <div class="cad2">
+                    <input class="action" type="password" name="password" id="password"
+                        placeholder="Coloque sua senha">
                     <div class="underline"></div>
-            </div>
-            <div class="cad2">
-                <input type="email" name="email" id="email"
-                    placeholder="Coloque seu email">
+                </div>
+                <div class="cad1">
+                    <input class="action" type="password" name="password" id="password"
+                        placeholder="Confirme sua senha">
                     <div class="underline"></div>
-            </div>
-            <div class="cad2">
-                <input type="password" name="password" id="password"
-                    placeholder="Coloque sua senha">
-                <div class="underline"></div>
-            </div>
-            <div class="cad1">
-                <input type="password" name="password" id="password"
-                    placeholder="Confirme sua senha">
-                <div class="underline"></div>
-            </div>
+                </div>
 
-            <input type="submit" value="Continue">
-            <div class="texto">Ou</div>
+                <input class="action" type="submit" value="Continue">
+                <div class="texto">Ou</div>
 
-            <a class="registre" href="/login">Logue com a sua conta</a></li>
-        </form>
-
+                <a class="registre" href="/login">Logue com a sua conta</a></li>
+            </form>
+        </div>
        
     </main>
 {% endblock %}
