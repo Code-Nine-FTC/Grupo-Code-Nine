@@ -81,7 +81,7 @@ h1{
 }
 
 #direitadados {
-    margin-left: 0;
+    margin-left: 25%;
 }
 
 #conteudodados{
@@ -90,4 +90,26 @@ h1{
     justify-content: center;
     align-items: center;
     padding: 30px;
+}
+
+/*TABELAS*/
+#tabela1{
+    border: 2px solid #000;
+    border-collapse: separate;
+    background-color: #e9e9e9; 
+    width: 150%;
+}
+th, td {
+    text-align: center;
+}
+#tabela2{
+    border: 2px solid #000;
+    border-collapse: separate;
+    background-color: #e9e9e9; 
+    width: 150%;
+    
+}
+.margem{
+    margin-left:30%;
+    text-align: center;
 }

@@ -23,24 +23,18 @@ rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
         </ul>
     </div>
     <div id="direitadados">
-        <div id="conteudodados">
-            <h1>Informações</h1>
-            <h2>A doença renal tem cura?</h2>
-            <p class="respostasinformacoes">Infelizmente, não existe cura para a doença renal crônica, embora o tratamento possa 
-            retardar ou interromper a progressão da doença e impedir o desenvolvimento de outras condições graves.
-            O uso de medicamentos e o controle da dieta podem ser prescritos. Nos casos mais extremos, pode ser necessária
-            a realização de sessões de diálise ou o transplante renal, como terapêutica definitiva de substituição da função renal.
+        <div id="conteudodados">           
             <br>
-            <h1>Dados oficiais</h1>
-            <h2>Número de crianças em fila de transplante por região</h2>
-            <table border="3">
+            <h1 class="margem">Dados oficiais</h1>
+            <h2 class="margem">Número de crianças em fila de transplante por região</h2>
+            <table border="3" id="tabela1" class="margem">
                 <thead>
                     <tr>
-                        <th>Anos</th>
-                        <th>Região</th>
+                        <th>Anos        </th>
+                        <th>Região      </th>
                         <th>Ingressantes</th>
-                        <th>Transplante</th>
-                        <th>Óbitos</th>
+                        <th>Transplante </th>
+                        <th>Óbitos      </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +54,8 @@ rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
                     </tr>
                 </tbody>
             </table>
-            <h2>Número de óbitos por DRC em cada região (0 a 9 anos)</h2>
-            <table border="3">
+            <h2 class="margem">Número de óbitos por DRC em cada região (0 a 9 anos)</h2>
+            <table border="3" id="tabela2" class="margem">
                 <thead>
                     <tr>
                         <th>Região</th>
@@ -115,7 +109,7 @@ rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
                     </tr>
                 </tbody>
                 </thead>
-            </table>    
+            </table>       
         </div>
     </div>
 </main>
