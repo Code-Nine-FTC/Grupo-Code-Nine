@@ -76,7 +76,15 @@ h2 {
 }
 
 p {
-    font-size: 20px;    
+    font-size: 20px;
+    text-align: justify;
+    text-justify: auto;    
+}
+
+ul {
+    font-size: 20px;
+    text-align: justify;
+    text-justify: auto;
 }
 
 .respostasinformacoes {
