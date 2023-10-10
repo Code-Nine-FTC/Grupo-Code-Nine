@@ -9,22 +9,37 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
 {% endblock %}
 
 {% block content %}
-<main id="content">
-    <div class="container">
-        <label for="upload" class="image-upload">
-            <img id="user-image" src="#" alt="" />
-            <input type="file" id="upload" accept="image/*">
-        </label>
-        <div class="titulo"><h2>Suas informações</h2></div>
-        <input type="text" id="name-input" placeholder="Digite seu nome...">
-    <div class="info">
-        <input type="text" id="name-input" placeholder="Digite seu nome...">
-        <div><input type="text" id="name-input" placeholder="Digite seu estado"></div>
-       
-        <button id="save-button">Salvar alterações</button>
-        <button id="logout">Sair</button>
-        </div>
+<div class="container">
+    <label for="upload" class="image-upload">
+        <img id="user-image" src="#" alt="" />
+        <input type="file" id="upload" accept="image/*">
+    </label>
+    <div class="titulo"></div>
+    <h3>Nome</h3>
+    <input type="text" id="name-input" placeholder="Digite seu nome...">
+    <h3>Bio</h3>
+    <div><input type="text" id="name-input" placeholder="Adicionar Bio..."></div>
+
     </div>
-</main>
+</div>
+<div class="info">
+    <div class="info-container">
+        <div class="custom-checkbox">
+            <input type="checkbox" id="Pai" name="gender" value="pai">
+            <label for="Pai">Pai</label>
+        </div>
+        <div class="custom-checkbox">
+            <input type="checkbox" id="mae" name="gender" value="mae">
+            <label for="mae">Mãe</label>
+        </div>
+    
+    </div>
+    <input type="text" id="name-input" placeholder="Digite sua cidade...">
+    <div><input type="text" id="name-input" placeholder="Digite seu estado..."></div>
+   
+    <button id="save-button">Salvar alterações</button>
+    <button id="logout">Sair</button>
+    </div>
+</div>
 
 {% endblock %}
