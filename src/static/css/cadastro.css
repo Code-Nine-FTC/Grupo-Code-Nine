@@ -22,16 +22,17 @@
 }   
 
 #formulario {
-    width: 30vw;
-    height: 43vh;
+    width: 40vw;
+    height: max-content;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    overflow: scroll;
 }
 
 #formulario2 {
     width: 30vw;
-    height: 36vh;
+    height: 43vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
