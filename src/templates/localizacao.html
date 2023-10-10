@@ -15,19 +15,19 @@ rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}"
         Pesquise um hospital de nefrologia próximo à sua localidade!
     </p>
     <!-- Mapa das regiões -->
-    <div class="mapa">
+    <!-- <div class="mapa">
         <div class="mpcompleto" style="text-align: center;">
             <a href="#ImagemCompleto"><img class="sideicons" src="{{url_for('static', filename='mapa-completo.png')}}" style="width: 500px;"></a><br>
-            <a class="txtlocalidades" href="#ImagemCompleto">Todas as localidades</a>
+            <a class="txtlocalidades" href="#ImagemCompleto">Todas as localidades</a> -->
         </div>
         <div class="mapa">
-            <a href="#ImagemNorte"><img class="sideicons" src="{{url_for('static', filename='mapa-norte.png')}}" style="width: 320px;">
+            <a href="/norte"><img class="sideicons" src="{{url_for('static', filename='mapa-norte.png')}}" style="width: 320px;">
             </a>
-            <a href="#ImagemCentro"><img class="sideicons" src="{{url_for('static', filename='mapa-centro-oeste.png')}}" style="width: 270px;"></a>
-            <a href="#ImagemNordeste"><img class="sideicons" src="{{url_for('static', filename='mapa-nordeste.png')}}" style="width: 180px;"></a><br>
-            <a href="#ImagemSudeste"><img class="sideicons" src="{{url_for('static', filename='mapa-sudeste.png')}}" style="width: 250px;
+            <a href="/centrooeste"><img class="sideicons" src="{{url_for('static', filename='mapa-centro-oeste.png')}}" style="width: 270px;"></a>
+            <a href="/nordeste"><img class="sideicons" src="{{url_for('static', filename='mapa-nordeste.png')}}" style="width: 180px;"></a><br>
+            <a href="/sudeste"><img class="sideicons" src="{{url_for('static', filename='mapa-sudeste.png')}}" style="width: 250px;
             "></a>
-            <a href="#ImagemSul"><img class="sideicons" src="{{url_for('static', filename='mapa-sul.png')}}" style="width: 250px;"></a>
+            <a href="/sul"><img class="sideicons" src="{{url_for('static', filename='mapa-sul.png')}}" style="width: 250px;"></a>
             </div>
         </div> 
         <!--Fim dos mapas-->
