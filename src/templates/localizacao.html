@@ -9,5 +9,67 @@ rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}"
 {% endblock %}
 
 {% block content %}
-<h1>Tela localizacões</h1>
+<main>
+    <h1 style="font-size: 65px; text-align: center;">Localizações</h1>
+    <p style="font-size: 35; text-align: center;">
+        Pesquise um hospital de nefrologia próximo à sua localidade!
+    </p>
+    <!-- Mapa das regiões -->
+    <div class="mapa">
+        <div class="mpcompleto" style="text-align: center;">
+            <a href="#ImagemCompleto"><img class="sideicons" src="{{url_for('static', filename='mapa-completo.png')}}" style="width: 500px;"></a><br>
+            <a class="txtlocalidades" href="#ImagemCompleto">Todas as localidades</a>
+        </div>
+        <div class="mapa">
+            <a href="#ImagemNorte"><img class="sideicons" src="{{url_for('static', filename='mapa-norte.png')}}" style="width: 320px;">
+            </a>
+            <a href="#ImagemCentro"><img class="sideicons" src="{{url_for('static', filename='mapa-centro-oeste.png')}}" style="width: 270px;"></a>
+            <a href="#ImagemNordeste"><img class="sideicons" src="{{url_for('static', filename='mapa-nordeste.png')}}" style="width: 180px;"></a><br>
+            <a href="#ImagemSudeste"><img class="sideicons" src="{{url_for('static', filename='mapa-sudeste.png')}}" style="width: 250px;
+            "></a>
+            <a href="#ImagemSul"><img class="sideicons" src="{{url_for('static', filename='mapa-sul.png')}}" style="width: 250px;"></a>
+            </div>
+        </div> 
+        <!--Fim dos mapas-->
+        <h1>TEXTO DIZENDO SOBRE OS ESTADOS ABAIXO E OS GRÁFICOS</h1>
+        <h1 id="ImagemNorte">Estados do Norte</hh>
+        <p>Amazonas (AM)
+            Pará (PA)
+            Acre (AC)
+            Roraima (RR)
+            Rondônia (RO)
+            Amapá (AP)
+            Tocantins (TO)
+        </p>
+        <h2 id="ImagemCentro">Estados do Centro-Oeste</h2>
+        <p>Goiás (GO)
+            Mato Grosso (MT)
+            Mato Grosso do Sul (MS)
+            Distrito Federal (DF)
+        </p>
+        <h2 id="ImagemNordeste">Estados do Nordeste</h2>
+        <p>Maranhão (MA) - São Luís.
+            Piauí (PI) - Teresina.
+            Ceará (CE) - Fortaleza.
+            Rio Grande do Norte (RN) - Natal.
+            Paraíba (PB) - João Pessoa.
+            Pernambuco (PE) - Recife.
+            Alagoas (AL) - Maceió
+            Sergipe (SE) - Aracaju.
+        </p>
+        <h2 id="ImagemSudeste">Estados do Centro</h2>
+        <p>
+            Espírito Santo (ES)
+            Minas Gerais (MG)
+            Rio de Janeiro (RJ)
+            São Paulo (SP)
+        </p>
+        <h2 id="ImagemSul">Estados do Centro</h2>
+        <p>
+            Paraná (PR)
+            Santa Catarina (SC)
+            Rio Grande do Sul (RS)
+        </p>
+    </div>
+</main>
 {% endblock %}
