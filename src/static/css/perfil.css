@@ -1,7 +1,8 @@
-body {
-    margin: 20px;
+main {
     display: flex;
-    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .image-upload {
@@ -77,9 +78,7 @@ body {
 .info{
     display: flex;
     flex-direction: column;
-    border-radius: 50%;
-    padding: 0px;
-    margin: 182px  0 0 100px;
+    border-radius: 50;
 }
 
 .custom-checkbox {
