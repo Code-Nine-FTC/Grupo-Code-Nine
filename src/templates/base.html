@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link{% block css %}{% endblock %}>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div id="navbar">
         <div class="esquerda">
             <div id="logo">
-                <img id="fotologo" src="{{url_for('static', filename='logocianp.png')}}">
+                <img id="fotologo" src="{{url_for('static', filename='img/logocianp.png')}}">
                 <h1 id="textologo">CIANP</h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <li><a class="botoesnav" href="/info">Informações</a></li>
             <li><a class="botoesnav" href="/localizacao">Localizações</a></li>
             <li><a class="botoesnav" href="/forum">Fórum</a></li>
-            <li id="itemperfil"><a href="/perfil"><img width="30px" height="30px" src="{{url_for('static', filename='perfilicon.png')}}"></a></li>
+            <li id="itemperfil"><a href="/perfil"><img width="30px" height="30px" src="{{url_for('static', filename='img/perfilicon.png')}}"></a></li>
         </ul>
     </div>
 </header>
@@ -32,7 +32,7 @@
         <div class="rodape">
             <div class="gitacess">
                 <a id="linkgit" href="https://github.com/Code-Nine-FTC/Grupo-Code-Nine" target="_blank"> Acesse nosso GitHub </a>
-                <img id="gitlogo" src="{{url_for('static', filename='icongit.png')}}">
+                <img id="gitlogo" src="{{url_for('static', filename='img/icongit.png')}}">
             </div>
         <h5 id="direitos">©Todos os direitos reservados. Code Nine ™</h5>
         </div>

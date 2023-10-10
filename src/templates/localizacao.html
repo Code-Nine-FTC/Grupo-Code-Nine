@@ -5,7 +5,7 @@ Localizações
 {% endblock %}
 
 {% block css %}
-rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}"
+rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
 {% endblock %}
 
 {% block content %}
@@ -21,13 +21,13 @@ rel="stylesheet" href="{{ url_for('static', filename='localizacao.css') }}"
             <a class="txtlocalidades" href="#ImagemCompleto">Todas as localidades</a> -->
         </div>
         <div class="mapa">
-            <a href="/norte"><img class="sideicons" src="{{url_for('static', filename='mapa-norte.png')}}" style="width: 320px;">
+            <a href="/norte"><img class="sideicons" src="{{url_for('static', filename='img/mapa-norte.png')}}" style="width: 320px;">
             </a>
-            <a href="/centrooeste"><img class="sideicons" src="{{url_for('static', filename='mapa-centro-oeste.png')}}" style="width: 270px;"></a>
-            <a href="/nordeste"><img class="sideicons" src="{{url_for('static', filename='mapa-nordeste.png')}}" style="width: 180px;"></a><br>
-            <a href="/sudeste"><img class="sideicons" src="{{url_for('static', filename='mapa-sudeste.png')}}" style="width: 250px;
+            <a href="/centrooeste"><img class="sideicons" src="{{url_for('static', filename='img/mapa-centro-oeste.png')}}" style="width: 270px;"></a>
+            <a href="/nordeste"><img class="sideicons" src="{{url_for('static', filename='img/mapa-nordeste.png')}}" style="width: 180px;"></a><br>
+            <a href="/sudeste"><img class="sideicons" src="{{url_for('static', filename='img/mapa-sudeste.png')}}" style="width: 250px;
             "></a>
-            <a href="/sul"><img class="sideicons" src="{{url_for('static', filename='mapa-sul.png')}}" style="width: 250px;"></a>
+            <a href="/sul"><img class="sideicons" src="{{url_for('static', filename='img/mapa-sul.png')}}" style="width: 250px;"></a>
             </div>
         </div> 
         <!--Fim dos mapas-->

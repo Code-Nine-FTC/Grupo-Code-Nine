@@ -5,20 +5,20 @@ Informações
 {% endblock %}
 
 {% block css %}
-rel="stylesheet" href="{{ url_for('static', filename='info.css') }}"
+rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
 {% endblock %}
 
 {% block content %}
 <main class="perguntas">
     <div id="sidebar">
         <ul class="sideitens">
-            <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='vector.png')}}">
+            <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='img/vector.png')}}">
                 <b class="topicbar" id="infosidebar">Informações</b></li>
             <hr class="testehr">
-            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='chaticon.png')}}">
+            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='img/chaticon.png')}}">
                 <a class="topicbar" href="/info">Perguntas frequentes</a></li>
             <hr class="testehr">
-            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='dataicon.png')}}">
+            <li class="liside"><img class="sideicons" src="{{url_for('static', filename='img/dataicon.png')}}">
                 <a class="topicbar" href="/dados">Dados oficiais</a></li>
         </ul>
     </div>
