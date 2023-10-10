@@ -1,39 +1,32 @@
 
-html, body {
-    height: 100%;
-    margin: 0px;
-    padding: 20px;
-    width: 600px;
-  }
 
 
-  .img2 {
+  .img2doc {
 
     position:relative; 
     left: 20px; 
-    width: 320px; 
-    height: 310px;
-    top: 0px;    
+    max-width: 50%; 
+    height: auto;
+    top: 0px;
+    float: left;
+    margin-left: 10px;    
     
     }
-.info {
-        display: flex;
+.texthome {
+    display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
-    max-width: 500px;
+    max-width: 200px;
     font-size: 20px;
     margin-bottom: 0px;
     padding: 0;
   }
-  body {
-    justify-content:center; 
-    align-items:baseline; 
-  }
-img {
-width: 320px;
-height: 360px;
-position: absolute;
+
+.imgrim {
+max-width: 200px;
+height: auto;
+position: relative;
 top: 80px;
 left: 600px;
 
@@ -47,7 +40,7 @@ left: 600px;
 
   }
 
-.texto1 {
+.texthome1 {
 position: relative;
 left: 400px;
 top: 250px
@@ -56,31 +49,20 @@ top: 250px
   }
   
 
-  .texto2 {
+  .texthome2 {
 
     position: relative;
     left: 400px;
     top: 250px
-
-
   }
 
-  .conteudo {
-    margin-top: -1px;
+.conteudohome {
 
-
-  }
-
-.conteudo {
-
-margin-bottom: 0px;
-padding: 0;
-
-
+width: 500px;
 
 }
 
-.botao {
+.botaohome {
 display: inline-block;
 padding: 6px 10px; 
 background-color: #ACEDCA; 
