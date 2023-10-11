@@ -1,4 +1,9 @@
-
+.localizacoes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
 .mapa{
     display: inline-block;
     text-align: center;
@@ -32,4 +37,27 @@
     right: 0px;
     display: inline-block;
     text-align: center;
+}
+#seletores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+#regiao {
+    width: 15vw;
+    font-size: 17px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#estado {
+    width: 15vw;
+    font-size: 17px;
+    margin: 10px;
+    padding: 5px;
+}
+label {
+    font-size: 40px;
 }
