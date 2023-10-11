@@ -61,5 +61,21 @@ function myFunction() {
 function estado() {
     g = document.getElementById("regiao").value;
     s = document.getElementById("estado").value;
-    window.alert (s)
+    
+    if (g === "") {
+        window.alert ("Insira um valor válido!")
+    }
+    else {
+        window.alert (g, s)
+    }
+}
+
+function dados() {
+    h = document.getElementById("dadosofc").value;
+
+    if (h === "") {
+        window.alert ("Insira um valor válido!")
+    }
+    
+    window.alert (h)
 }

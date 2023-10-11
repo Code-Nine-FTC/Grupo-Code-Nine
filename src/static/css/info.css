@@ -111,6 +111,25 @@ ul {
     padding: 30px;
 }
 
+#seletores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dadosofc {
+    width: 30vw;
+    font-size: 15px;
+    margin: 10px;
+    padding: 5px;
+
+}
+
+label {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
 /*TABELAS*/
 .tabela{
     border: 2px solid #000;

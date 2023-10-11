@@ -7,7 +7,11 @@ Estatísticas
 {% block css %}
 rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
 {% endblock %}
-
+<!-- dados para serem inseridos nessa tela
+Crianças renais em diálise e Hemodiálise
+Crianças renais transplantadas, 
+Incidência de acometimento de problemas renais (gestação, ao nascer, na 1° infância, na adolescência),
+ -->
 {% block content %}
 <main class="dados">
     <div id="sidebar">
@@ -26,6 +30,20 @@ rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
         <div id="conteudodados">           
             <br>
             <h1 class="margem">Dados oficiais</h1>
+            <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
+            <div id="seletores">
+                <label for="dadosofc"> Escolha a informação: </label>
+        
+                <select name="dadosofc" id="dadosofc">
+                    <option value=""> Escolha um valor!</option>
+                    <option value="hemodialisec"> Crianças renais em diálise e Hemodiálise</option>
+                    <option value="transplantec"> Crianças renais transplantadas</option>
+                    <option value="especialistar"> Especialistas em Nefrologia Pediátrica por região</option>
+                    <option value="acometimentor"> Incidência de acometimento de problemas renais </option>
+                </select>
+            </div>
+
+            <button class="enviar" type="button" onclick="dados()"> Pesquisar!</button>
             <h2 class="margem">Número de crianças em fila de transplante por região</h2>
             <table border="3" class="tabela">
                 <thead>
