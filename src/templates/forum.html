@@ -3,11 +3,26 @@
 {% block title %}
 Fórum
 {% endblock %}
-<!-- {% block css %}
-rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}"
-{% endblock %} -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
+{% endblock %}
 
 {% block content %}
-<h1>Tela fórum</h1>
+<h1>Enviar Post</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)"></textarea>
+    <input type="file" name="post_image" accept="image/*" multiple>
+    <input type="submit" value="Enviar">
+</form>
+
+<h1>Posts</h1>
+<div>
+    <div class="post">
+        <p>Sou Vandressa, mãe e principal cuidadora da Ágatha, mãe também da Kauana (15 anos) e Mateus (8 anos). Atualmente me dedico a estudar (entre consultas, terapias, serviços domésticos, cuidar de 3 crianças e uma avó) para alcançar o sonho acadêmico, faço parte também nessa luta em busca por melhores condições de tratamento para os doentes renais sou da diretoria da Associação dos Renais crônicos de Alagoas como Conselheira Fiscal (Arcal). Ágatha foi diagnosticada com DRC Doença Renal Crônica aos 3 anos de idade. Em Alagoas, Estado onde moramos, não há tratamento adequado para essa patologia em crianças, como consequência foi transferida para São Paulo com intenção de encontrar a causa da doença e iniciar tratamento adequado além de prepará-la para o transplante.</p>
+        <div class="images">
+            <img src="{{ url_for('static', filename='imagens_forum/foto_1.png') }}" alt="Imagem1">
+            <img src="{{ url_for('static', filename='imagens_forum/foto_2.png') }}" alt="Imagem2">
+        </div>
+    </div>
+</div>
 {% endblock %}
