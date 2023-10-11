@@ -81,7 +81,7 @@ main {
     display: flex;
     flex-direction: column;
     border-radius: 50;
-    gap: 10px;
+    gap: 30px;
 }
 
 .custom-checkbox {

@@ -18,12 +18,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
         <div class="titulo"></div>
         <h3>Nome</h3>
         <input type="text" id="name-input" placeholder="Digite seu nome...">
-        <h3>Bio</h3>
-        <div><input type="text" id="name-input" placeholder="Adicionar Bio..."></div>
+        <h3>Informações adicionais</h3>
+        <div><input type="text" id="name-input" placeholder="Adicionar informações..."></div>
 
         </div>
+        <div><input type="text" id="name-input" placeholder="Grau de parentesco"></div>
     </div>
-    <div class="info">
+    <!--<div class="info">
         <div class="conteinerinfo2">
             <div class="custom-checkbox">
                 <input type="checkbox" id="Pai" name="gender" value="pai">
@@ -34,13 +35,15 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
                 <label for="mae">Mãe</label>
             </div>
         
-        </div>
+        </div>-->
+        <h3></h3>
         <input type="text" id="name-input" placeholder="Digite sua cidade...">
+        <h3>Seu estado</h3>
         <div><input type="text" id="name-input" placeholder="Digite seu estado..."></div>
     
         <button id="save-button">Salvar alterações</button>
         <button id="logout">Sair</button>
-        </div>
+        </div> 
     </div>
 </main>
 {% endblock %}
