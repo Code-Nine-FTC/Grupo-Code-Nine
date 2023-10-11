@@ -22,7 +22,8 @@
 }   
 
 #formulario {
-    width: 40vw;
+    font-size: 30px;
+    width: 50vw;
     height: max-content;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -102,7 +103,7 @@ form .input-field:first-child {
 form input[type="submit"] {
     margin-top: 2rem;
     padding: 0.4rem;
-    width: 100%;
+    width: flex;
     background: linear-gradient(to left, #8f1818,   #8f1818    );
     cursor: pointer;
     color: white;
@@ -238,7 +239,7 @@ form .cad2 {
 .registre{
     margin-top: 2rem;
     padding: 0.4rem;
-    width: 100%;
+    width: flex;
     background: linear-gradient(to left, #8f1818,   #8f1818    );
     cursor: pointer;
     color: white;
