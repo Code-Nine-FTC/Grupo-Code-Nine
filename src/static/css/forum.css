@@ -1,3 +1,42 @@
 h1 {
-    color: rgb(255, 8, 0);
+    color: black;
+    text-align: center;
+}
+
+form {
+    margin: 20px;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+.post {
+    border: 1px solid #323232;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+}
+
+.post p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.images {
+    text-align: center;
+}
+
+.images img {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 100px;  /* Define a largura máxima para as imagens */
+    height: auto;  /* Mantém a proporção original da imagem */
 }

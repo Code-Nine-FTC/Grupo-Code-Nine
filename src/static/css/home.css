@@ -1,59 +1,40 @@
+.img2doc {
 
+  position:relative;  
+  max-width: 50%; 
+  height: auto;
+  float: left;
+  margin-left: 10px;    
 
-
-  .img2doc {
-
-    position:relative; 
-    left: 20px; 
-    max-width: 50%; 
-    height: auto;
-    top: 0px;
-    float: left;
-    margin-left: 10px;    
-    
-    }
+}
 .texthome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
-    max-width: 200px;
-    font-size: 20px;
-    margin-bottom: 0px;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  max-width: 200px;
+  font-size: 20px;
+  margin-bottom: 0px;
+  padding: 0;
   }
 
 .imgrim {
-max-width: 200px;
-height: auto;
-position: relative;
-top: 80px;
-left: 600px;
-
+  max-width: 200px;
+  height: auto;
+  position: relative;
 
 }
-
-
-
-  .texto-centralizado {
-    text-align: center;
-
-  }
+.texto-centralizado {
+  text-align: center;
+}
 
 .texthome1 {
-position: relative;
-left: 400px;
-top: 250px
-
+  position: relative;
 
   }
   
-
-  .texthome2 {
-
+.texthome2 {
     position: relative;
-    left: 400px;
-    top: 250px
   }
 
 .conteudohome {
@@ -72,11 +53,10 @@ border: 20px;
 cursor: pointer; 
 border-radius: 10px;
 position: relative;
-top: 1000px;
-left: 200px;
 margin-top: 5px;
 
 }
-botao:hover {
+
+.botaohome:hover {
 background-color: #0056b3;
 }
