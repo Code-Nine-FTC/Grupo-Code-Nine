@@ -4,8 +4,89 @@
 FAQ
 {% endblock %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
+{% endblock %}
 
 {% block content %}
-<h1>Aqui Você começa leo</h1>
+
+<main>
+
+    <div class="texto">
+        <h1>FAQ</h1>
+        </div>
+    <article>
+        <button>+Faça uma nova pergunta</button>
+        
+    </article>
+    
+
+    
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <textarea name="post_text" rows="5" cols="50" placeholder="Insira sua pergunta (até 1500 caracteres)"></textarea>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    
+
+    <div class="post">
+        <img src="../static/img/miniperfil.png" alt="" height="35px" width="40px" ><h3>Maria do Carmo Silva Santos:</h3>
+        <h4>Alguém sabe onde eu posso encontrar um especialista na região de São José dos Campos-SP?</h4>
+        <p>Preciso de um especialista para tirar algumas
+            dúvidas na região do Vale Do Paraíba. 
+            Algúem pode me ajudar?
+        </p>
+        <br>
+        <img id="mini" src="../static/img/chaticon.png" alt="iconchat" height="30px" width="30px"> Comentários:  +5
+        <div class="images">
+            
+        </div>
+    </div>
+    <br>
+    <div class="post">
+        <img src="../static/img/miniperfil.png" alt="" height="35px" width="40px" ><h3>Dênis Augusto Merlim:</h3>
+        <h4>A cor da urina pode ser um sinal de alerta?</h4>
+        <p>Alguém poderia me ajudar com isso?
+        </p>
+        <br>
+        <img id="mini" src="../static/img/chaticon.png" alt="iconchat" height="30px" width="30px"> Comentários:  +9
+        <div class="images">
+            
+        </div>
+        
+    </div>
+    <br>
+    <div class="post">
+        <img src="../static/img/miniperfil.png" alt="" height="35px" width="40px" ><h3>Fernanda Lima de Morais:</h3>
+        <h4>Quais os riscos de um transplante de rim?</h4>
+        <p>Meu filho tem 9 anos e tem doença renal
+            crônica, atualmente está precisando de um 
+            transplante de rim. Alguém sabe quais são
+            os riscos?
+        </p>
+        <br>
+        <img id="mini" src="../static/img/chaticon.png" alt="iconchat" height="30px" width="30px"> Comentários:  +11
+        <div class="images">
+            
+        </div>
+        
+    </div>
+    <br>
+    <div class="post">
+        <img src="../static/img/miniperfil.png" alt="" height="35px" width="40px" ><h3>Rogério Ceni:</h3>
+        <h4>Qual a média de preços dos medicamentos para quem trata DRC?</h4>
+        <p>Meu filho possui DRC e descobrimos recentemente que o custo é muito alto, mas não há muitas informações.Por isso queria saber uma média para os medicamentos.
+        </p>
+        <br>
+        <img id="mini" src="../static/img/chaticon.png" alt="iconchat" height="30px" width="30px"> Comentários:  +12
+        <div class="images">
+            
+        </div>
+        
+    </div>
+    <br>
+    <br>
+</main>
+
 {% endblock %}
