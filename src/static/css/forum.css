@@ -96,6 +96,7 @@ ul {
 
 .forum {
     display: flex;
+    justify-content: flex-end;
 }
 
 #direitaforum {
