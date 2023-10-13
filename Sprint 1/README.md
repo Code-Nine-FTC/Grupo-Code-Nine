@@ -5,7 +5,7 @@
 <h2> 🔗 Índice</h2>
 
 - [Valor da Sprint](#valor)
-- [Backlog do Produto](#backlog)
+- [Backlog da primeira Sprint](#backlog)
 - [MVP (Minimum Viable Product)](#mvp)
 - [Vídeo demonstrativo do Wireframe](#video)
 

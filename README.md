@@ -55,10 +55,10 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 
 | Sprint |   Início   |  Entrega   |                                      Relatório                                      | Status |
 | :----: | :--------: | :--------: | :---------------------------------------------------------------------------------: | :----: |
-|   01   | 04/09/2023 | 24/09/2023 | <a href="./Sprint 1/README.md"> 1° Relatório </a> |    ❌   |
-|   02   | 25/09/2023 | 15/10/2023 | Em breve |    ❌   |
-|   03   | 16/10/2023 | 05/11/2023 | Em breve |    ❌   |
-|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ❌   |
+|   01   | 04/09/2023 | 24/09/2023 | <a href="./Sprint 1/README.md"> 1° Relatório </a> |    ✅   |
+|   02   | 25/09/2023 | 15/10/2023 | <a href="./Sprint 2/README.md">  2° Relatório </a> |  ✅  |
+|   03   | 16/10/2023 | 05/11/2023 | Em breve |    ✅   |
+|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ✅   |
 <br>
 
 <h2> 🗒Product Backlog </h2><a name="backlog"></a>
@@ -75,13 +75,13 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 |   #08   |   Registro e login  | "Eu, como cliente, gostaria de uma forma segura de compartilhar minhas histórias e manter um registro delas" | Alta |   3 | 
 |   #09   |   Inserção das informações                             | "Eu, como cliente, gostaria de receber as informações certas" | Alta |   3   |
 |   #10   |   Criação das imagens a serem utilizadas               | "Eu, como cliente, gostaria de uma forma fácil e intuitiva de ver as informações do site" | Média |   3   |
-|   #11   |   Formatação e estilização do site  | "Eu, como cliente, gostaria de ver informações de uma forma boa e legível" | Baixo |   3   |
+|   #11   |   Formatação e estilização do site  | "Eu, como cliente, gostaria de ver informações de uma forma boa e legível" | Média |   3   |
 |   #12   |   Raspagem dos dados utilizados  | "Eu, como cliente, gostaria de obter os dados para análises posteriores" | Média |   3   |
 |   #13   |   Correção de erros  | "Eu, como cliente, gostaria de navegar pelo site sem problemas e erros"  | Média |   4   | 
 |   #14   |   Otimizações  | "Eu, como cliente, gostaria de um site fácil e simples de navegar" |  Baixa  |    4   |
-|   #12   |   Melhora nas informações inseridas  | "Eu, como cliente, gostaria de ver informações limpas, sem obstáculos na leitura" | Média |   4   |
-|   #15   |   Melhorias segundo às criticas | "Eu, como cliente, gostaria do site pronto sem erros" |  Alta  |    4   |
-|   #16   |   Testes finais | "Eu, como cliente, gostaria do site que atendam as necessidades" | Média |   4   |
+|   #12   |   Melhora nas informações inseridas  | "Eu, como cliente, gostaria de ver informações limpas, sem obstáculos na leitura" | Baixa |   4   |
+|   #15   |   Melhorias segundo às criticas | "Eu, como cliente, gostaria do site pronto sem erros" |  Baixa  |    4   |
+|   #16   |   Testes finais | "Eu, como cliente, gostaria do site que atendam as necessidades" | Baixa |   4   |
 <br>
 
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>

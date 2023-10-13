@@ -1,18 +1,18 @@
 <img src="/Sprint 2/Imagens sp2/CIANP.png">
 <br>
-<h1>Primeira Sprint</h1>
+<h1>Segunda Sprint</h1>
 <br>
 <h2> 🔗 Índice</h2>
 
 - [Valor da Sprint](#valor)
-- [Backlog do Produto](#backlog)
+- [Backlog da segunda Sprint](#backlog)
 - [MVP (Minimum Viable Product)](#mvp)
-- [Vídeo demonstrativo do Wireframe](#video)
+- [Vídeo do funcionamento das páginas](#video)
 
 
 <br>
 <h2>⭐️ Valor da Sprint</h2><a name="valor"></a>
-Primeiro desenvolvimento das páginas do site de forma navegável.
+Primeiro desenvolvimento das páginas do site de forma navegável. Seu foco é o site em que possam nagevar de forma fácil e livre.
 
 <br>
 <h2> 🗒 Backlog da Sprint</h2> <a name="backlog"></a>
@@ -30,8 +30,11 @@ Primeiro desenvolvimento das páginas do site de forma navegável.
 <br>
 
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
- Desenvolvimento das páginas do site
+Criação e funcionamento do site e suas páginas.
  <br>
  <img src="/Sprint 2/Imagens sp2/Sprint 2 img.png" width="300px">
 
+<h2>🎬Vídeo demonstrativo</h2>
+ <a name="video"></a>
+Vídeo de fácil entendimento que demonstra como o site se comporta e de como será seu navegamento e como se procura suas informações.
 
