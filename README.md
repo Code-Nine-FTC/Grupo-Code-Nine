@@ -57,8 +57,8 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 | :----: | :--------: | :--------: | :---------------------------------------------------------------------------------: | :----: |
 |   01   | 04/09/2023 | 24/09/2023 | <a href="./Sprint 1/README.md"> 1° Relatório </a> |    ✅   |
 |   02   | 25/09/2023 | 15/10/2023 | <a href="./Sprint 2/README.md">  2° Relatório </a> |  ✅  |
-|   03   | 16/10/2023 | 05/11/2023 | Em breve |    ✅   |
-|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ✅   |
+|   03   | 16/10/2023 | 05/11/2023 | Em breve |    ❌   |
+|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ❌   |
 <br>
 
 <h2> 🗒Product Backlog </h2><a name="backlog"></a>
