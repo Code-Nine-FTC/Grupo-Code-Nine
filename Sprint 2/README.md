@@ -38,3 +38,7 @@ Criação e funcionamento do site e suas páginas.
  <a name="video"></a>
 Vídeo de fácil entendimento que demonstra como o site se comporta e de como será seu navegamento e como se procura suas informações.
 
+ <br>
+
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142222197/ebfda400-c27c-434f-9616-66a184ad9f8e
+
