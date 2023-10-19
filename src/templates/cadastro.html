@@ -8,67 +8,44 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
 {% endblock %}
 
 {% block content %}
-    <main class="maincadastro">
-        <div id="formulario">
-            <h2>Cadastro</h2>
-            <form class="action" action="">
-                <div class="cad1">
-                    <input class="action" type="text" name="username" id="username"
-                        placeholder="Seu nome de usuário">
-                        <div class="underline"></div>
-                </div>
-                 
-                <div class="cad2">
-                    <input class="action" type="email" name="email" id="email"
-                        placeholder="Coloque seu email">
-                        <div class="underline"></div>
-                </div>
+    <section id="formulario">
+        <h2>Cadastro</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Insira o seu nome de usuário">
+            </div>
 
-                <div class="cad2">
-                    <input class="action" type="number" name="CPF" id="CPF"
-                        placeholder="Informe seu CPF">
-                        <div class="underline"></div>
-                </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="CPF" id="CPF" placeholder="Informe seu CPF">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="prof" id="prof" placeholder="Insira a sua profissão">
+            </div>                
 
-                <div class="cad2">
-                    <input class="action" type="text" name="prof" id="prof"
-                        placeholder="Profissão">
-                        <div class="underline"></div>
-                </div>
+            <div class="form-group">
+                <input type="date" name="data" id="data" placeholder="Coloque a sua data de nascimento">
+            </div>
 
-                <div class="cad2">
-                    <input class="action" type="date" name="data" id="data"
-                        placeholder="Data de nascimento">
-                        <div class="underline"></div>
-                </div>
+            <div class="form-group">
+                <input type="text" name="parentesco" id="parentesco" placeholder="Coloque o seu grau de parentesco">
+            </div>
 
-                <div class="cad2">
-                    <input class="action" type="text" name="parentesco" id="parentesco"
-                        placeholder="Grau de parentesco">
-                        <div class="underline"></div>
-                </div>
+            <div class="form-group">
+                <input type="password" name="senha" id="senha" placeholder="Insira a sua senha">
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
 
-                <div class="cad2">
-                    <input class="action" type="number" name="CPF" id="CPF"
-                        placeholder="Informe seu CPF">
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="cad2">
-                    <input class="action" type="number" name="CPF" id="CPF"
-                        placeholder="Insira a sua senha">
-                        <div class="underline"></div>
-                </div>
-               
-                <div class="cad1">
-                    <input class="action" type="password" name="password" id="password"
-                        placeholder="Confirme sua senha">
-                    <div class="underline"></div>
-                </div>
+        <br>
 
-                <a class="registre" href="/login">Logue com uma conta já existente</a>
-            </form>
+        <div class="bot">
+            <a href="/login">Faça login com uma conta já existente.</a>
         </div>
-       
-    </main>
+    </section>
 {% endblock %}

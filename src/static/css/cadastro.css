@@ -1,252 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300&display=swap');
-
-.action{
-    border: 0;
-}
-
-/* body {
-    background: linear-gradient(45deg, #20b364, #33be74);
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-.maincadastro {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    margin: auto;
-}   
-
 #formulario {
-    font-size: 30px;
-    width: 50vw;
-    height: max-content;
-    padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow-y: scroll;
+    background-color: #ffffff;
+    padding: 2%;
+    margin: 2% auto;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 70%;
+}
+#formulario h2 {text-align: center;}
+
+.form-group {margin-bottom: 20px; text-align: center;}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
 }
 
-#formulario2 {
-    width: 30vw;
-    height: 43vh;
-    padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-}
-
-main h2 {
-    font-weight: 600;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-main h2::before {
-    position: center;
-    
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-field {
-    position: relative;
-}
-
-form .input-field:first-child {
-    margin-bottom: 1.5rem;  
-}
-
-.input-field .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: rgba(2, 2, 2, 0.6);
-} 
-
-.input-field .underline::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: linear-gradient(45deg, #000000, #000000);
-    transform: scaleX(0);
-    
-} */
-
-.input-field input:focus ~ .underline::after {
-    transform: scaleX(1);
-}
-
-.input-field input {
-    outline: none;
-    font-size: 1rem;
-    color: rgba(34, 25, 25, 0.7);
-    width: 100%;
-}
-
-.input-field input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-form input[type="submit"] {
-    margin-top: 2rem;
-    padding: 0.4rem;
-    width: flex;
-    background: linear-gradient(to left, #8f1818,   #8f1818    );
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    letter-spacing: 0.5px;
-    background: linear-gradient(to right, #2FD27A, #2FD27A);
-}
-
-.registre:hover {
-    letter-spacing: 0.5px;
-    background: linear-gradient(to right, #2FD27A, #2FD27A);
-}
-
-footer{
-    margin-top: 0 !important; 
-}
-
-/* .footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-
-.footer span {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-.footer .social-field {
-    padding: 0.4rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    width: 100%;
-    cursor: pointer;
-    margin-top: 1rem;
-} */
-
-/* main.container2 {
-    background: white;
-    min-width: 320px;
-    min-height: 40vh;
-    padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-} */
-
-.cad2{
-    position: relative;
-}
-
-.cad1 {
-    position: relative;
-}
-
-form .cad1:first-child {
-    margin-bottom: 1.5rem;
-}
-form .cad2 {
-    margin-bottom: 1.5rem;
-}
-
-.cad1 .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-.cad2 .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-.cad2.underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    transition: all .3s ease-in-out;
-}
-.cad1.underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    transition: all .3s ease-in-out;
-}
-
-.cad1 input {
-    outline: none;
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-}
-.cad2 input {
-    outline: none;
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-}
-
-.cad1 input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-.cad2 input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.texto{
-    text-align: center;
-    margin-top: 30px;
-    font-size: larger;
-    font-weight: bold;
-}
-
-.registre{
-    margin-top: 2rem;
-    padding: 0.4rem;
-    width: flex;
-    background: linear-gradient(to left, #8f1818,   #8f1818    );
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    text-align: center;
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f32222ec;
+    color: #fff;
     text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+    cursor: pointer;
 }
+
+button:hover {background-color: rgb(21, 255, 0);}
+
+.bot {text-align: center; display: block;}
+
+.bot a {
+    color: #f32222ec;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight:normal;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+.bot a:hover {color: rgb(21, 255, 0);}

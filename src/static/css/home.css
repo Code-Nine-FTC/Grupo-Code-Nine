@@ -68,7 +68,7 @@
 .bot a {
   display: inline-block;
   padding: 1% 2%;
-  background-color: #00ff73;
+  background-color: #2cce78ec;
   color: #fff;
   text-decoration: none; /* Remova o sublinhado */
   border: none; /* Remove a borda do link */
@@ -80,5 +80,5 @@
 }
 
 .bot a:hover {
-  background-color: #05b70253;
+  background-color: rgb(21, 255, 0);
 }

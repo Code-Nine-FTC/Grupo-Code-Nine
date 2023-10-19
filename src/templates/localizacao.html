@@ -11,7 +11,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
 {% block content %}
 <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
 <main class="localizacoes">
-    <div id="seletores">
+    <section id="seletores">
         <label for="regiao"> Escolha sua região:</label>
         <select name="regiao" id="regiao" onchange="myFunction()">
             <option value=""> Escolha um valor!</option>
@@ -24,9 +24,10 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
         <label for="estado"> Escolha seu estado:</label>
         <select name="estado" id="estado">
         </select>
-    </div>
+        <button type="button" onclick="estado()"> Pesquisar!</button>
+    </section>
 
-    <button type="button" onclick="estado()"> Pesquisar!</button>
+    <!-- <button type="button" onclick="estado()"> Pesquisar!</button> -->
     <!-- Mapa das regiões -->
     <!-- <div class="mapa">
         <div class="mpcompleto" style="text-align: center;">
