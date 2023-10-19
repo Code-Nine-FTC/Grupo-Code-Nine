@@ -1,130 +1,108 @@
-html, body {
-  width: 100%;
-  height: 100%;
+/* Reset de estilos para garantir uma base limpa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.conteiner{
-
-  display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-
+/* Estilos gerais da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
 }
 
-.titulo
-{
-  font-family: Arial, Helvetica, sans-serif;
+/* Estilos para a seção conteudo1 */
+#conteudo1 {
+  max-width: 90%; /* Largura máxima */
   display: flex;
-margin: 20px;
-font-size:xx-large;
-  font-weight:bolder;
-max-width: fit-content;
-margin-bottom: 50px;
-margin-left: 330px;
-margin-top: 90px;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2%;
+  margin: 2% auto; /* Centraliza verticalmente e ajusta a largura */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .textos {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 30%;
-margin: 20px;
-font-weight:570;
-font-size:large;
-margin-bottom: 47px;
-letter-spacing: 0.5px; 
+  width: 48%;
+  padding: 2%;
 }
 
-
-
-
-.par {
-
-margin-bottom: 30px;
-
-
+.textos p {
+  margin-bottom: 2%;
+  font-size: 1.2em;
+  line-height: 1.6;
 }
+
 .imgrim {
-  display: flex;
-flex-direction: row;
-
-  margin: 20px;
-max-width: fit-content;
+  width: 48%;
+  text-align: center;
 }
-
-
-
 
 .rim {
-margin-left: 100px;
-width: 380px;
-height: 380px;
-margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
 }
 
-.conteiner2 {
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-
+/* Estilos para a seção conteudo2 */
+#conteudo2 {
+  max-width: 90%; /* Largura máxima */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2%;
+  margin: 2% auto; /* Centraliza verticalmente e ajusta a largura */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .textos2 {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 30%;
-  margin-left: 160px;
-  margin-top: 50px;
-  font-weight: 570;
-  font-size:large;
-  letter-spacing: 0.5px; 
+  width: 48%;
+  padding: 2%;
+}
 
-
+.textos2 p {
+  margin-bottom: 2%;
+  font-size: 1.2em;
+  line-height: 1.6;
 }
 
 .foto {
-  display: flex;
-  flex-direction: row;
-  
-      margin: 20px;
-  max-width: fit-content;
-
-
+  width: 48%;
+  text-align: center;
 }
 
 .fotos {
-
-margin-left: 120px;
-  width: 351px;
-height: 351px;
-margin-top: 25px;
+  max-width: 50%;
+  height: auto;
 }
 
-
-.botao{
-
-      display: flex;
-      padding: 8px 10px;
-     max-width: fit-content;
-      background-color: #ACEDCA; 
-      color: black; 
-      border: 1px solid black; 
-      cursor: pointer; 
-      border-radius: 15px;
-      margin-left: 690px; 
-      text-decoration: none;
-     margin-bottom: 80px;
-      margin-top: 80px;
-    
+/* Estilos para o botão centralizado */
+#botao {
+  position: relative;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.bot {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-color: black;
-font-size: 18px;
-text-decoration: none;
+.bot a {
+  display: inline-block;
+  padding: 1% 2%;
+  background-color: #00ff73;
+  color: #fff;
+  text-decoration: none; /* Remova o sublinhado */
+  border: none; /* Remove a borda do link */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
+.bot a:hover {
+  background-color: #05b70253;
+}

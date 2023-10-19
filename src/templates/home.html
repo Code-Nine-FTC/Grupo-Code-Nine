@@ -10,41 +10,41 @@ rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"
 
 
 {% block content %}
-<div class="titulo"><!--Título-->
-    O que é a doença renal crônica?
-</div><!--Título-->
-<div class="conteiner">
-<div class="textos"> <!--textos-->
-    <p class="par">   A doença renal crônica é uma diminuição lenta e progressiva (durante meses ou anos) da capacidade dos rins de filtrar os resíduos metabólicos do sangue, a diabetes e hipertensão arterial estão entre as principais causas para o desenvolvimento da doença em adultos, no caso das crianças as malformações congênitas no sistema urinário e doenças renais hereditárias estão entre os diagnósticos mais frequentes.</p>
-    <p class="par">   No Brasil atualmente existem  (numero) pacientes com doença renal crônica, dentre eles (numero) são crianças, tornando esse assunto algo muito importante a ser tratado.</p2>
-    <p >  Principalmente pela falta de acesso das crianças ao tratamento de hemodialíse, seja por questões de peso, ou a falta de profissionais especializados em pediatría.</p3>
-</div><!--textos-->
+<section id="conteudo1">
+    <div class="textos">
+        <p class="par">
+            A doença renal crônica é uma diminuição lenta e progressiva (durante meses ou anos) da capacidade dos rins de filtrar os resíduos metabólicos do sangue, a diabetes e hipertensão arterial estão entre as principais causas para o desenvolvimento da doença em adultos, no caso das crianças as malformações congênitas no sistema urinário e doenças renais hereditárias estão entre os diagnósticos mais frequentes.
+        </p>
+        <p class="par">
+            No Brasil atualmente existem (numero) pacientes com doença renal crônica, dentre eles (numero) são crianças, tornando esse assunto algo muito importante a ser tratado.
+        </p>
+        <p class="par">
+            Principalmente pela falta de acesso das crianças ao tratamento de hemodiálise, seja por questões de peso, ou a falta de profissionais especializados em pediatria.
+        </p>
+    </div>
 
-<div class="imgrim"> <!--imagens-->
-    <img class="rim" src="{{ url_for('static', filename='img/rim.png') }}" alt="Rim">
-</div><!--imagens-->
-</div><!--conteiner-->
+    <div class="imgrim">
+        <img class="rim" src="{{ url_for('static', filename='img/rim.png') }}" alt="Rim">
+    </div>
+</section>
 
+<section id="conteudo2">
+    <div class="foto">
+        <img class="fotos" src="{{ url_for('static', filename='img/doctor.png') }}" alt="doutor">
+    </div>
+    <div class="textos2">
+        <p class="par">
+            A doença renal crônica é sempre secundária a uma questão de saúde anterior, podendo ser uma infecção urinária de repetição, um rim que não se formou direito, uma glomerulopatia que vem de repente ou uma criança com infecção muito grave que ocasionou um choque séptico.
+        </p>
+        <p class="par">
+            O objetivo desse site é tornar essa causa mais reconhecida, facilitando a identificação e tratamento dos pacientes, disponibilizando uma lista de sintomas, locais de tratamento e dados estatísticos sobre o assunto.
+        </p>
+    </div>
+</section>
 
-
-<div class="conteiner2"> <!--conteiner 2-->
-<div class="foto"> <!--imagens-->   
-    <img class="fotos" src="{{ url_for('static', filename='img/doctor.png') }}" alt="doutor">
-</div><!--imagens-->   
-<div class="textos2"><!--texto 2-->   
-    <p class="par">  A doença renal crônica é sempre secundária à uma questão de saúde anterior, podendo ser uma infecção urinária de repetição, um rim que não se formou direito, uma glomerulopatia que vem de repente ou uma criança com infecção muito grave que ocasionou um choque séptico.</p>
-    <p class="par">O objetivo desse site é tornar essa causa mais reconhecida facilitando a identificação e tratamento dos pacientes, disponibilizando uma lista de sintomas, locais de tratamento e dados estatísticos sobre o assunto.</p>
-</div><!--texto 2--> 
-
-</div><!--conteiner 2-->
-
-
-
-
-<div class="botao"><!--botão-->
-    <a href="/cadastro" class="bot"> Crie sua conta! </a>
-
-
-</div><!--botão-->
-   
+<section id="botao">
+    <div class="bot">
+        <a href="/cadastro">Crie sua conta!</a>
+    </div>
+</section>
 {% endblock %}
