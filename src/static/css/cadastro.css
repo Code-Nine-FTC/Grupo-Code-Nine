@@ -2,12 +2,25 @@
     background-color: #ffffff;
     padding: 2%;
     margin: 2% auto;
-    border-radius: 5%;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
     width: 70%;
 }
+
+#formulario2 {
+    background-color: #ffffff;
+    padding: 2%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 30%;
+}
+
 #formulario h2 {text-align: center;}
+
+#formulario2 h2 {text-align: center;}
 
 .form-group {margin-bottom: 20px; text-align: center;}
 

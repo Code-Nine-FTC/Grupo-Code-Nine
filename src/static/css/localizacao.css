@@ -47,19 +47,42 @@
     padding: 20px;
 }
 
+#seletores button {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#seletores button:hover {
+    background-color: rgb(21, 255, 0);
+}
+
+
 #regiao {
     width: 15vw;
     font-size: 1em;
     margin: 10px;
     padding: 5px;
+    border-radius: 20px;
 }
 
 #estado {
     width: 15vw;
-    font-size: 1empx;
+    font-size: 1em;
     margin: 10px;
     padding: 5px;
+    border-radius: 20px;
 }
 label {
     font-size: 1.5em;
 }
+

@@ -8,10 +8,6 @@ form {
     text-align: center;
 }
 
-textarea {
-    width: 100%;
-}
-
 input[type="file"] {
     margin: 10px 0;
 }
@@ -20,7 +16,7 @@ input[type="file"] {
     border: 1px solid #323232;
     padding: 10px;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 30%;
     border-radius: 10px;
     background-color: #d9d9d9;
 }
@@ -41,13 +37,7 @@ input[type="file"] {
     height: auto;  /* Mantém a proporção original da imagem */
 }
 
-.forum {
-    display: flex;
-    justify-content: flex-end;
-}
-
 #direitaforum {
-    margin-left: 0;
     flex: 1;
 }
 
@@ -57,4 +47,24 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     padding: 30px;
+    
+}
+
+#criapost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 2%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 50%;
+}
+
+#criapost textarea {
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
 }
