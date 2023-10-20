@@ -9,21 +9,19 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
 {% endblock %}
 
 {% block content %}
-<main class="perfil">
-    <div class="containerinfo1">
+    <section id="containerinfo1">
         <label for="upload" class="image-upload">
             <img id="user-image" src="#" alt="" />
             <input type="file" id="upload" accept="image/*">
         </label>
         <div class="titulo"></div>
-        <h3>Nome</h3>
-        <input type="text" id="name-input" placeholder="Digite seu nome...">
-        <h3>Informações adicionais</h3>
-        <div><input type="text" id="name-input" placeholder="Adicionar informações..."></div>
+            <h3>Nome</h3>
+            <input type="text" id="name-input" placeholder="Digite seu nome...">
+            <h3>Informações adicionais</h3>
+            <div><input type="text" id="name-input" placeholder="Adicionar informações..."></div>
 
         </div>
         <div><input type="text" id="name-input" placeholder="Grau de parentesco..."></div>
-    </div>
     <!--<div class="info">
         <div class="conteinerinfo2">
             <div class="custom-checkbox">
@@ -36,15 +34,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
             </div>
         
         </div>-->
-        <h3></h3>
         <input type="text" id="name-input" placeholder="Digite sua cidade...">
         <h3>Seu estado</h3>
         <div><input type="text" id="name-input" placeholder="Digite seu estado..."></div>
-    
-        <button id="save-button">Salvar alterações</button>
-        <a href="/">
-        <button id="logout">Sair</button></a>
-        </div> 
-    </div>
-</main>
+
+        <div id="salvar">
+            <button id="save-button">Salvar alterações</button>
+            <button id="logout">Sair</button></a>
+        </div>
+    </section>
 {% endblock %}

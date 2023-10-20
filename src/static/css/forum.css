@@ -27,7 +27,7 @@ input[type="file"] {
 
 .post p {
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .images {
@@ -39,59 +39,6 @@ input[type="file"] {
     margin: 0 auto;
     max-width: 100px;  /* Define a largura máxima para as imagens */
     height: auto;  /* Mantém a proporção original da imagem */
-}
-
-#sidebar {
-    background-color: #D9D9D9;
-    min-height: 87.6vh;
-    min-width: 21vw;
-    max-height: inherit;
-    padding-right: 10px;
-    width: 20%;
-}
-
-.sideitens {
-    margin-top: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 20px;
-}
-
-.liside{
-    display: flex;
-    align-items: center;
-    padding-bottom: 5px;
-    padding-top: 10px;
-}
-
-#ideiaicon {
-    padding-top: 5px;
-    width: 30px;
-    height: 40px;
-    padding-right: 10px;
-}
-
-ul {
-    font-size: 20px;
-    text-align: justify;
-    text-justify: auto;
-}
-
-#infosidebar {
-    font-size: 35px;
-}
-
-.topicbar {
-    font-size: 25px;
-    font-style: italic;
-}
-
-.testehr{
-    color: #ffffffb4;
-    width: 100%;
 }
 
 .forum {
