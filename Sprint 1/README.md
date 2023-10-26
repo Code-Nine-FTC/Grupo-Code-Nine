@@ -12,7 +12,8 @@
 
 <br>
 <h2>⭐️ Valor da Sprint</h2><a name="valor"></a>
-Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e dê seu feedback
+
+>Mostrar uma prévia do produto para que o cliente acompanhe o desenvolvimento e dê seu feedback
 <br>
 <h2> 🗒 Backlog da Sprint</h2> <a name="backlog"></a>
 

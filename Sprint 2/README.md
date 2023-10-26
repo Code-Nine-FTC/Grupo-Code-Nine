@@ -12,7 +12,8 @@
 
 <br>
 <h2>⭐️ Valor da Sprint</h2><a name="valor"></a>
-Primeiro desenvolvimento das páginas do site de forma navegável. Seu foco é o site em que possam nagevar de forma fácil e livre.
+
+>Primeiro desenvolvimento das páginas do site de forma navegável. Seu foco é o site em que possam nagevar de forma fácil e livre.
 
 <br>
 <h2> 🗒 Backlog da Sprint</h2> <a name="backlog"></a>
