@@ -9,20 +9,26 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
 {% endblock %}
 
 {% block content %}
+<script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
     <section id="containerinfo1">
         <label for="upload" class="image-upload">
             <img id="user-image" src="#" alt="" />
             <input type="file" id="upload" accept="image/*">
         </label>
-        <div class="titulo"></div>
-            <h3>Nome</h3>
-            <input type="text" id="name-input" placeholder="Digite seu nome...">
+        <p>Nome de usuário: {{ user[0] }}</p>
+        <p>Email: {{ user[1] }}</p>
+        <p>CPF: {{ user[2] }}</p>
+        <p>Profissão: {{ user[3] }}</p>
+        <p>Data de nascimento: {{ user[4] }}</p>
+        <p>Parentesco: {{ user[5] }}</p>
+        <!-- <div class="titulo"></div>
+            <h3>{{session['username']}}</h3>
             <h3>Informações adicionais</h3>
             <div><input type="text" id="name-input" placeholder="Adicionar informações..."></div>
 
         </div>
         <div><input type="text" id="name-input" placeholder="Grau de parentesco..."></div>
-    <!--<div class="info">
+    <div class="info">
         <div class="conteinerinfo2">
             <div class="custom-checkbox">
                 <input type="checkbox" id="Pai" name="gender" value="pai">
@@ -33,14 +39,12 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
                 <label for="mae">Mãe</label>
             </div>
         
-        </div>-->
+        </div>
         <input type="text" id="name-input" placeholder="Digite sua cidade...">
         <h3>Seu estado</h3>
-        <div><input type="text" id="name-input" placeholder="Digite seu estado..."></div>
-
-        <div id="salvar">
-            <button id="save-button">Salvar alterações</button>
-            <button id="logout">Sair</button></a>
-        </div>
+        <div><input type="text" id="name-input" placeholder="Digite seu estado..."></div> -->
+        <form action="/logout" method="POST">
+            <button id="logout">SAIR</button>
+        </form>
     </section>
 {% endblock %}
