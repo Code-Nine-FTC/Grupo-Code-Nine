@@ -14,11 +14,11 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
     <h2>Login</h2>
     <form action="#" method="post">
         <div class="form-group">
-            <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail">
+            <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail" required>
         </div>
         
         <div class="form-group">
-            <input type="password" name="senha" id="senha" placeholder="Insira a sua senha">
+            <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
         </div>
         
         <button type="submit">Enviar</button>

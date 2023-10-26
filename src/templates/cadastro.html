@@ -12,31 +12,31 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
         <h2>Cadastro</h2>
         <form action="#" method="post">
             <div class="form-group">
-                <input type="text" name="username" id="username" placeholder="Insira o seu nome de usuário">
+                <input type="text" name="username" id="username" placeholder="Insira o seu nome de usuário" required>
             </div>
 
             <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail">
+                <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail" required>
             </div>
             
             <div class="form-group">
-                <input type="text" name="CPF" id="CPF" placeholder="Informe seu CPF">
+                <input type="text" name="cpf" id="cpf" placeholder="Informe seu CPF" required>
             </div>
             
             <div class="form-group">
-                <input type="text" name="prof" id="prof" placeholder="Insira a sua profissão">
+                <input type="text" name="prof" id="prof" placeholder="Insira a sua profissão" required>
             </div>                
 
             <div class="form-group">
-                <input type="date" name="data" id="data" placeholder="Coloque a sua data de nascimento">
+                <input type="date" name="data_nasc" id="data_nasc" placeholder="Coloque a sua data de nascimento" required>
             </div>
 
             <div class="form-group">
-                <input type="text" name="parentesco" id="parentesco" placeholder="Coloque o seu grau de parentesco">
+                <input type="text" name="parentesco" id="parentesco" placeholder="Coloque o seu grau de parentesco" required>
             </div>
 
             <div class="form-group">
-                <input type="password" name="senha" id="senha" placeholder="Insira a sua senha">
+                <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
             </div>
             
             <button type="submit">Enviar</button>
