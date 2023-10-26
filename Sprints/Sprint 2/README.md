@@ -1,4 +1,4 @@
-<img src="/Sprint 2/Imagens sp2/CIANP.png">
+<img src="./Imagens sp2/CIANP.png">
 <br>
 <h1>Segunda Sprint</h1>
 <br>
@@ -33,7 +33,7 @@
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
 Criação e funcionamento do site e suas páginas.
  <br>
- <img src="/Sprint 2/Imagens sp2/Sprint 2 img.png" width="300px">
+ <img src="./Imagens sp2/Sprint 2 img.png" width="300px">
 
 <h2>🎬Vídeo demonstrativo</h2>
  <a name="video"></a>

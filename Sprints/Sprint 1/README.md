@@ -1,4 +1,4 @@
-<img src="/Sprint 1/Imagens sp1/CIANP.png">
+<img src="./Imagens sp1/CIANP.png">
 <br>
 <h1>Primeira Sprint</h1>
 <br>
@@ -30,7 +30,7 @@
 <h2> 🚀 MVP (Minimum Viable Product) </h2><a name="mvp"></a>
  Um protótipo do projeto, um demonstrativo das telas e de como irá funcionar.
  <br>
- <img src="/Sprint 1/Imagens sp1/Sprint 1 img.png" width="300px">
+ <img src="./Imagens sp1/Sprint 1 img.png" width="300px">
 
 <h2>🎬Vídeo demonstrativo</h2>
  <a name="video"></a>

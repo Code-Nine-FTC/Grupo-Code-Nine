@@ -1,11 +1,11 @@
-<img src="/Sprint 3/CIANP.png">
+<img src="./CIANP.png">
 <br>
 <h1>Terceira Sprint</h1>
 <br>
 <h2> 🔗 Índice</h2>
 
 - [Valor da Sprint](#valor)
-- [Backlog da segunda Sprint](#backlog)
+- [Backlog da terceira Sprint](#backlog)
 - [MVP (Minimum Viable Product)](#mvp)
 
 
@@ -31,7 +31,7 @@
 Criação dos mecanismos de funcionalidade das páginas
 
  <br>
- <img src="/Sprint 3/Sprint 3 img.png" width="300px">
+ <img src="./Sprint 3 img.png" width="300px">
 
 
 
