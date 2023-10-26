@@ -71,6 +71,13 @@ def dados():
 def localizacao():
     return render_template('localizacao.html')
 
+@app.route('/postagem', methods = ['POST', 'GET'])
+def postagem():
+    if 'user_email' in session:
+        #codigo da postagem
+        return redirect ('/faq')
+    return redirect('/login')
+
 @app.route('/forum')
 def forum():
     return render_template('forum.html')

@@ -12,10 +12,10 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
     <div id="conteudoforum">
         <div id="criapost">
             <h1>Criar postagem</h1>
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+            <form action="/postagem" method="POST" enctype="multipart/form-data">
                 <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)"></textarea>
                 <input type="file" name="post_image" accept="image/*" multiple>
-                <input type="submit" value="Enviar">
+                <button id="logout">Enviar</button>
             </form>
         </div>
 
