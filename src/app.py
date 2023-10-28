@@ -9,7 +9,7 @@ app.secret_key = "codenine"  # Change this to a strong, random key
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "fatec", #senha
+    'password': "davimaciel2", #senha
     'database': "cianp", #qual banco de dados será utilizado
 }
 
@@ -53,7 +53,7 @@ def cadastro():
         try:
             cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha))
             db_config.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
-            alert("Cadastro realizado, agora você pode logar.") #exibe um alerta de que a tarefa foi concluida
+            #alert("Cadastro realizado, agora você pode logar.") #exibe um alerta de que a tarefa foi concluida
             return redirect(url_for('/login')) #retorna o usuário para a tela de login
         except mysql.connector.errors.IntegrityError:
             return 'Email já está em uso.'
@@ -80,6 +80,13 @@ def postagem():
 
 @app.route('/forum')
 def forum():
+    try:
+        cursor = db_config.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM posts")
+        posts = cursor.fetchall()
+        return render_template('forum.html', posts=posts)
+    except mysql.connector.Error as err:
+        print(f"Erro no banco de dados: {err}")
     return render_template('forum.html')
 
 @app.route('/faq')
@@ -100,5 +107,68 @@ def logout():
     session.pop('user_email', None)
     return redirect('/login')
     
+# Rota para criar uma nova postagem
+@app.route('/create_post', methods=['POST'])
+def create_post():
+    if 'user_email' in session:
+        if request.method == 'POST':
+            user_email = session['user_email']
+            content = request.form['content']  # Captura o conteúdo da postagem
+            # Verificação do tamanho da postagem (até 1500 caracteres)
+            if len(content) > 1500:
+                return "A postagem excede o tamanho máximo de 1500 caracteres."
+            image1 = request.form['image1']
+            image2 = request.form['image2']
+            image3 = request.form['image3']
+
+            try:
+                cursor.execute("INSERT INTO posts (user_email, content) VALUES (%s, %s)",
+                               (user_email, content))
+                db_config.commit()
+            except mysql.connector.Error as err:
+                print(f"Erro no banco de dados: {err}")
+        return redirect(url_for('forum'))
+    else:
+        return "Você precisa estar conectado para fazer uma postagem."
+
+# Rota para a página de comentários de uma postagem
+@app.route('/post/<int:post_id>')
+def post_comments(post_id):
+    if 'user_email' in session:
+        try:
+            cursor = db_config.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM posts WHERE id = %s", (post_id,))
+            post = cursor.fetchone()
+            cursor.execute("SELECT * FROM coments WHERE post_id = %s", (post_id,))
+            coments = cursor.fetchall()
+            return render_template('pcoments.html', post=post, coments=coments)
+        except mysql.connector.Error as err:
+            print(f"Erro no banco de dados: {err}")
+    else:
+        return "Você precisa estar conectado para acessar os comentários."
+
+# Rota para adicionar um comentário a uma postagem
+@app.route('/add_comment/<int:post_id>', methods=['POST'])
+def add_comment(post_id):
+    if 'user_email' in session:
+        if request.method == 'POST':
+            user_email = session['user_email']
+            content = request.form['content']  # Captura o conteúdo do comentário
+            # Verificação do tamanho do comentário (até 300 caracteres)
+            if len(content) > 300:
+                return "O comentário excede o tamanho máximo de 300 caracteres."
+
+            try:
+                cursor = db_config.cursor(dictionary=True)
+                cursor.execute("INSERT INTO coments (post_id, user_email, content) VALUES (%s, %s, %s)",
+                               (post_id, user_email, content))
+                db_config.commit()
+            except mysql.connector.Error as err:
+                print(f"Erro no banco de dados: {err}")
+        return redirect(url_for('post_comments', post_id=post_id))
+    else:
+        return "Você precisa estar conectado para fazer um comentário."
+
 if __name__ == "__main__":
     app.run(debug=True)
+
