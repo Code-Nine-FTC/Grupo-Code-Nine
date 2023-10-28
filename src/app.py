@@ -54,7 +54,7 @@ def cadastro():
             cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha))
             db_config.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
             #alert("Cadastro realizado, agora você pode logar.") #exibe um alerta de que a tarefa foi concluida
-            return redirect(url_for('/login')) #retorna o usuário para a tela de login
+            return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.errors.IntegrityError:
             return 'Email já está em uso.'
     return render_template('cadastro.html')
