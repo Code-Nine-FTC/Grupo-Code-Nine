@@ -1,67 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300&display=swap');
-
-.texto{
+#conteudofaq {
     display: flex;
-    justify-content: center;
-    font-size: 25px;
-    padding: 10px;
-
-}
-
-main{
-    display: flex;
-    justify-content: flex-end;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-button{
+#criaperg {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 500px;
-    height: 25px;
-    background: linear-gradient(to left, #13492c,   #13492c   );
-    cursor: pointer;
-    color: white;
-}
-article{
-    align-content: center;
-    display: flex;
-    justify-content: center;
-}
-
-.pergunta1{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(219, 219, 219);
-    display: flex;
-    justify-content: center;
-    width: 500px;
-    height: 150px;
-    overflow-y: scroll;
-}
-form {
-    margin: 20px;
-    text-align: center;
-}
-
-textarea {
-    width: 600px;
-}
-input[type="submit"] {
-    display: center;
-    margin: 10px 0;
-}
-.post {
-   
-    border: 1px solid #323232;
-    padding: 15px;
-    margin: 0 auto;
-    width: 500px;
-    border-radius: 10px;
     background-color: #d9d9d9;
-} 
-h6{
+    padding: 2%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 50%;
+}
+
+.limite {
+    font-size: 1em;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
+
+#criaperg textarea {
+    border-radius: 20px;
+    padding: 1%;
+    width: 100%;
+}
+
+#criaperg button {
+    display: block;
+    margin: 1% auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
     font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#criaperg button:hover {
+    background-color: rgb(21, 255, 0);
+}
+
+#pergunta {
+    background-color: #d9d9d9;
+    padding: 3%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+#pergunta strong {
+    font-size: 1.1em;
+}
+
+#postagem a {
+    font-weight: bold;
+}
+
+ul {
+    width: 60%;
+}
+li {
+    list-style: none;
+}
+
+#comentarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 3%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 90%;
+}
+
+#voltar {
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#comentarios form {
+    width: 100%;
+}
+
+#comentarios form textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+#comentarios form input {
+    display: block;
+    margin: 1% auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#comentarios form input:hover {
+    background-color: rgb(21, 255, 0);
+}
+
+.coments {
+    background-color: #ffffff;
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.coments li {
+    padding: 1%;
 }
 
 

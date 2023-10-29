@@ -105,7 +105,19 @@ def forum():
 
 @app.route('/faq')
 def faq():
+    try:
+        conn = mysql.connector.connect(**db)
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM perguntas")
+        perg = cursor.fetchall()
+        return render_template('faq.html', perg=perg)
+    except mysql.connector.Error as err:
+        print(f"Erro no banco de dados: {err}")
+    finally:
+        cursor.close()
+        conn.close()
     return render_template('faq.html')
+
 
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():
@@ -191,6 +203,81 @@ def add_comment(post_id):
                                (post_id, user_email, content))
                 conn.commit()
                 return redirect(url_for('post_comments', post_id=post_id))
+            except mysql.connector.Error as err:
+                print(f"Erro no banco de dados: {err}")
+                return 'Erro, tente novamente'
+            finally:
+                cursor.close()
+                conn.close()
+    else:
+        return "Você precisa estar conectado para fazer um comentário."
+
+@app.route('/criar_pergunta', methods=['POST'])
+def criar_pergunta():
+    if 'user_email' in session:
+        if request.method == 'POST':
+            user_email = session['user_email']
+            texto = request.form['perg_text']  # Captura o conteúdo da pergunta
+            # Verificação do tamanho da pergunta (até 300 caracteres)
+            if len(texto) > 300:
+                return "A pergunta excede o tamanho máximo de 300 caracteres."
+            if len(texto) == 0:
+                return "A pergunta precisa de um conteúdo válido"
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            try:
+                cursor.execute("INSERT INTO perguntas (user_email, texto) VALUES (%s, %s)",
+                               (user_email, texto))
+                conn.commit()
+                return redirect(url_for('faq'))
+            except mysql.connector.Error as err:
+                print(f"Erro no banco de dados: {err}")
+                return 'Erro, tente novamente'
+            finally:
+                cursor.close()
+                conn.close()
+    else:
+        return "Você precisa estar conectado para fazer uma pergunta."
+
+@app.route('/perg/<int:perg_id>')
+def post_comments2(perg_id):
+    if 'user_email' in session:
+        try:
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM perguntas WHERE id = %s", (perg_id,))
+            perg = cursor.fetchone()
+            cursor.execute("SELECT * FROM respostas_perguntas WHERE perg_id = %s", (perg_id,))
+            coments2 = cursor.fetchall()
+            return render_template('pcoments2.html', perg=perg, coments2=coments2)
+        except mysql.connector.Error as err:
+            print(f"Erro no banco de dados: {err}")
+            return 'Erro, tente novamente'
+        finally:
+            cursor.close()
+            conn.close()
+    else:
+        return "Você precisa estar conectado para acessar os comentários."
+    
+# Rota para adicionar um comentário a uma pergunta
+@app.route('/add_comment2/<int:perg_id>', methods=['POST'])
+def add_comment2(perg_id):
+    if 'user_email' in session:
+        if request.method == 'POST':
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor(dictionary=True)
+            user_email = session['user_email']
+            texto = request.form['texto']  # Captura o conteúdo do comentário
+            # Verificação do tamanho do comentário (até 300 caracteres)
+            if len(texto) > 300:
+                return "O comentário excede o tamanho máximo de 300 caracteres."
+            if len(texto) == 0:
+                return 'Insira um comentário válido'
+            try:
+                cursor.execute("INSERT INTO respostas_perguntas (perg_id, user_email, texto) VALUES (%s, %s, %s)",
+                               (perg_id, user_email, texto))
+                conn.commit()
+                return redirect(url_for('post_comments2', perg_id=perg_id))
             except mysql.connector.Error as err:
                 print(f"Erro no banco de dados: {err}")
                 return 'Erro, tente novamente'
