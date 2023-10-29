@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block title %}
 Fórum
 {% endblock %}
@@ -9,39 +10,33 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 
 {% block content %}
 <section id="forum">
-    <!-- <div id="conteudoforum">
+    <div id="conteudoforum">
         <div id="criapost">
             <h1>Criar postagem</h1>
-            <form action="/postagem" method="POST" enctype="multipart/form-data">
-                <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)"></textarea>
-                <input type="file" name="post_image" accept="image/*" multiple>
+            <form action="/create_post" method="POST" enctype="multipart/form-data">
+                <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)"></textarea> <br>
+                <input type="text" name="image1" placeholder="URL da imagem 1"><br>
+                <input type="text" name="image2" placeholder="URL da imagem 2"><br>
+                <input type="text" name="image3" placeholder="URL da imagem 3"><br>
                 <button id="logout">Enviar</button>
             </form>
         </div>
         <title>Fórum</title>
-    <h1>Fórum</h1> -->
-
-    <!-- Formulário para criar uma nova postagem -->
-    <form method="post" action="/create_post">
-        <textarea name="content" placeholder="Digite sua postagem (até 1500 caracteres)"></textarea><br>
-        <input type="text" name="image1" placeholder="URL da imagem 1"><br>
-        <input type="text" name="image2" placeholder="URL da imagem 2"><br>
-        <input type="text" name="image3" placeholder="URL da imagem 3"><br>
-        <input type="submit" value="Criar Postagem">
-    </form>
-
+    <h1>Fórum</h1>
     <!-- Lista de postagens -->
     <ul>
         {% for post in posts %}
             <li>
-                <strong>{{ post.user_email }}</strong>: {{ post.content }}
-                <br>
-                <a href="/post/{{ post.id }}">Ver Comentários</a>
+                <section id="postagem">
+                    <strong>{{ post.user_email }}</strong>
+                    <p>{{ post.content }}<p>
+                    <br>
+                    <a href="/post/{{ post.id }}">Ver Comentários</a>
+            
+                </section>
             </li>
         {% endfor %}
     </ul>
-        <h1>Posts</h1>
-    </div>
 </section>
 </body>
 </html>

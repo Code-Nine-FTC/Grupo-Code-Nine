@@ -37,10 +37,6 @@ input[type="file"] {
     height: auto;  /* Mantém a proporção original da imagem */
 }
 
-#direitaforum {
-    flex: 1;
-}
-
 #conteudoforum {
     display: flex;
     flex-direction: column;
@@ -67,4 +63,32 @@ input[type="file"] {
     border-radius: 20px;
     padding: 5px;
     width: 100%;
+}
+
+#postagem {
+    background-color: #d9d9d9;
+    padding: 3%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+#postagem strong {
+    font-size: 1.1em;
+}
+
+#postagem p {
+    font-size: 1em;
+}
+
+#postagem a {
+    font-weight: bold;
+}
+
+ul {
+    width: 60%;
+}
+li {
+    list-style: none;
 }

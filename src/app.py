@@ -117,6 +117,8 @@ def create_post():
             # Verificação do tamanho da postagem (até 1500 caracteres)
             if len(content) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
+            if len(content) == 0:
+                return "A postagem precisa de um conteúdo válido"
             image1 = request.form['image1']
             image2 = request.form['image2']
             image3 = request.form['image3']

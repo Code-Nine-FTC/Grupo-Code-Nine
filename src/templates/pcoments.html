@@ -5,25 +5,24 @@
 </head>
 <body>
     <h1>Comentários</h1>
+        <h3>Postagem:</h3>
+        <p>
+            <strong>{{ post.user_email }}</strong>: {{ post.content }}
+        </p>
 
-    <h3>Postagem:</h3>
-    <p>
-        <strong>{{ post.user_email }}</strong>: {{ post.content }}
-    </p>
+        <!-- Formulário para adicionar um comentário -->
+        <form method="post" action="/add_comment/{{ post.id }}">
+            <textarea name="content" placeholder="Digite seu comentário (até 300 caracteres)"></textarea><br>
+            <input type="submit" value="Adicionar Comentário">
+        </form>
 
-    <!-- Formulário para adicionar um comentário -->
-    <form method="post" action="/add_comment/{{ post.id }}">
-        <textarea name="content" placeholder="Digite seu comentário (até 300 caracteres)"></textarea><br>
-        <input type="submit" value="Adicionar Comentário">
-    </form>
-
-    <!-- Lista de comentários -->
-    <ul>
-        {% for comment in coments %}
-            <li>
-                <strong>{{ comment.user_email }}</strong>: {{ comment.content }}
-            </li>
-        {% endfor %}
-    </ul>
+        <!-- Lista de comentários -->
+        <ul>
+            {% for comment in coments %}
+                <li>
+                    <strong>{{ comment.user_email }}</strong>: {{ comment.content }}
+                </li>
+            {% endfor %}
+        </ul>
 </body>
 </html>
