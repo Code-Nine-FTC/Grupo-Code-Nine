@@ -39,7 +39,6 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 >Essas foram as **Tecnologias Utulizadas** para produção do protótipo e a evolução do projeto.
 
 <div align="center">
-  <a href="https://tasks.office.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Microsoft_Planner_%282019–present%29.svg/1200px-Microsoft_Planner_%282019–present%29.svg.png">
   <a href="https://discord.com/"><img src="https://img.shields.io/badge/Discord-4a1fa8?style=for-the-badge&logo=discord&logoColor=black&color=5620B8">
   <a href="https://www.figma.com/"><img src="https://img.shields.io/badge/Figma-3ad6b2?style=for-the-badge&logo=figma&logoColor=c41f1f&color=5620B8"/>
   <a href="https://github.com/"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=5620B8"/>
