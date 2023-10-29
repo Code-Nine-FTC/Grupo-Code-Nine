@@ -3,11 +3,6 @@ h1 {
     text-align: center;
 }
 
-form {
-    margin: 20px;
-    text-align: center;
-}
-
 input[type="file"] {
     margin: 10px 0;
 }
@@ -19,11 +14,6 @@ input[type="file"] {
     max-width: 30%;
     border-radius: 10px;
     background-color: #d9d9d9;
-}
-
-.post p {
-    margin-bottom: 5px;
-    font-size: 1em;
 }
 
 .images {
@@ -61,8 +51,27 @@ input[type="file"] {
 
 #criapost textarea {
     border-radius: 20px;
-    padding: 5px;
+    padding: 1%;
     width: 100%;
+}
+
+#criapost button {
+    display: block;
+    margin: 1% auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#criapost button:hover {
+    background-color: rgb(21, 255, 0);
 }
 
 #postagem {
@@ -78,8 +87,11 @@ input[type="file"] {
     font-size: 1.1em;
 }
 
-#postagem p {
+.limite {
     font-size: 1em;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
 }
 
 #postagem a {
@@ -91,4 +103,65 @@ ul {
 }
 li {
     list-style: none;
+}
+
+#comentarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 3%;
+    margin: 2% auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 90%;
+}
+
+#voltar {
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#comentarios form {
+    width: 100%;
+}
+
+#comentarios form textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+#comentarios form input {
+    display: block;
+    margin: 1% auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#comentarios form input:hover {
+    background-color: rgb(21, 255, 0);
+}
+
+.coments {
+    background-color: #ffffff;
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.coments li {
+    padding: 1%;
 }

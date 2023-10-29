@@ -113,7 +113,7 @@ def create_post():
     if 'user_email' in session:
         if request.method == 'POST':
             user_email = session['user_email']
-            content = request.form['content']  # Captura o conteúdo da postagem
+            content = request.form['post_text']  # Captura o conteúdo da postagem
             # Verificação do tamanho da postagem (até 1500 caracteres)
             if len(content) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
