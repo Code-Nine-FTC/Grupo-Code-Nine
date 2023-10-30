@@ -7,8 +7,8 @@ app = Flask(__name__)
 #conecta ao banco de dados
 db = {
     'host': "localhost", #host = ip, no caso localhost
-    'user': "cianp", #usuario para logar
-    'password': "codenine", #senha
+    'user': "root", #usuario para logar
+    'password': "root", #senha
     'database': "cianp", #qual banco de dados será utilizado
 }
 
