@@ -4,40 +4,8 @@
     align-items: center;
     flex-direction: column;
 }
-.mapa{
-    display: inline-block;
-    text-align: center;
-    align-items: center;
-    display: block;
 
-}
-.txtlocalidades{
-    border-radius:12px;
-	border:1px solid #000000;
-	color:#000000;
-	font-family:Century;  
-	font-size:25px;
-	padding:5px 20px;
-	text-decoration:none
-}
 
-#centro{
-    display: block;
-    margin: 0 auto;
-    width: 300px;
-    right: 0px;
-}
-
-.mpcompleto{
-}
-
-.maps{
-    margin: 0 auto;
-    width: 300px;
-    right: 0px;
-    display: inline-block;
-    text-align: center;
-}
 
 #seletores {
     display: flex;

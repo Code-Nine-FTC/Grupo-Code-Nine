@@ -76,7 +76,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 |   #07   |   Página do blog | "Eu, como cliente, gostaria de compartilhar minhas histórias e saber sobre notícias relevantes" | Alta |   2   |
 |   #08   |   Registro e login  | "Eu, como cliente, gostaria de uma forma segura de compartilhar minhas histórias e manter um registro delas" | Alta |   3 | 
 |   #09   |   Inserção das informações                             | "Eu, como cliente, gostaria de receber as informações certas" | Alta |   3   |
-|   #10   |   Criação das imagens a serem utilizadas               | "Eu, como cliente, gostaria de uma forma fácil e intuitiva de ver as informações do site" | Média |   3   |
+|   #10   |   Página FAQ               | "Eu, como cliente, gostaria de uma página FAQ para maior facilidade do usuário ao acessar as perguntas mais frequentes" | Alta |   3   |
 |   #11   |   Formatação e estilização do site  | "Eu, como cliente, gostaria de ver informações de uma forma boa e legível" | Média |   3   |
 |   #12   |   Raspagem dos dados utilizados  | "Eu, como cliente, gostaria de obter os dados para análises posteriores" | Média |   3   |
 |   #13   |   Correção de erros  | "Eu, como cliente, gostaria de navegar pelo site sem problemas e erros"  | Média |   4   | 

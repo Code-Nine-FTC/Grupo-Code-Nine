@@ -21,6 +21,7 @@
 | :----: | :--------: | :--------: | :--------------: |
 |   #01   |   Registro e login  | "Eu, como cliente, gostaria de uma forma segura de compartilhar minhas histórias e manter um registro delas" | Alta |   3 | 
 |   #02   |   Inserção das informações                             | "Eu, como cliente, gostaria de receber as informações certas" | Alta |   3   |
+|   #03  |   Página FAQ  | "Eu, como cliente, gostaria de uma página FAQ para maior facilidade do usuário ao acessar as perguntas mais frequentes" | Alta |   3   |
 |   #04   |   Formatação e estilização do site  | "Eu, como cliente, gostaria de ver informações de uma forma boa e legível" | Média |   3   |
 |   #05  |   Raspagem dos dados utilizados  | "Eu, como cliente, gostaria de obter os dados para análises posteriores" | Média |   3   |
 
