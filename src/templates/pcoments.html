@@ -17,15 +17,15 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 
             <!-- Formulário para adicionar um comentário -->
             <form method="post" action="/add_comment/{{ post.id }}">
-                <textarea name="content" placeholder="Digite seu comentário (até 300 caracteres)" required></textarea><br>
+                <textarea name="content" placeholder="Digite seu comentário (até 300 caracteres)"></textarea><br>
                 <input type="submit" value="Adicionar Comentário">
             </form>
 
             <!-- Lista de comentários -->
             <ul class="coments">
-                {% for comment in comentarios %}
+                {% for comment in coments %}
                     <li>
-                        <strong>{{ comment.user_name }}</strong>:  
+                        <strong>{{ comment.user_email }}</strong>:  
                         <p class="limite"> {{ comment.content }} </p>
                     </li>
                     <hr>
