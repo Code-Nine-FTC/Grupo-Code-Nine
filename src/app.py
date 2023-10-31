@@ -8,7 +8,7 @@ app = Flask(__name__)
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "root", #senha
+    'password': "fatec", #senha
     'database': "cianp", #qual banco de dados será utilizado
 }
 
@@ -219,7 +219,7 @@ def criar_pergunta():
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO perguntas (user_email, texto) VALUES (%s, %s)",
+                cursor.execute("INSERT INTO perguntas (autor_email, texto) VALUES (%s, %s)",
                                (user_email, texto))
                 conn.commit()
                 return redirect(url_for('faq'))
