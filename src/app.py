@@ -58,15 +58,13 @@ def cadastro():
         try:
             cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha))
             conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
-            cursor.close()
-            conn.close()
-            #alert("Cadastro realizado, agora você pode logar.") #exibe um alerta de que a tarefa foi concluida
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
             print(f'Erro no banco: {err}')
+            return 'Erro no cadastro'
+        finally:
             cursor.close()
             conn.close()
-            return 'Erro no cadastro'
     return render_template('cadastro.html')
 
 @app.route('/info')
@@ -93,9 +91,9 @@ def forum():
     try:
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM posts")
-        posts = cursor.fetchall()
-        return render_template('forum.html', posts=posts)
+        cursor.execute("SELECT * FROM postagens")
+        postagens = cursor.fetchall()
+        return render_template('forum.html', postagens=postagens)
     except mysql.connector.Error as err:
         print(f"Erro no banco de dados: {err}")
     finally:
@@ -145,12 +143,10 @@ def create_post():
             # Verificação do tamanho da postagem (até 1500 caracteres)
             if len(content) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
-            if len(content) == 0:
-                return "A postagem precisa de um conteúdo válido"
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO posts (user_email, content) VALUES (%s, %s)",
+                cursor.execute("INSERT INTO postagens (user_email, content) VALUES (%s, %s)",
                                (user_email, content))
                 conn.commit()
                 return redirect(url_for('forum'))
@@ -170,11 +166,11 @@ def post_comments(post_id):
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
-            cursor.execute("SELECT * FROM posts WHERE id = %s", (post_id,))
+            cursor.execute("SELECT * FROM postagens WHERE id = %s", (post_id,))
             post = cursor.fetchone()
-            cursor.execute("SELECT * FROM coments WHERE post_id = %s", (post_id,))
-            coments = cursor.fetchall()
-            return render_template('pcoments.html', post=post, coments=coments)
+            cursor.execute("SELECT * FROM comentarios WHERE post_id = %s", (post_id,))
+            comentarios = cursor.fetchall()
+            return render_template('pcoments.html', post=post, comentarios=comentarios)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
             return 'Erro, tente novamente'
@@ -196,10 +192,9 @@ def add_comment(post_id):
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(content) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
-            if len(content) == 0:
-                return 'Insira um comentário válido'
+
             try:
-                cursor.execute("INSERT INTO coments (post_id, user_email, content) VALUES (%s, %s, %s)",
+                cursor.execute("INSERT INTO comentarios (post_id, user_email, content) VALUES (%s, %s, %s)",
                                (post_id, user_email, content))
                 conn.commit()
                 return redirect(url_for('post_comments', post_id=post_id))
@@ -221,8 +216,6 @@ def criar_pergunta():
             # Verificação do tamanho da pergunta (até 300 caracteres)
             if len(texto) > 300:
                 return "A pergunta excede o tamanho máximo de 300 caracteres."
-            if len(texto) == 0:
-                return "A pergunta precisa de um conteúdo válido"
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
@@ -248,8 +241,8 @@ def post_comments2(perg_id):
             cursor.execute("SELECT * FROM perguntas WHERE id = %s", (perg_id,))
             perg = cursor.fetchone()
             cursor.execute("SELECT * FROM respostas_perguntas WHERE perg_id = %s", (perg_id,))
-            coments2 = cursor.fetchall()
-            return render_template('pcoments2.html', perg=perg, coments2=coments2)
+            comentarios2 = cursor.fetchall()
+            return render_template('pcoments2.html', perg=perg, comentarios2=comentarios2)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
             return 'Erro, tente novamente'
@@ -271,8 +264,6 @@ def add_comment2(perg_id):
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
-            if len(texto) == 0:
-                return 'Insira um comentário válido'
             try:
                 cursor.execute("INSERT INTO respostas_perguntas (perg_id, user_email, texto) VALUES (%s, %s, %s)",
                                (perg_id, user_email, texto))

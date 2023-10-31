@@ -13,7 +13,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         <div id="criapost">
             <h1>Criar postagem</h1>
             <form action="/create_post" method="POST" enctype="multipart/form-data">
-                <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)"></textarea> <br>
+                <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)" required></textarea> <br>
                 <input type="file" name="post_image" accept="image/*" multipl><br>
                 <button>Enviar</button>
             </form>
@@ -22,7 +22,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
     <h1>Fórum</h1>
     <!-- Lista de postagens -->
     <ul>
-        {% for post in posts %}
+        {% for post in postagens %}
             <li>
                 <section id="postagem">
                     <strong>{{ post.user_email }}</strong>

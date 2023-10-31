@@ -11,7 +11,7 @@ parentesco VARCHAR(50) NOT NULL,
 senha CHAR(16) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS posts(
+CREATE TABLE IF NOT EXISTS postagens(
 id INT AUTO_INCREMENT PRIMARY KEY,
 user_email VARCHAR(100) NOT NULL,
 content VARCHAR(1500) NOT NULL,
@@ -19,12 +19,12 @@ imagens INT DEFAULT 0,
  FOREIGN KEY (user_email) REFERENCES usuario(email)
 );
 
-CREATE TABLE IF NOT EXISTS coments(
+CREATE TABLE IF NOT EXISTS comentarios(
 id INT AUTO_INCREMENT PRIMARY KEY,
 post_id INT NOT NULL,
 user_email VARCHAR(100) NOT NULL,
 content VARCHAR(300) NOT NULL,
-FOREIGN KEY (post_id) REFERENCES posts(id),
+FOREIGN KEY (post_id) REFERENCES postagens(id),
 FOREIGN KEY (user_email) REFERENCES usuario(email)
 );
 
@@ -45,5 +45,3 @@ texto VARCHAR(300) NOT NULL,
 FOREIGN KEY (id_perguntas) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
-
-drop table coments
