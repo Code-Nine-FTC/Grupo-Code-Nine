@@ -28,8 +28,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                     <strong>{{ post.user_name }}:</strong>
                     <p class="limite">{{ post.texto }}</p>
                     <br>
-                    <a href="/post/{{ post.id }}">Ver Comentários</a>
-            
+                    <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>
                 </section>
             </li>
         {% endfor %}

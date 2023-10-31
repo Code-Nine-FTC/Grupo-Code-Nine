@@ -28,8 +28,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
                     <strong>{{ pergs.user_name }}:</strong>
                     <p class="limite">{{ pergs.texto }}</p>
                     <br>
-                    <a href="/perg/{{ pergs.id }}">Ver Comentários</a>
-            
+                    <strong><a href="/perg/{{ pergs.id }}">Ver Respostas</a></strong>
                 </section>
             </li>
         {% endfor %}

@@ -247,7 +247,7 @@ def post_comments2(perg_id):
             cursor.close()
             conn.close()
     else:
-        return "Você precisa estar conectado para acessar os comentários."
+        return "Você precisa estar conectado para acessar as respostas."
     
 # Rota para adicionar um comentário a uma pergunta
 @app.route('/add_comment2/<int:perg_id>', methods=['POST'])
