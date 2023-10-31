@@ -24,12 +24,13 @@ def login():
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
         # Check if the username and password match
-        cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha)) 
+        cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,)) 
         user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
 
         if user: #caso a variável user seja verdadeira
             session['user_email']=email
+            session['user_name']=user['username']
             return redirect('/perfil')
         else:
             return 'Inválido.'
@@ -78,13 +79,6 @@ def dados():
 @app.route('/localizacao')
 def localizacao():
     return render_template('localizacao.html')
-
-@app.route('/postagem', methods = ['POST', 'GET'])
-def postagem():
-    if 'user_email' in session:
-        #codigo da postagem
-        return redirect ('/faq')
-    return redirect('/login')
 
 @app.route('/forum')
 def forum():
@@ -138,16 +132,17 @@ def logout():
 def create_post():
     if 'user_email' in session:
         if request.method == 'POST':
-            user_email = session['user_email']
-            content = request.form['post_text']  # Captura o conteúdo da postagem
+            autor_email = session['user_email']
+            user_name = session['user_name']
+            texto = request.form['post_text']  # Captura o conteúdo da postagem
             # Verificação do tamanho da postagem (até 1500 caracteres)
-            if len(content) > 1500:
+            if len(texto) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO postagens (user_email, content) VALUES (%s, %s)",
-                               (user_email, content))
+                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto) VALUES (%s, %s, %s)",
+                               (autor_email, user_name, texto,))
                 conn.commit()
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:
@@ -187,15 +182,16 @@ def add_comment(post_id):
         if request.method == 'POST':
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
-            user_email = session['user_email']
-            content = request.form['content']  # Captura o conteúdo do comentário
+            autor_email = session['user_email']
+            user_name = session['user_name']
+            texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
-            if len(content) > 300:
+            if len(texto) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
 
             try:
-                cursor.execute("INSERT INTO comentarios (post_id, user_email, content) VALUES (%s, %s, %s)",
-                               (post_id, user_email, content))
+                cursor.execute("INSERT INTO comentarios (post_id, autor_email, user_name, texto) VALUES (%s, %s, %s, %s)",
+                               (post_id, autor_email, user_name, texto,))
                 conn.commit()
                 return redirect(url_for('post_comments', post_id=post_id))
             except mysql.connector.Error as err:
@@ -211,16 +207,17 @@ def add_comment(post_id):
 def criar_pergunta():
     if 'user_email' in session:
         if request.method == 'POST':
-            user_email = session['user_email']
+            autor_email = session['user_email']
+            user_name = session['user_name']
             texto = request.form['perg_text']  # Captura o conteúdo da pergunta
             # Verificação do tamanho da pergunta (até 300 caracteres)
-            if len(texto) > 300:
-                return "A pergunta excede o tamanho máximo de 300 caracteres."
+            if len(texto) > 500:
+                return "A pergunta excede o tamanho máximo de 500 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO perguntas (autor_email, texto) VALUES (%s, %s)",
-                               (user_email, texto))
+                cursor.execute("INSERT INTO perguntas (autor_email, user_name, texto) VALUES (%s, %s, %s)",
+                               (autor_email, user_name, texto,))
                 conn.commit()
                 return redirect(url_for('faq'))
             except mysql.connector.Error as err:
@@ -240,7 +237,7 @@ def post_comments2(perg_id):
             cursor = conn.cursor(dictionary=True)
             cursor.execute("SELECT * FROM perguntas WHERE id = %s", (perg_id,))
             perg = cursor.fetchone()
-            cursor.execute("SELECT * FROM respostas_perguntas WHERE perg_id = %s", (perg_id,))
+            cursor.execute("SELECT * FROM respostas WHERE perg_id = %s", (perg_id,))
             comentarios2 = cursor.fetchall()
             return render_template('pcoments2.html', perg=perg, comentarios2=comentarios2)
         except mysql.connector.Error as err:
@@ -259,14 +256,15 @@ def add_comment2(perg_id):
         if request.method == 'POST':
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
-            user_email = session['user_email']
-            texto = request.form['texto']  # Captura o conteúdo do comentário
+            autor_email = session['user_email']
+            user_name = session['user_name']
+            texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
             try:
-                cursor.execute("INSERT INTO respostas_perguntas (perg_id, user_email, texto) VALUES (%s, %s, %s)",
-                               (perg_id, user_email, texto))
+                cursor.execute("INSERT INTO respostas (perg_id, autor_email, user_name, texto) VALUES (%s, %s, %s, %s)",
+                               (perg_id, autor_email, user_name, texto,))
                 conn.commit()
                 return redirect(url_for('post_comments2', perg_id=perg_id))
             except mysql.connector.Error as err:
@@ -281,4 +279,3 @@ def add_comment2(perg_id):
 if __name__ == "__main__":
     app.secret_key = '8f2bdd84d7c4443215a42c84dabd52b21f9bdd596790cd61'
     app.run(debug=True)
-

@@ -15,7 +15,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
         <div id="criaperg">
             <h1>Criar Pergunta</h1>
             <form action="/criar_pergunta" method="POST">
-                <textarea name="perg_text" rows="5" cols="50" placeholder="Insira sua perguntas (até 300 caracteres)" required></textarea> <br>
+                <textarea name="perg_text" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
                 <button>Enviar</button>
             </form>
         </div>
@@ -25,7 +25,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
         {% for pergs in perg %}
             <li>
                 <section id="pergunta">
-                    <strong>{{ pergs.user_email }}</strong>
+                    <strong>{{ pergs.user_name }}:</strong>
                     <p class="limite">{{ pergs.texto }}</p>
                     <br>
                     <a href="/perg/{{ pergs.id }}">Ver Comentários</a>
