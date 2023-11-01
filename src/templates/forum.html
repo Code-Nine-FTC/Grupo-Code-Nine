@@ -25,7 +25,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         {% for post in postagens %}
             <li>
                 <section id="postagem">
-                    <strong>{{ post.user_name }}:</strong>
+                    <strong>{{ post.user_name }}  {{ post.timestamp_brasil }}</strong>
                     <p class="limite">{{ post.texto }}</p>
                     <br>
                     <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>

@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for, session, flash
 import mysql.connector
+import datetime
 
 app = Flask(__name__)
 
@@ -138,11 +139,12 @@ def create_post():
             # Verificação do tamanho da postagem (até 1500 caracteres)
             if len(texto) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
+            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto) VALUES (%s, %s, %s)",
-                               (autor_email, user_name, texto,))
+                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
+                               (autor_email, user_name, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:
@@ -180,18 +182,18 @@ def post_comments(post_id):
 def add_comment(post_id):
     if 'user_email' in session:
         if request.method == 'POST':
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor(dictionary=True)
             autor_email = session['user_email']
             user_name = session['user_name']
             texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
-
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor(dictionary=True)
+            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             try:
-                cursor.execute("INSERT INTO comentarios (post_id, autor_email, user_name, texto) VALUES (%s, %s, %s, %s)",
-                               (post_id, autor_email, user_name, texto,))
+                cursor.execute("INSERT INTO comentarios (post_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
+                               (post_id, autor_email, user_name, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('post_comments', post_id=post_id))
             except mysql.connector.Error as err:
@@ -215,9 +217,10 @@ def criar_pergunta():
                 return "A pergunta excede o tamanho máximo de 500 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
+            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             try:
-                cursor.execute("INSERT INTO perguntas (autor_email, user_name, texto) VALUES (%s, %s, %s)",
-                               (autor_email, user_name, texto,))
+                cursor.execute("INSERT INTO perguntas (autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
+                               (autor_email, user_name, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('faq'))
             except mysql.connector.Error as err:
@@ -254,17 +257,18 @@ def post_comments2(perg_id):
 def add_comment2(perg_id):
     if 'user_email' in session:
         if request.method == 'POST':
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor(dictionary=True)
             autor_email = session['user_email']
             user_name = session['user_name']
             texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 return "O comentário excede o tamanho máximo de 300 caracteres."
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor(dictionary=True)
+            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             try:
-                cursor.execute("INSERT INTO respostas (perg_id, autor_email, user_name, texto) VALUES (%s, %s, %s, %s)",
-                               (perg_id, autor_email, user_name, texto,))
+                cursor.execute("INSERT INTO respostas (perg_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
+                               (perg_id, autor_email, user_name, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('post_comments2', perg_id=perg_id))
             except mysql.connector.Error as err:

@@ -12,7 +12,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         <a id ="voltar"href="/faq"> Voltar </a>
         <h1>Respostas</h1>
             <h3>Postagem:</h3>
-                <strong>{{ perg.user_name }}:</strong>
+                <strong>{{ perg.user_name }}  {{ perg.timestamp_brasil }}</strong>
                 <p class="limite">{{ perg.texto }}</p>
 
             <!-- Formulário para adicionar um comentário -->
@@ -25,7 +25,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
             <ul class="coments">
                 {% for comment in comentarios2 %}
                     <li>
-                        <strong>{{ comment.user_name }}:</strong>  
+                        <strong>{{ comment.user_name }}  {{ comment.timestamp_brasil }}</strong>  
                         <p class="limite"> {{ comment.texto }} </p>
                     </li>
                     <hr>
