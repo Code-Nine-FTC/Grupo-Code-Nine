@@ -1,26 +1,26 @@
-Ano;Estado;Pacientes
-2023;Acre;0
-2023;Alagoas;0
-2023;Amazonas;0
-2023;Bahia;0
-2023;Ceará;2
-2023;Distrito Federal;0
-2023;Espirito Santo;0
-2023;Goiás;0
-2023;Maranhão;0
-2023;Mato Grosso;0
-2023;Mato Grosso do Sul;2
-2023;Minas Gerais;11
-2023;Pará;2
-2023;Paraíba;0
-2023;Paraná;0
-2023;Pernambuco;11
-2023;Piauí;0
-2023;Rio de Janeiro;11
-2023;Rio Grande do Norte;1
-2023;Rio Grande do Sul;16
-2023;Rondonia;0
-2023;Santa Catarina;2
-2023;São Paulo;43
-2023;Sergipe;0
-2023;Tocantins;0
+Ano;Estado;Pacientes;Óbitos
+2023;Acre;0;0
+2023;Alagoas;0;0
+2023;Amazonas;0;0
+2023;Bahia;0;0
+2023;Ceará;2;0
+2023;Distrito Federal;0;0
+2023;Espirito Santo;0;0
+2023;Goiás;0;0
+2023;Maranhão;0;0
+2023;Mato Grosso;0;0
+2023;Mato Grosso do Sul;2;0
+2023;Minas Gerais;11;0
+2023;Pará;2;1
+2023;Paraíba;0;0
+2023;Paraná;0;0
+2023;Pernambuco;11;0
+2023;Piauí;0;0
+2023;Rio de Janeiro;11;1
+2023;Rio Grande do Norte;1;0
+2023;Rio Grande do Sul;16;0
+2023;Rondonia;0;0
+2023;Santa Catarina;2;0
+2023;São Paulo;43;4
+2023;Sergipe;0;0
+2023;Tocantins;0;0
