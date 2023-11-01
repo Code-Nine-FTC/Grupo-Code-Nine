@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template, request, redirect, url_for, session, flash
 import mysql.connector
 import datetime
-
+from werkzeug.security import check_password_hash
 app = Flask(__name__)
 
 #conecta ao banco de dados
@@ -25,16 +25,16 @@ def login():
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
         # Check if the username and password match
-        cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,)) 
+        cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,)) 
         user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
 
-        if user: #caso a variável user seja verdadeira
+        if user and check_password_hash(user['senha'], senha): #caso a variável user seja verdadeira
             session['user_email']=email
             session['user_name']=user['username']
             return redirect('/perfil')
         else:
-            return 'Inválido.'
+            return None
     return render_template('login.html')
 
 @app.route('/cadastro', methods=['GET', 'POST']) #inicia a rota de get e post de dados no form html
