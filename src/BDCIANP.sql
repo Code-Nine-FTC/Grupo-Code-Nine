@@ -16,7 +16,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(30) NOT NULL,
 texto VARCHAR(1500) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
+timestamp_brasil DATETIME NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
@@ -26,7 +26,7 @@ post_id INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(30) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
+timestamp_brasil DATETIME NOT NULL,
 FOREIGN KEY (post_id) REFERENCES postagens(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
@@ -36,7 +36,7 @@ id int AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(30) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
+timestamp_brasil DATETIME NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
@@ -46,7 +46,7 @@ perg_id INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(30) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
+timestamp_brasil DATETIME NOT NULL,
 FOREIGN KEY (perg_id) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );

@@ -121,6 +121,8 @@ def perfil():
             email = session['user_email']
             cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,))
             user = cursor.fetchone()
+            if user['data_nasc']:
+                user['data_nasc'] = user['data_nasc'].strftime('%d/%m/%Y')
             return render_template('perfil.html', user=user)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
@@ -146,7 +148,7 @@ def create_post():
             # Verificação do tamanho da postagem (até 1500 caracteres)
             if len(texto) > 1500:
                 return "A postagem excede o tamanho máximo de 1500 caracteres."
-            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
@@ -197,7 +199,7 @@ def add_comment(post_id):
                 return "O comentário excede o tamanho máximo de 300 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
-            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
                 cursor.execute("INSERT INTO comentarios (post_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
                                (post_id, autor_email, user_name, texto, timestamp_brasil,))
@@ -224,7 +226,7 @@ def criar_pergunta():
                 return "A pergunta excede o tamanho máximo de 500 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
-            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
                 cursor.execute("INSERT INTO perguntas (autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
                                (autor_email, user_name, texto, timestamp_brasil,))
@@ -272,7 +274,7 @@ def add_comment2(perg_id):
                 return "O comentário excede o tamanho máximo de 300 caracteres."
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
-            timestamp_brasil = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
                 cursor.execute("INSERT INTO respostas (perg_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
                                (perg_id, autor_email, user_name, texto, timestamp_brasil,))
