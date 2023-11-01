@@ -121,8 +121,6 @@ def perfil():
             email = session['user_email']
             cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,))
             user = cursor.fetchone()
-            if user['data_nasc']:
-                user['data_nasc'] = user['data_nasc'].strftime('%d/%m/%Y')
             return render_template('perfil.html', user=user)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
