@@ -20,7 +20,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
             <p>Email: {{ user[1] }}</p>
             <p>CPF: {{ user[2] }}</p>
             <p>Profissão: {{ user[3] }}</p>
-            <p>Data de nascimento: {{ user[4] }}</p>
+            <p>Data de nascimento: {{ user[4].strftime('%d/%m/%Y') }}</p>
             <p>Parentesco: {{ user[5] }}</p>
             <button id="logout">SAIR</button>
         </form>

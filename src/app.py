@@ -115,13 +115,20 @@ def faq():
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():
     if 'user_email' in session:
-        conn = mysql.connector.connect(**db)
-        cursor = conn.cursor()
-        email = session['user_email']
-        cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,))
-        user = cursor.fetchone()
-        return render_template('perfil.html', user=user)
-    return redirect('/login')
+        try:
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            email = session['user_email']
+            cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,))
+            user = cursor.fetchone()
+            return render_template('perfil.html', user=user)
+        except mysql.connector.Error as err:
+            print(f"Erro no banco de dados: {err}")
+        finally:
+            cursor.close()
+            conn.close()
+    else:
+        return redirect('/login')
     
 @app.route('/logout', methods = ['POST'])
 def logout():
