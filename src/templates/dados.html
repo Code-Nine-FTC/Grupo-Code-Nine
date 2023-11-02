@@ -8,9 +8,7 @@ Estatísticas
 rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
 {% endblock %}
 <!-- dados para serem inseridos nessa tela
-Crianças renais em diálise e Hemodiálise
-Crianças renais transplantadas, 
-Incidência de acometimento de problemas renais (gestação, ao nascer, na 1° infância, na adolescência),
+Crianças renais transplantadas, e em fila de espera.
  -->
 {% block content %}
 <main class="dados">
@@ -47,7 +45,7 @@ Incidência de acometimento de problemas renais (gestação, ao nascer, na 1° i
                     <option value="fila2022">Crianças com DRC transplantadas-2022</option>
                     <option value="fila2023">Crianças com DRC transplantadas-2023</option>
                 </select>
-                <input class="enviar" type="submit"> Pesquisar!</input>
+                <button type="submit">Pesquisar</button>
             </form>
 
             <h2 class="margem">{{titulo}}</h2>
