@@ -31,105 +31,46 @@ Incidência de acometimento de problemas renais (gestação, ao nascer, na 1° i
             <br>
             <h1 class="margem">Dados oficiais</h1>
             <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
-            <div id="seletores">
+            <form id="seletores" method="post" action="http://localhost:5000/dados">
                 <label for="dadosofc"> Escolha a informação: </label>
         
                 <select name="dadosofc" id="dadosofc">
-                    <option value=""> Escolha um valor!</option>
-                    <option value="hemodialisec"> Crianças renais em diálise e Hemodiálise</option>
-                    <option value="transplantec"> Crianças renais transplantadas</option>
-                    <option value="especialistar"> Especialistas em Nefrologia Pediátrica por região</option>
-                    <option value="acometimentor"> Incidência de acometimento de problemas renais </option>
+                    <option value="" disabled selected> Escolha um valor!</option>
+                    <option value="flespera2019">Fila de Espera para Transplante-2019</option>
+                    <option value="flespera2020">Fila de Espera para Transplante-2020</option>
+                    <option value="flespera2021">Fila de Espera para Transplante-2021</option>
+                    <option value="flespera2022">Fila de Espera para Transplante-2022</option>
+                    <option value="flespera2023">Fila de Espera para Transplante-2023</option>
+                    <option value="fila2019">Crianças com DRC transplantadas-2019</option>
+                    <option value="fila2020">Crianças com DRC transplantadas-2020</option>
+                    <option value="fila2021">Crianças com DRC transplantadas-2021</option>
+                    <option value="fila2022">Crianças com DRC transplantadas-2022</option>
+                    <option value="fila2023">Crianças com DRC transplantadas-2023</option>
                 </select>
-            </div>
+                <input class="enviar" type="submit"> Pesquisar!</input>
+            </form>
 
-            <button class="enviar" type="button" onclick="dados()"> Pesquisar!</button>
-            <h2 class="margem">Número de crianças em fila de transplante por região</h2>
-            <table border="3" class="tabela">
+            <h2 class="margem">{{titulo}}</h2>
+            {% if dados %}
+            <table border="3" class="tabela" output="latin2">
                 <thead>
                     <tr>
-                        <th>Anos        </th>
+                        <th>Ano         </th>
                         <th>Região      </th>
-                        <th>Ingressantes</th>
-                        <th>Transplante </th>
-                        <th>Óbitos      </th>
+                        <th>Quantidade  </th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for dado in dados %}
                     <tr>
-                        <td>2020</td>
-                        <td>SP</td>
-                        <td>573</td>
-                        <td>468</td>
-                        <td>56</td>
+                        <td>{{dado.ano}}</td>
+                        <td>{{dado.estado}}</td>
+                        <td>{{dado.quantidade}}</td>
                     </tr>
-                    <tr>
-                        <td>2019</td>
-                        <td>SP</td>
-                        <td>238</td>
-                        <td>227</td>
-                        <td>11</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
-            <h2 class="margem">Número de óbitos por DRC em cada região (0 a 9 anos)</h2>
-            <table border="3" class="tabela">
-                <thead>
-                    <tr>
-                        <th>Região</th>
-                        <th>2015</th>
-                        <th>2016</th>
-                        <th>2017</th>
-                        <th>2018</th>
-                        <th>2019</th>
-                    </tr>
-                
-                <tbody>
-                    <tr>
-                        <td>Norte</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Nordeste</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Centro-Oeste</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Sudeste</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Sul</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-                </thead>
-            </table>  
-            
-            
+            {% endif %}
         </div>
     </div>
 </main>
