@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template, request, redirect, url_for, session, flash, jsonify
 import mysql.connector
 import datetime
-from werkzeug.security import check_password_hash
 import csv
 import pandas as pd
 
@@ -28,16 +27,16 @@ def login():
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
         # Check if the username and password match
-        cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,)) 
+        cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,))
         user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
 
-        if user and check_password_hash(user['senha'], senha): #caso a variável user seja verdadeira
+        if user: #caso a variável user seja verdadeira
             session['user_email']=email
             session['user_name']=user['username']
             return redirect('/perfil')
         else:
-            return None
+            return 'Inválido'
     return render_template('login.html')
 
 @app.route('/cadastro', methods=['GET', 'POST']) #inicia a rota de get e post de dados no form html
@@ -54,14 +53,13 @@ def cadastro():
             return "CPF inválido"
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor()
-        cursor.execute("SELECT * from usuario where email = %s or cpf = %s", (email, cpf))
+        cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf))
         if cursor.fetchone():
             cursor.close()
             conn.close()
             return "CPF ou email já em uso"
-        
         try:
-            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha))
+            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha,))
             conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
