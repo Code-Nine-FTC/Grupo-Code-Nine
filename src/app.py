@@ -1,10 +1,10 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for, session, flash
+from flask import render_template, request, redirect, url_for, session, flash, jsonify
 import mysql.connector
 import datetime
 from werkzeug.security import check_password_hash
 import csv
-import os
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -100,6 +100,19 @@ def dados():
 @app.route('/localizacao')
 def localizacao():
     return render_template('localizacao.html')
+
+@app.route('/loccsv', methods = ['POST', 'GET'])
+def teste():
+    regiao = request.form['regiao']
+    if regiao:
+        estado = request.form['estado']
+        with open('../Docs/csv/' + estado +'.csv', encoding='UTF-8') as file:
+            df = pd.read_csv(file, delimiter=';')
+            html_table = df.to_html(classes='table table-striped', index=False)
+            response = {"table": html_table}
+            return jsonify(response)
+    else:
+        return jsonify({'error': 'No file part'})
 
 @app.route('/forum')
 def forum():

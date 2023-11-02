@@ -7,6 +7,7 @@ Localizações
 {% block css %}
 rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
 {% endblock %}
+{% block js %} src="https://code.jquery.com/jquery-3.6.0.min.js" {% endblock %}
 
 {% block content %}
 <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
@@ -24,8 +25,39 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
         <label for="estado"> Escolha seu estado:</label>
         <select name="estado" id="estado">
         </select>
-        <button type="button" onclick="estado()"> Pesquisar!</button>
+        <button id="submitBtn"> Pesquisar!</button>
     </section>
+
+    <div id="tabelaloc">
+
+
+
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#submitBtn").click(function() {
+                var formData = new FormData();
+                formData.append("regiao", $("#regiao").val());
+                formData.append("estado", $("#estado").val());
+
+                $.ajax({
+                    url: '/loccsv',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        console.log("Received data:", data);
+                        $("#tabelaloc").html(data.table);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error:", error);
+                    }
+                });
+            });
+        });
+    </script>
+
 </main>
 {% endblock %}
