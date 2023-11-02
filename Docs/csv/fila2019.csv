@@ -1,26 +1,26 @@
-Ano;Estado;Ingresso;Mortalidade
-2019;Acre;0;0
-2019;Alagoas;0;0
-2019;Amazonas;0;0
-2019;Bahia;0;0
-2019;Ceará;19;0
-2019;Distrito Federal;0;0
-2019;Espirito Santo;0;3
-2019;Goiás;0;0
-2019;Maranhão;1;0
-2019;Mato Grosso;0;0
-2019;Mato Grosso do Sul;2;0
-2019;Minas Gerais;34;1
-2019;Pará;7;0
-2019;Paraíba;5;3
-2019;Paraná;3;0
-2019;Pernambuco;30;2
-2019;Piauí;1;0
-2019;Rio de Janeiro;0;0
-2019;Rio Grande do Norte;3;0
-2019;Rio Grande do Sul;35;0
-2019;Rondonia;0;0
-2019;Santa Catarina;1;0
-2019;São Paulo;156;8
-2019;Sergipe;0;0
-2019;Tocantins;0;0
+Ano;Estado;Ingresso
+2019;Acre;0
+2019;Alagoas;0
+2019;Amazonas;0
+2019;Bahia;0
+2019;Ceará;19
+2019;Distrito Federal;0
+2019;Espirito Santo;0
+2019;Goiás;0
+2019;Maranhão;1
+2019;Mato Grosso;0
+2019;Mato Grosso do Sul;2
+2019;Minas Gerais;34
+2019;Pará;7
+2019;Paraíba;5
+2019;Paraná;3
+2019;Pernambuco;30
+2019;Piauí;1
+2019;Rio de Janeiro;0
+2019;Rio Grande do Norte;3
+2019;Rio Grande do Sul;35
+2019;Rondonia;0
+2019;Santa Catarina;1
+2019;São Paulo;156
+2019;Sergipe;0
+2019;Tocantins;0
