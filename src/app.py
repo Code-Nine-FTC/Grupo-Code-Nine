@@ -11,9 +11,9 @@ app = Flask(__name__)
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "fatec", #senha
+    'password': "root", #senha
     'database': "cianp", #qual banco de dados será utilizado
-}
+} 
 
 @app.route('/')
 def home():
@@ -176,7 +176,7 @@ def perfil():
     else:
         return redirect('/login')
     
-@app.route('/logout', methods = ['POST'])
+@app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('user_email', None)
     return redirect('/login')

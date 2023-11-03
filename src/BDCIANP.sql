@@ -6,7 +6,7 @@ username VARCHAR(30) NOT NULL,
 email VARCHAR(100) NOT NULL PRIMARY KEY UNIQUE,
 cpf CHAR(11) NOT NULL UNIQUE,
 prof VARCHAR(50),
-data_nasc VARCHAR(50) NOT NULL,
+data_nasc VARCHAR(30) NOT NULL,
 parentesco VARCHAR(50) NOT NULL,
 senha CHAR(16) NOT NULL
 );
@@ -14,39 +14,37 @@ senha CHAR(16) NOT NULL
 CREATE TABLE IF NOT EXISTS postagens(
 id INT AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
-user_name VARCHAR(30) NOT NULL,
-texto VARCHAR(1500) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
-FOREIGN KEY (autor_email) REFERENCES usuario(email)
+user_name VARCHAR(30),
+content VARCHAR(1500) NOT NULL,
+imagens INT DEFAULT 0,
+ FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
 CREATE TABLE IF NOT EXISTS comentarios(
 id INT AUTO_INCREMENT PRIMARY KEY,
 post_id INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
-user_name VARCHAR(30) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (post_id) REFERENCES postagens(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
 CREATE TABLE IF NOT EXISTS perguntas(
-id INT AUTO_INCREMENT PRIMARY KEY,
+id int AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
-user_name VARCHAR(30) NOT NULL,
+user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
-CREATE TABLE IF NOT EXISTS respostas(
+CREATE TABLE IF NOT EXISTS respostas_perguntas(
 id INT AUTO_INCREMENT PRIMARY KEY,
-perg_id INT NOT NULL,
+id_perguntas INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
-user_name VARCHAR(30) NOT NULL,
+user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-timestamp_brasil VARCHAR(50) NOT NULL,
-FOREIGN KEY (perg_id) REFERENCES perguntas(id),
+FOREIGN KEY (id_perguntas) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
+
+select * from usuario
