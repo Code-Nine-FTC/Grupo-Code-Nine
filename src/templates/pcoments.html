@@ -12,9 +12,11 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         <a id ="voltar"href="/forum"> Voltar </a>
         <h1>Comentários</h1>
             <h3>Postagem:</h3>
-                <strong>{{ post.user_name }}  {{ post.timestamp_brasil }}</strong>
+                <strong>{{ post.user_name }}</strong>
                 <p class="limite">{{ post.texto }}</p>
-
+                <br>
+                <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
+                <br>
             <!-- Formulário para adicionar um comentário -->
             <form method="post" action="/add_comment/{{ post.id }}">
                 <textarea name="content" placeholder="Digite seu comentário (até 300 caracteres)" required></textarea><br>
@@ -25,8 +27,11 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
             <ul class="coments">
                 {% for comment in comentarios %}
                     <li>
-                        <strong>{{ comment.user_name }}  {{ comment.timestamp_brasil }}</strong>  
-                        <p class="limite"> {{ comment.texto }} </p>
+                        <strong>{{ comment.user_name }}</strong>  
+                        <p class="limite">{{ comment.texto }}</p>
+                        <br>
+                        <p class="limite">Data e Hora: {{ comment.timestamp_brasil }}</p>
+                        <br>
                     </li>
                     <hr>
                 {% endfor %}
