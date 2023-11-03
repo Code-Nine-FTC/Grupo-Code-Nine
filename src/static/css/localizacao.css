@@ -54,3 +54,18 @@ label {
     font-size: 1.5em;
 }
 
+table {
+    border: 2px solid #000;
+    /* border-collapse: collapse; */
+    background-color: hsl(0, 0%, 91%); 
+    width: 60vw;
+    margin-bottom: 5%;
+}
+
+table, th, td {
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+}

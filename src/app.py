@@ -1,8 +1,10 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for, session, flash
+from flask import render_template, request, redirect, url_for, session, flash, jsonify
 import mysql.connector
 import datetime
-from werkzeug.security import check_password_hash
+import csv
+import pandas as pd
+
 app = Flask(__name__)
 
 #conecta ao banco de dados
@@ -25,16 +27,16 @@ def login():
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
         # Check if the username and password match
-        cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,)) 
+        cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,))
         user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
 
-        if user and check_password_hash(user['senha'], senha): #caso a variável user seja verdadeira
+        if user: #caso a variável user seja verdadeira
             session['user_email']=email
             session['user_name']=user['username']
             return redirect('/perfil')
         else:
-            return None
+            return 'Inválido'
     return render_template('login.html')
 
 @app.route('/cadastro', methods=['GET', 'POST']) #inicia a rota de get e post de dados no form html
@@ -51,14 +53,13 @@ def cadastro():
             return "CPF inválido"
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor()
-        cursor.execute("SELECT * from usuario where email = %s or cpf = %s", (email, cpf))
+        cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf))
         if cursor.fetchone():
             cursor.close()
             conn.close()
             return "CPF ou email já em uso"
-        
         try:
-            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha))
+            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha,))
             conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
@@ -73,13 +74,43 @@ def cadastro():
 def info():
     return render_template('info.html')
 
-@app.route('/dados')
+@app.route('/dados',methods =['GET','POST'])
 def dados():
-    return render_template('dados.html')
+    dados = None
+    titulo ='Número de crianças em fila de transplante'
+    if request.method == 'POST':
+        if item:= request.form.get('dadosofc'):
+            arquivo = item + '.csv'
+            if 'fila' in item:
+                titulo = 'Número de crianças com DRC transplantadas'
+            with open('../Docs/csv/'+ arquivo , newline='', encoding='UTF-8') as csvfile:
+                dados = list(csv.reader(csvfile))
+                for i,dado in enumerate(dados):
+                    informacoes = dado[0].split(';')
+                    dado = {}
+                    dado['ano'] = informacoes[0]
+                    dado['estado'] = informacoes[1]
+                    dado['quantidade'] = informacoes[2]
+                    dados[i]= dado
+                dados.pop(0)  
+    return render_template('dados.html',dados = dados, titulo = titulo)
 
 @app.route('/localizacao')
 def localizacao():
     return render_template('localizacao.html')
+
+@app.route('/loccsv', methods = ['POST', 'GET'])
+def teste():
+    regiao = request.form['regiao']
+    if regiao:
+        estado = request.form['estado']
+        with open('../Docs/csv/' + estado +'.csv', encoding='UTF-8') as file:
+            df = pd.read_csv(file, delimiter=';')
+            html_table = df.to_html(classes='table table-striped', index=False)
+            response = {"table": html_table}
+            return jsonify(response)
+    else:
+        return jsonify({'error': 'No file part'})
 
 @app.route('/forum')
 def forum():

@@ -20,7 +20,7 @@ function myFunction() {
     if (y === 'nordeste') {
         // document.getElementById("estado").innerHTML="<option>Bahia</option><option>Salvador</option>";
         var est = new Array("Pernambuco", "Maranhão", "Bahia", "Ceará", "Piauí", "Rio Grande do Norte", "Paraíba", "Sergipe", "Alagoas");
-        var estval = new Array("pernambuco", "maranhão", "bahia", "ceará", "piauí", "riograndedonorte", "paraíba", "sergipe", "alagoas");
+        var estval = new Array("pernambuco", "maranhao", "bahia", "ceara", "piaui", "riograndedonorte", "paraiba", "sergipe", "alagoas");
         document.getElementById("estado").innerHTML=option.remove;
         for(var i = 0; i < est.length; i++) {
             select[select.length] = new Option(est[i], estval[i])
