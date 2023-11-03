@@ -7,6 +7,7 @@ Estatísticas
 {% block css %}
 rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
 {% endblock %}
+{% block js %} src="https://code.jquery.com/jquery-3.6.0.min.js" {% endblock %}
 <!-- dados para serem inseridos nessa tela
 Crianças renais transplantadas, e em fila de espera.
  -->
@@ -29,9 +30,8 @@ Crianças renais transplantadas, e em fila de espera.
             <br>
             <h1 class="margem">Dados oficiais</h1>
             <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
-            <form id="seletores" method="post" action="http://localhost:5000/dados">
+            <section id="seletor">
                 <label for="dadosofc"> Escolha a informação: </label>
-        
                 <select name="dadosofc" id="dadosofc">
                     <option value="" disabled selected> Escolha um valor!</option>
                     <option value="flespera2019">Fila de Espera para Transplante-2019</option>
@@ -45,10 +45,10 @@ Crianças renais transplantadas, e em fila de espera.
                     <option value="fila2022">Crianças com DRC transplantadas-2022</option>
                     <option value="fila2023">Crianças com DRC transplantadas-2023</option>
                 </select>
-                <button type="submit">Pesquisar</button>
-            </form>
+                <button id=submitBtn>Pesquisar</button>
+            </section>
 
-            <h2 class="margem">{{titulo}}</h2>
+            <!-- <h2 class="margem">{{titulo}}</h2>
             {% if dados %}
             <table border="3" class="tabela" output="latin2">
                 <thead>
@@ -69,7 +69,38 @@ Crianças renais transplantadas, e em fila de espera.
                 </tbody>
             </table>
             {% endif %}
+        </div> -->
+
+        <div id="tabelaloc">
+
+
+
         </div>
+    
+        <script>
+            $(document).ready(function() {
+                $("#submitBtn").click(function() {
+                    var formData = new FormData();
+                    formData.append("dadosofc", $("#dadosofc").val());
+    
+                    $.ajax({
+                        url: '/dadoscsv',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(data) {
+                            console.log("Received data:", data);
+                            $("#tabelaloc").html(data.table);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log("Error:", error);
+                        }
+                    });
+                });
+            });
+        </script>
+
     </div>
 </main>
 

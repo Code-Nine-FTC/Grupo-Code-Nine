@@ -76,24 +76,39 @@ def info():
 
 @app.route('/dados',methods =['GET','POST'])
 def dados():
-    dados = None
-    titulo ='Número de crianças em fila de transplante'
-    if request.method == 'POST':
-        if item:= request.form.get('dadosofc'):
-            arquivo = item + '.csv'
-            if 'fila' in item:
-                titulo = 'Número de crianças com DRC transplantadas'
-            with open('../Docs/csv/'+ arquivo , newline='', encoding='UTF-8') as csvfile:
-                dados = list(csv.reader(csvfile))
-                for i,dado in enumerate(dados):
-                    informacoes = dado[0].split(';')
-                    dado = {}
-                    dado['ano'] = informacoes[0]
-                    dado['estado'] = informacoes[1]
-                    dado['quantidade'] = informacoes[2]
-                    dados[i]= dado
-                dados.pop(0)  
-    return render_template('dados.html',dados = dados, titulo = titulo)
+    return render_template('dados.html')
+
+@app.route('/dadoscsv', methods= ['GET', 'POST'])
+def dadoscsv():
+    tipo = request.form['dadosofc']
+    if tipo:
+        with open('../Docs/csv/' + tipo +'.csv', encoding='UTF-8') as file:
+            df = pd.read_csv(file, delimiter=';')
+            html_table = df.to_html(classes='table table-striped', index=False)
+            response = {"table": html_table}
+            return jsonify(response)
+    else:
+        return jsonify({'error': 'No file part'})
+    
+
+    # dados = None
+    # titulo ='Número de crianças em fila de transplante'
+    # if request.method == 'POST':
+    #     if item:= request.form.get('dadosofc'):
+    #         arquivo = item + '.csv'
+    #         if 'fila' in item:
+    #             titulo = 'Número de crianças com DRC transplantadas'
+    #         with open('../Docs/csv/'+ arquivo , newline='', encoding='UTF-8') as csvfile:
+    #             dados = list(csv.reader(csvfile))
+    #             for i,dado in enumerate(dados):
+    #                 informacoes = dado[0].split(';')
+    #                 dado = {}
+    #                 dado['ano'] = informacoes[0]
+    #                 dado['estado'] = informacoes[1]
+    #                 dado['quantidade'] = informacoes[2]
+    #                 dados[i]= dado
+    #             dados.pop(0)  
+    # return render_template('dados.html',dados = dados, titulo = titulo)
 
 @app.route('/localizacao')
 def localizacao():

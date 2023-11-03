@@ -131,15 +131,59 @@ label {
     padding-bottom: 10px;
 }
 /*TABELAS*/
-.tabela{
+
+#seletor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#seletor button {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 10px;
+    background-color: #2cce78ec;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#seletor button:hover {
+    background-color: rgb(21, 255, 0);
+}
+
+
+#dadosofc{
+    width: 20vw;
+    font-size: 1em;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+table {
     border: 2px solid #000;
     /* border-collapse: collapse; */
     background-color: hsl(0, 0%, 91%); 
     width: 60vw;
+    margin-bottom: 5%;
 }
-th, td {
+
+table, th, td {
     text-align: center;
 }
+
+th, td {
+    padding: 10px;
+}
+
 /* #tabela2{
     border: 2px solid #000;
     border-collapse: separate;
