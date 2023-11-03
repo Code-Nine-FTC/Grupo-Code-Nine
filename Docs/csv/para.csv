@@ -1,34 +1,34 @@
-Estado;Nome;Cidade;Endereco
-PA; CENTRO DE HEMODIALISE ARI GONCALVES LTDA; Ananindeua; Av. Gov. Hélio Gueiros, 2672 - Coqueiro
-PA; ASSOCIACAO GUIOMAR JESUS; Capanema; R, Av. Gen. Moura Carvalho, 257
-PA; CDR CARAJAS; Marabá; FL 25, Quadra 21 Lote 3 - Nova Marabá
-PA;CHC CLINICA DE HEMODIALISE DE CANAA; Canaã dos Carajás; R Maparajuba Qd 039 Lote 006
-PA; CNC CLINICA DE NEFROLOGIA DE CASTANHAL; Castanhal;  R. Maj. Wilson - Saudade I, Castanhal  
-PA; DAVITA MARCO; Belém; Tv. Perebebuí, 2304 - Marco
-PA; DAVITA TIMBO; Belém; Tv. Timbó, 3161 - Marco
-PA; DIALIZE TERAPIA DO RIM, Belém; Tv. Dom Romualdo de Seixas, 963 - Umarizal
-PA; GOLD NEFRO LTDA; Belém; Tv. Barão do Triunfo, 3618 - Marco
-PA; HOSPITAL ADVENTISTA DE BELEM; Belém; Av. Alm. Barroso, 1758 - Marco
-PA; HOSPITAL D LUIZ I; Belém; v. Generalíssimo Deodoro, S/N - Umarizal
-PA; HOSPITAL DE CLINICAS GASPAR VIANA; Belém; Tv. Alferes Costa, S/N - Pedreira
-PA; HOSPITAL GERAL DE PARAUAPEBAS MANOEL EVALDO BENEVIDES ALVES; Parauapebas; Rua A, Quadra Especial, s/n - Centro
-PA; HOSPITAL MUNICIPAL DE SANTAREM; Santarem; Av. Pres. Vargas, 1539 - Santa Clara 
-PA; HOSPITAL ONCOLOGICO INFANTIL OCTAVIO LOBO; Belém; Tv. Quatorze de Abril, 1394 - São Brás
-PA; HOSPITAL OPHIR LOYOLA; Belém; Av. Gov Magalhães Barata, nº 992 - São Brás
-PA; HOSPITAL REGIONAL DA PA 279; Ourilândia do Norte; Rua Cateté c/ a Ceará - Rua Cateté, Bairro Independência
-PA; HOSPITAL REGIONAL DE CONCEICAO DO ARAGUAIA; Conceicao do Araguaia; Tv Pará, 840 - Centro
-PA; HOSPITAL REGIONAL DO BAIXO AMAZONAS DO PA DR WALDEMAR PENNA; Santarém; Av. Sérgio Henn, 1364 - Diamantino
-PA; HOSPITAL REGIONAL DO BAIXO TOCANTINS HOSPITAL SANTA ROSA; Abaetetuba; Av. Pedro Rodrigues, 1357 - Santa Rosa
-PA; HOSPITAL REGIONAL DO SUDESTE DO PARA DR GERALDO VELOSO; Marabá; Rodovia PA 150, Km 7, s/n - Nova Marabá
-PA; HOSPITAL REGIONAL PUBLICO DA TRANSAMAZONICA; Altamira; Av. Brg. Eduardo Gomes, s/n - Esplanada do Xingu
-PA; HOSPITAL REGIONAL PUBLICO DE CASTANHAL; Castanhal; Av. dos Universitários, 3035 - Santa Lídia
-PA; HOSPITAL REGIONAL PUBLICO DO ARAGUAIA; Redenção; Av. Brasil, Quadra 30, s/n - Park dos Buritis
-PA; HOSPITAL REGIONAL PUBLICO DO MARAJO; Breves; Av. Rio Branco, 1.266
-PA; HOSPITAL REGIONAL PUBLICO DO TAPAJOS ITAITUBA; Itaituba; Rod. Transamazônica, 43 - Comércio
-PA; HOSPITAL REGIONAL PUBLICO DR ABELARDO SANTOS; Belém; Avenida Augusto Montenegro Km 13, S/N Agulha - Campina de Icoaraci
-PA; HOSPITAL SANTO ANTONIO MARIA ZACCARIA; Bragança; Av. Nazeazeno Ferreira, s/n - Padre Luiz
-PA; NEFRO SAUDE; Cascavel; R. Afonso Pena, 1523 - 1° andar Sala 2 - Centro
-PA; CLINICA DE DOENCAS RENAIS E METODOS DIAGNOSTICOS LTDA; Belém; R. Municipalidade, 1709 - Umarizal
-PA; NEFROCLINICA; Belém; Tv. Francisco Caldeira Castelo Branco, 849
-PA; POLICLINICA DE TUCURUI NATEA; Tucuruí;  Av. Raimundo Veridiano Cardoso - Bela Vista
-PA; SANTA CASA DE MISERICORDIA DO PARA; Belém; R. Bernal do Couto, 988 - Umarizal
+Estado;Nome;Cidade;Endereço
+PA; CENTRO DE HEMODIALISE ARI GONCALVES LTDA;Ananindeua - PA;Av. Gov. Hélio Gueiros - 2672 - Coqueiro
+PA; ASSOCIACAO GUIOMAR JESUS;Capanema - PA;R. Av. Gen. Moura Carvalho - 257
+PA; CDR CARAJAS;Marabá - PA;FL 25 - Quadra 21 Lote 3 - Nova Marabá
+PA;CHC CLINICA DE HEMODIALISE DE CANAA;Canaã dos Carajás - PA;R Maparajuba Qd 039 Lote 006
+PA; CNC CLINICA DE NEFROLOGIA DE CASTANHAL;Castanhal - PA;R. Maj. Wilson - Saudade I - Castanhal  
+PA; DAVITA MARCO;Belém - PA;Tv. Perebebuí - 2304 - Marco
+PA; DAVITA TIMBO;Belém - PA;Tv. Timbó - 3161 - Marco
+PA; DIALIZE TERAPIA DO RIM;Belém - PA;Tv. Dom Romualdo de Seixas - 963 - Umarizal
+PA; GOLD NEFRO LTDA;Belém - PA;Tv. Barão do Triunfo - 3618 - Marco
+PA; HOSPITAL ADVENTISTA DE BELEM;Belém - PA;Av. Alm. Barroso - 1758 - Marco
+PA; HOSPITAL D LUIZ I;Belém - PA;v. Generalíssimo Deodoro - S/N - Umarizal
+PA; HOSPITAL DE CLINICAS GASPAR VIANA;Belém - PA;Tv. Alferes Costa - S/N - Pedreira
+PA; HOSPITAL GERAL DE PARAUAPEBAS MANOEL EVALDO BENEVIDES ALVES;Parauapebas - PA;Rua A - Quadra Especial - s/n - Centro
+PA; HOSPITAL MUNICIPAL DE SANTAREM;Santarem - PA; Av. Pres.Vargas - 1539 - Santa Clara 
+PA; HOSPITAL ONCOLOGICO INFANTIL OCTAVIO LOBO;Belém - PA;Tv. Quatorze de Abril - 1394 - São Brás
+PA; HOSPITAL OPHIR LOYOLA;Belém - PA;Av. Gov Magalhães Barata - nº 992 - São Brás
+PA; HOSPITAL REGIONAL DA PA 279;Ourilândia do Norte - PA;Rua Cateté c/ a Ceará - Rua Cateté - Bairro Independência
+PA; HOSPITAL REGIONAL DE CONCEICAO DO ARAGUAIA;Conceicao do Araguaia - PA;Tv Pará - 840 - Centro
+PA; HOSPITAL REGIONAL DO BAIXO AMAZONAS DO PA DR WALDEMAR PENNA;Santarém - PA;Av. Sérgio Henn - 1364 - Diamantino
+PA; HOSPITAL REGIONAL DO BAIXO TOCANTINS HOSPITAL SANTA ROSA;Abaetetuba - PA;Av. Pedro Rodrigues - 1357 - Santa Rosa
+PA; HOSPITAL REGIONAL DO SUDESTE DO PARA DR GERALDO VELOSO;Marabá - PA;Rodovia PA 150 - Km 7 - s/n - Nova Marabá
+PA; HOSPITAL REGIONAL PUBLICO DA TRANSAMAZONICA;Altamira - PA;Av. Brg. Eduardo Gomes - s/n - Esplanada do Xingu
+PA; HOSPITAL REGIONAL PUBLICO DE CASTANHAL;Castanhal - PA;Av. dos Universitários - 3035 - Santa Lídia
+PA; HOSPITAL REGIONAL PUBLICO DO ARAGUAIA;Redenção - PA;Av. Brasil - Quadra 30 - s/n - Park dos Buritis
+PA; HOSPITAL REGIONAL PUBLICO DO MARAJO;Breves - PA;Av. Rio Branco - 1.266
+PA; HOSPITAL REGIONAL PUBLICO DO TAPAJOS ITAITUBA;Itaituba - PA;Rod. Transamazônica - 43 - Comércio
+PA; HOSPITAL REGIONAL PUBLICO DR ABELARDO SANTOS;Belém - PA;Avenida Augusto Montenegro Km 13 - S/N Agulha - Campina de Icoaraci
+PA; HOSPITAL SANTO ANTONIO MARIA ZACCARIA;Bragança - PA;Av. Nazeazeno Ferreira - s/n - Padre Luiz
+PA; NEFRO SAUDE;Cascavel - PA;R. Afonso Pena - 1523 - 1° andar Sala 2 - Centro
+PA; CLINICA DE DOENCAS RENAIS E METODOS DIAGNOSTICOS LTDA;Belém - PA;R. Municipalidade - 1709 - Umarizal
+PA; NEFROCLINICA;Belém - PA;Tv. Francisco Caldeira Castelo Branco - 849
+PA; POLICLINICA DE TUCURUI NATEA;Tucuruí - PA;Av. Raimundo Veridiano Cardoso - Bela Vista
+PA; SANTA CASA DE MISERICORDIA DO PARA;Belém - PA;R. Bernal do Couto - 988 - Umarizal

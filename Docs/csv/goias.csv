@@ -1,59 +1,58 @@
-Estado;Nome;Cidade;Endereço;Bairro
-GO;Centro Médico Dr. Pra Você;Goiânia;Av. Aragai 376
-GO;Hospital de Urgência de Goiânia Hugo;Goiânia;Av. Portugal 1148
-GO;Hospital Geral de Goiânia Doutor Alberto Rassi;Goiânia;Av. Anhanguera 4379
-GO;Hospital Urológico Puigvert;Goiânia;Alameda das Rosas 2155
-GO;Irg Hospital-Insituto do Rim;Goiânia;Av. T1 759
-GO;Centrel Centro de Nefrologia;Goiânia;Av. Mutirão 1868
-GO;Centro Médico Vitória;Goiânia;Rua 16 A 496
-GO;Milli Clínica Nefrológica;Aparecida de Goiânia;Rua Piratininga com Rua Gramada Qd 58 Lt 1/3 e 38
-GO;Principal Saúde;Goiânia;Rua 6 430
-GO;TRS-Nefrologia e Hemodiálise;Goiânia;Rua 5 691
-GO;Clinorte Clínica de Hemodiálise;Porangatu;Av. Goiás 704
-GO;Centro Médico Cirúrgico de Catalão;Catalão;Rua Nilo Margon Vaz, 63;Centro
-GO;Da Vila Serviços Médicos LTDA;Valparaíso de Goiás;Quadra 32, Lote 16;Parque Esplanada III
-GO;DAVITA SERVIÇOS DE NEFROLOGIA BUENO LTDA.;Goiânia;avenida t2 esq com t47, n 1865;Setor Bueno
-GO;Instituto CEM;Posse;Av. Juscelino Kubitscheck de Oliveira, sem número;Setor Buenos Aires
-GO;Instituto de Hemodiálise de Itumbiara;Itumbiara;Rua Jorge Simões de Lima, 382;Santos Dumont
-GO;Martins e Paixão SS Ltda;-;Av Pref João de P T Filho, 0, Cond. Reality Buritis Ap 401 A;Setor Conde dos Arcos
-GO;Nefrologistas LTDA;Aparecida de Goiânia;Rua EM 12 com EM 1 Quadra área Lote 02;Vila Sul
-GO;UNIVERSIDADE FEDERAL DE GOIAS;Goiânia;1 AVENIDA, SN;Setor Universitário
-GO;CASA DE DIALISE DE INAN;Anápolis;RUA AQUILES DE PINA	48;Centro
-GO;CENTREL CENTRO DE NEFROLOGIA;Goiânia;AVENIDA MUTIRAO	1868;Bueno
-GO;CENTRO DE URO NEFROLOGIA;Jataí;RUA DO HIPODROMO 433;Setor Hermosa
-GO;CLIMER;Águas Lindas de Goiás;QD110 CONJUNTO B SETOR 10 S/N;Parque Barragem
-GO;CLINEFRO;Aparecida de Goiânia;Rua Ivaí S/N QD110 CONJUNTO B SALA;VILA BRASILIA
-GO;CLINEFRO GOIANESIA;Goianésia;RUA 39 357;Santa Luzia
-GO;CLINICA DE DIALISE DE URUACU;Uruaçu;Rua Pará S/N QD1 B LT 2 2 A;VILA SAO JOSE
-GO;CLINICA DE DOENCAS RENAIS;Rio Verde;RUA 30 151;Jardim Maristela
-GO;CLINICA DE DOENCAS RENAIS LTDA;Goiânia;RUA R3 220;Setor Oeste
-GO;CLINICA DE HEMODIALISES SAO BERNARDO;Aparecida de Goiânia;Rua Ivaí, S/N;Vila Brasília
-GO;CLINICA DO RIM E HIPERTENSAO;Valparaíso de Goiás;QD 32 LT 16;Parque Esplanada III
-GO;CLINICA RENAL DE LUZIANIA;Luziânia;RUA ELIANE LAQUIS	S/N FUNDOS;Centro
-GO;Clinorte;Porangatu;AVENIDA GOIAS	S/N;Aeroporto
-GO;CTR CENTRO DE TERAPIA RENAL;Aparecida de Goiânia;RUA EM 01 COM EM 12 BLOCO CTR	S/N;Vila Sul
-GO;Davita;Valparaíso de Goiás;AREA ESPECIAL RP 02 LOTE 02 S/N;Valparaíso II
-GO;Davita Unidade Bueno;Goiânia;RUA T 47 1865;Setor Bueno
-GO;Davita Unidade Centro;Goiânia;AV PARANAIBA 938;Centro
-GO;Hospital das Clínicas;Goiânia;PRIMEIRA AVENIDA S/N;Setor Leste Universitário
-GO;HOSPITAL DE DOENCAS RENAIS DE ANAPOLIS;Anápolis;Rua Amazonas 5;Centro
-GO;HOSPITAL E MATERNIDADE SAO NICOLAU;Catalão;NILO MARGON 63;Centro
-GO;HOSPITAL ESTADUAL DR ALBERTO RASSI HGG;Goiânia;AVENIDA ANHANGUERA 6479;Oeste
-GO;HOSPITAL EVANGELICO GOIANO SA;Anápolis;TRAVESSA JOAO AIRES 137;Setor Central
-GO;HOSPITAL UROLOGICO PUIGEVERTE;Goiânia;ALAMEDA DAS ROSAS 2155;Setor Oeste
-GO;INSTITUTO DE NEFROLOGIA DE CERES LTDA;Ceres;MEINHA MENDES 88;Centro
-GO;MILLI CLINICA NEFROLOGICA;Aparecida de Goiânia;RUA PIRATININGA ESQ C RUA GRAMADO	S/N;Conde dos Arcos
-GO;MONTES BELOS TERAPIAS AVANCADAS;São Luís de Montes Belos;APORE 1177; Setor Bela Vista
-GO;Nefrocenter;Iporá;AV QUINTINO VARGAS	100;Mato Grosso
-GO;Nefroclínica;Goiânia;RUA C 149 1145;Jardim América
-GO;Nefroclínica de Itumbiara;Itumbiara;RUA JORGE SIMOES DE LIMA	382;Setor Santos Dumont
-GO;NEFRON CLINICA DO RIM E HEMODIALISE LTDA;Goiânia;RUA C 32 161;Jardim América
-GO;POLICLINICA ESTADUAL DA REGIAO DO ENTORNO FORMOSA;Formosa;AV OESTE S/N;Jardim Oliveira
-GO;POLICLINICA ESTADUAL DA REGIAO NORDESTE POSSE;Posse;AVENIDA JUSCELINO KUBITSCHECK DE OLIVEIRA S/N;Setor Buenos Aires
-GO;POLICLINICA ESTADUAL DA REGIAO SAO PATRICIO GOIANESIA;Goianésia;AV ULISSES GUIMARAES	S/N;Esperança
-GO;POLICLINICA ESTADUAL DA REGIAO SUDOESTE QUIRINOPOLIS;Quirinópolis;RUA 01	S/N;Bairro Residencial A
-GO;Renalclínica;Goiânia;RUA R1 99;Oeste
-GO;SANTA CASA DE MISERICORDIA DE GOIANIA;Goiânia;RUA CAMPINAS 1135;Americano do Brasil
-GO;SEANEF FORMOSA;Formosa;SENADOR COIMBRA BUENO	915;Jardim Triângulo
-GO;TRS TERAPIA RENAL SUBSTITUTIVA;Goiânia;RUA 1A 305;ST Aeroporto
-GO;4HEALTH SERVICOS MEDICOS LTDA EPP;Caldas Novas;RUA 14 ESQUINA COM RUA 05	1;Caldas do Oeste
+Estado;Nome;Cidade;Endereço;
+GO;Centro Médico Dr. Pra Você;Goiânia - GO;Av. Aragai - 376
+GO;Hospital de Urgência de Goiânia Hugo;Goiânia - GO;Av. Portugal -1148
+GO;Hospital Geral de Goiânia Doutor Alberto Rassi;Goiânia - GO;Av. Anhanguera - 4379
+GO;Hospital Urológico Puigvert;Goiânia - GO;Alameda das Rosas - 2155
+GO;Irg Hospital-Insituto do Rim;Goiânia - GO;Av. T1 759
+GO;Centrel Centro de Nefrologia;Goiânia - GO;Av. Mutirão - 1868
+GO;Centro Médico Vitória;Goiânia - GO;Rua 16 A 496
+GO;Milli Clínica Nefrológica;Aparecida de Goiânia - GO;Rua Piratininga com Rua Gramada Qd 58 Lt 1/3 e 38
+GO;Principal Saúde;Goiânia - GO;Rua 6 430
+GO;TRS-Nefrologia e Hemodiálise;Goiânia - GO;Rua 5 691
+GO;Clinorte Clínica de Hemodiálise;Porangatu - GO;Av. Goiás - 704
+GO;Centro Médico Cirúrgico de Catalão;Catalão - GO;Rua Nilo Margon Vaz - 63
+GO;Da Vila Serviços Médicos LTDA;Valparaíso de Goiás - GO;Quadra 32 - Lote 16
+GO;DAVITA SERVIÇOS DE NEFROLOGIA BUENO LTDA.;Goiânia - GO;avenida t2 esq com t47 - 1865
+GO;Instituto CEM;Posse - GO;Av. Juscelino Kubitscheck de Oliveira 
+GO;Instituto de Hemodiálise de Itumbiara;Itumbiara - GO;Rua Jorge Simões de Lima - 382
+GO;Nefrologistas LTDA;Aparecida de Goiânia - GO;Rua EM 12 com EM 1 Quadra área Lote 02
+GO;UNIVERSIDADE FEDERAL DE GOIAS;Goiânia - GO;1 AVENIDA - SN
+GO;CASA DE DIALISE DE INAN;Anápolis - GO;RUA AQUILES DE PINA - 48
+GO;CENTREL CENTRO DE NEFROLOGIA;Goiânia - GO;AVENIDA MUTIRAO - 1868
+GO;CENTRO DE URO NEFROLOGIA;Jataí - GO;RUA DO HIPODROMO - 433
+GO;CLIMER;Águas Lindas de Goiás - GO;QD110 CONJUNTO B SETOR 10 - S/N
+GO;CLINEFRO;Aparecida de Goiânia - GO;Rua Ivaí - S/N - QD110 CONJUNTO B SALA
+GO;CLINEFRO GOIANESIA;Goianésia - GO;RUA 39 357
+GO;CLINICA DE DIALISE DE URUACU;Uruaçu - GO;Rua Pará - S/N - QD1 B LT 2 2 A
+GO;CLINICA DE DOENCAS RENAIS;Rio Verde - GO;RUA 30 151
+GO;CLINICA DE DOENCAS RENAIS LTDA;Goiânia - GO;RUA R3 220
+GO;CLINICA DE HEMODIALISES SAO BERNARDO;Aparecida de Goiânia - GO;Rua Ivaí - S/N
+GO;CLINICA DO RIM E HIPERTENSAO;Valparaíso de Goiás - GO;QD 32 LT 16
+GO;CLINICA RENAL DE LUZIANIA;Luziânia - GO;RUA ELIANE LAQUIS - S/N FUNDOS
+GO;Clinorte;Porangatu - GO;AVENIDA GOIAS - S/N
+GO;CTR CENTRO DE TERAPIA RENAL;Aparecida de Goiânia - GO;RUA EM 01 COM EM 12 BLOCO CTR - S/N
+GO;Davita;Valparaíso de Goiás - GO;AREA ESPECIAL RP 02 LOTE 02 - S/N
+GO;Davita Unidade Bueno;Goiânia - GO;RUA T 47 1865 
+GO;Davita Unidade Centro;Goiânia - GO;AV PARANAIBA - 938
+GO;Hospital das Clínicas;Goiânia - GO;PRIMEIRA AVENIDA - S/N
+GO;HOSPITAL DE DOENCAS RENAIS DE ANAPOLIS;Anápolis - GO;Rua Amazonas - 5
+GO;HOSPITAL E MATERNIDADE SAO NICOLAU;Catalão - GO;NILO MARGON - 63
+GO;HOSPITAL ESTADUAL DR ALBERTO RASSI HGG;Goiânia - GO;AVENIDA ANHANGUERA - 6479
+GO;HOSPITAL EVANGELICO GOIANO SA;Anápolis - GO;TRAVESSA JOAO AIRES - 137
+GO;HOSPITAL UROLOGICO PUIGEVERTE;Goiânia - GO;ALAMEDA DAS ROSAS - 2155
+GO;INSTITUTO DE NEFROLOGIA DE CERES LTDA;Ceres - GO;MEINHA MENDES - 88
+GO;MILLI CLINICA NEFROLOGICA;Aparecida de Goiânia - GO;RUA PIRATININGA ESQ C RUA GRAMADO - S/N
+GO;MONTES BELOS TERAPIAS AVANCADAS;São Luís de Montes Belos - GO;APORE 1177
+GO;Nefrocenter;Iporá - GO;AV QUINTINO VARGAS - 100
+GO;Nefroclínica;Goiânia - GO;RUA C 149 1145
+GO;Nefroclínica de Itumbiara;Itumbiara - GO;RUA JORGE SIMOES DE LIMA - 382
+GO;NEFRON CLINICA DO RIM E HEMODIALISE LTDA;Goiânia - GO;RUA C 32 161
+GO;POLICLINICA ESTADUAL DA REGIAO DO ENTORNO FORMOSA;Formosa - GO;AV OESTE - S/N
+GO;POLICLINICA ESTADUAL DA REGIAO NORDESTE POSSE;Posse - GO;AVENIDA JUSCELINO KUBITSCHECK DE OLIVEIRA - S/N
+GO;POLICLINICA ESTADUAL DA REGIAO SAO PATRICIO GOIANESIA;Goianésia - GO;AV ULISSES GUIMARAES - S/N
+GO;POLICLINICA ESTADUAL DA REGIAO SUDOESTE QUIRINOPOLIS;Quirinópolis - GO;RUA 01 - S/N
+GO;Renalclínica;Goiânia - GO;RUA R1 99
+GO;SANTA CASA DE MISERICORDIA DE GOIANIA;Goiânia - GO;RUA CAMPINAS - 1135
+GO;SEANEF FORMOSA;Formosa - GO;SENADOR COIMBRA BUENO - 915
+GO;TRS TERAPIA RENAL SUBSTITUTIVA;Goiânia - GO;RUA 1A 305
+GO;4HEALTH SERVICOS MEDICOS LTDA EPP;Caldas Novas - GO;RUA 14 ESQUINA COM RUA 05 - 1
