@@ -1,17 +1,26 @@
-from flask import Flask
-from flask import render_template, request, redirect, url_for, session, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import mysql.connector
 import datetime
 import csv
 import pandas as pd
+import os
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+
+# Configurações para o upload de imagens
+UPLOAD_FOLDER = os.path.join(app.static_folder, 'uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 #conecta ao banco de dados
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "root", #senha
+    'password': "fatec", #senha
     'database': "cianp", #qual banco de dados será utilizado
 } 
 
@@ -53,7 +62,7 @@ def cadastro():
             return "CPF inválido"
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor()
-        cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf))
+        cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf,))
         if cursor.fetchone():
             cursor.close()
             conn.close()
@@ -180,24 +189,34 @@ def perfil():
 def logout():
     session.pop('user_email', None)
     return redirect('/login')
-    
-# Rota para criar uma nova postagem
+
 @app.route('/create_post', methods=['POST'])
 def create_post():
     if 'user_email' in session:
         if request.method == 'POST':
             autor_email = session['user_email']
             user_name = session['user_name']
-            texto = request.form['post_text']  # Captura o conteúdo da postagem
-            # Verificação do tamanho da postagem (até 1500 caracteres)
+            texto = request.form['post_text']
             if len(texto) > 1500:
-                return "A postagem excede o tamanho máximo de 1500 caracteres."
+                return 'Tamanho inválido.'
+            # Processar o upload de imagens
+            image_urls = []
+            for i in range(1, 4):
+                image = request.files.get(f"imagem{i}")
+                if image and allowed_file(image.filename):
+                    filename = secure_filename(image.filename)
+                    file_path = os.path.normpath(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    image.save(file_path)
+                    image_url = f"/static/uploads/{filename}"
+                    image_urls.append(image_url)
+
+            # Resto do código para inserir no banco de dados
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
-                               (autor_email, user_name, texto, timestamp_brasil,))
+                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto, imagem1, imagem2, imagem3, timestamp_brasil) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                               (autor_email, user_name, texto, image_urls[0] if len(image_urls) > 0 else None, image_urls[1] if len(image_urls) > 1 else None, image_urls[2] if len(image_urls) > 2 else None, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:
@@ -206,6 +225,7 @@ def create_post():
             finally:
                 cursor.close()
                 conn.close()
+        # Resto do código para tratamento de erros e finalização
     else:
         return "Você precisa estar conectado para fazer uma postagem."
 

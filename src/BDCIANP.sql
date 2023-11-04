@@ -14,11 +14,12 @@ senha CHAR(16) NOT NULL
 CREATE TABLE IF NOT EXISTS postagens(
 id INT AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
-user_name VARCHAR(30),
+user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(1500) NOT NULL,
 imagem1 VARCHAR(255) DEFAULT NULL,
 imagem2 VARCHAR(255) DEFAULT NULL,
 imagem3 VARCHAR(255) DEFAULT NULL,
+timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
@@ -26,7 +27,9 @@ CREATE TABLE IF NOT EXISTS comentarios(
 id INT AUTO_INCREMENT PRIMARY KEY,
 post_id INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
+user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(300) NOT NULL,
+timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (post_id) REFERENCES postagens(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
@@ -36,15 +39,17 @@ id int AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(300) NOT NULL,
+timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
-CREATE TABLE IF NOT EXISTS respostas_perguntas(
+CREATE TABLE IF NOT EXISTS respostas(
 id INT AUTO_INCREMENT PRIMARY KEY,
-id_perguntas INT NOT NULL,
+perg_id INT NOT NULL,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(300) NOT NULL,
-FOREIGN KEY (id_perguntas) REFERENCES perguntas(id),
+timestamp_brasil VARCHAR(50) NOT NULL,
+FOREIGN KEY (perg_id) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );

@@ -16,13 +16,12 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
                 <img id="user-image" src="#" alt="" />
                 <input type="file" id="upload" accept="image/*">
             </label>
-            <!-- <p>Nome de usuário: {{ user[0] }}</p>
+            <p>Nome de usuário: {{ user[0] }}</p>
             <p>Email: {{ user[1] }}</p>
             <p>CPF: {{ user[2] }}</p>
             <p>Profissão: {{ user[3] }}</p>
-            {% set dataparts = user[4].split('-') %}
-            <p>Data de nascimento: {{ dataparts[2] }}/{{ dataparts[1] }}/{{ dataparts[0] }}</p>
-            <p>Parentesco: {{ user[5] }}</p> -->
+            <p>Data de nascimento: {{ user[4] }}</p>
+            <p>Parentesco: {{ user[5] }}</p>
             <button id="logout">SAIR</button>
         </form>
     </section>

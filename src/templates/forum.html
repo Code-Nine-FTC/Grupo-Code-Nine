@@ -3,6 +3,7 @@
 {% block title %}
 Fórum
 {% endblock %}
+
 {% block css %}
 rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 {% endblock %}
@@ -14,25 +15,37 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
             <h1>Criar postagem</h1>
             <form action="/create_post" method="POST" enctype="multipart/form-data">
                 <textarea name="post_text" rows="5" cols="50" placeholder="Insira seu post (até 1500 caracteres)" required></textarea> <br>
-                <input type="file" name="post_image" accept="image/*" multipl><br>
+                <input type="file" name="imagem1" accept="image/*"><br>
+                <input type="file" name="imagem2" accept="image/*"><br>
+                <input type="file" name="imagem3" accept="image/*"><br>
                 <button>Enviar</button>
             </form>
         </div>
-    <h1>Fórum</h1>
-    <!-- Lista de postagens -->
-    <ul>
-        {% for post in postagens %}
-            <li>
-                <section id="postagem">
-                    <strong>{{ post.user_name }}</strong>
-                    <p class="limite">{{ post.texto }}</p>
-                    <br>
-                    <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
-                    <br>
-                    <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>
-                </section>
-            </li>
-        {% endfor %}
-    </ul>
+        <h1>Fórum</h1>
+        <!-- Lista de postagens -->
+        <ul>
+            {% for post in postagens %}
+                <li>
+                    <section id="postagem">
+                        <strong>{{ post.user_name }}</strong>
+                        <p class="limite">{{ post.texto }}</p>
+                        <br>
+                        <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
+                        <br>
+                        {% if post.imagem1 %}
+                            <img src="{{ post.imagem1 }}" alt="Imagem 1"><br>
+                        {% endif %}
+                        {% if post.imagem2 %}
+                            <img src="{{ post.imagem2 }}" alt="Imagem 2"><br>
+                        {% endif %}
+                        {% if post.imagem3 %}
+                            <img src="{{ post.imagem3 }}" alt="Imagem 3"><br>
+                        {% endif %}
+                        <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>
+                    </section>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
 {% endblock %}
