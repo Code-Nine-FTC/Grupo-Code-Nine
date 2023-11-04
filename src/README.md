@@ -28,25 +28,30 @@ source venv\bin\activate
 pip install -r req.txt
 ```
 
-<h5> 7. Antes de executar, verifique se a senha do arquivo app.py (localizado dentro da pasta src) coincide com sua senha do MySQL (definimos por padrão "12345", você pode alterá-la de acordo com a senha definida na instalação do MySQL). </h5>
-    
-    #Defina a senha abaixo de acordo com seu MySQL:
-    app.config["MYSQL_PASSWORD"] = "12345"
-    
-<h6> 7.1. Exemplo: Digamos que sua senha do MySQL seja " abcd ", você substiuirá a senha por: </h6>
-    
-    #Defina a senha abaixo de acordo com seu MySQL:
-    app.config["MYSQL_PASSWORD"] = "abcd"
+## 7. Antes de executar, verifique se a senha do arquivo app.py (localizado dentro da pasta src) coincide com sua senha do MySQL (definimos por padrão "fatec", você pode alterá-la de acordo com a senha definida na instalação do MySQL). 
+```
+#Defina os seguintes valores de acordo com seu usuário do seu MYSQL
+db = {
+    'host': "localhost", #host = ip, no caso localhost
+    'user': "root", #usuario para logar
+    'password': "fatec", #senha 
+    'database': "cianp", #qual banco de dados será utilizado
+} 
+```
 
-<h5> 8. Execute a aplicação com o comando: </h5>
-    
-    flask run
+## 8. Execute a aplicação com o comando: 
+```   
+flask run
+```
 
-<h5> 9. Agora, abra o seguinte link no navegador de sua preferência: http://127.0.0.1:5000 </h5>
+## 9. Agora, abra o seguinte link no navegador de sua preferência: http://127.0.0.1:5000 
 
-<h5> 10. Após utilizar o site, utilize esse comando no terminal para fechar o ambiente virtual:
+<br>
 
-    deactivate
- 
+## 10. Após utilizar o site, utilize esse comando no terminal para fechar o ambiente virtual:
+```
+deactivate
+``` 
+
 <br>
 
