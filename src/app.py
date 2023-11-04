@@ -170,6 +170,7 @@ def perfil():
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('user_email', None)
+    session.clear()
     return redirect('/login')
 
 @app.route('/create_post', methods=['POST'])
