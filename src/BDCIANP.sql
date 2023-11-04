@@ -15,9 +15,11 @@ CREATE TABLE IF NOT EXISTS postagens(
 id INT AUTO_INCREMENT PRIMARY KEY,
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(30),
-content VARCHAR(1500) NOT NULL,
-imagens INT DEFAULT 0,
- FOREIGN KEY (autor_email) REFERENCES usuario(email)
+texto VARCHAR(1500) NOT NULL,
+imagem1 VARCHAR(255) DEFAULT NULL,
+imagem2 VARCHAR(255) DEFAULT NULL,
+imagem3 VARCHAR(255) DEFAULT NULL,
+FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 
 CREATE TABLE IF NOT EXISTS comentarios(
@@ -46,5 +48,3 @@ texto VARCHAR(300) NOT NULL,
 FOREIGN KEY (id_perguntas) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
-
-select * from usuario
