@@ -9,6 +9,7 @@
 - [Metodologias Utilizadas](#metodologias)
 - [Visão do Produto](#visao)
 - [Tecnologias Utilizadas](#tecnologias)
+- [Saiba Como Executar o site](#executar)
 - [Sprints](#sprints)
 - [Backlog do Produto](#backlog)
 - [Integrantes](#integrantes)
@@ -62,6 +63,12 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 |   03   | 16/10/2023 | 05/11/2023 | <a href="./Sprints/Sprint 3/README.md"> 3° Relatório </a> |    ❌   |
 |   04   | 06/11/2023 | 26/11/2023 | Em breve |    ❌   |
 <br>
+
+<h2>🖥 Como Executar o Projeto </h2><a name="executar">
+
+| Saiba Como Executar o Projeto em Seu Computador |
+| :------------------------------------------: |
+| <a href="./src/README.md">Clique Aqui </a>   |
 
 <h2> 🗒Product Backlog </h2><a name="backlog"></a>
 
