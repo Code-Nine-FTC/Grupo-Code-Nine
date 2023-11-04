@@ -20,7 +20,7 @@ def allowed_file(filename):
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "fatec", #senha
+    'password': "Caneta@0123", #senha
     'database': "cianp", #qual banco de dados será utilizado
 } 
 

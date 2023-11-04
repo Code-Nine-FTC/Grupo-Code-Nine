@@ -68,7 +68,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 
 | Saiba Como Executar o Projeto em Seu Computador |
 | :------------------------------------------: |
-| <a href="./src/README.md">Clique Aqui </a>   |
+| <a href="./src/">Clique Aqui </a>   |
 
 <h2> 🗒Product Backlog </h2><a name="backlog"></a>
 
