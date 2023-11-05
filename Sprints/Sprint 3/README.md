@@ -7,6 +7,7 @@
 - [Valor da Sprint](#valor)
 - [Backlog da terceira Sprint](#backlog)
 - [MVP (Minimum Viable Product)](#mvp)
+- [Vídeo Demonstrativo](#video)
 
 
 <br>
@@ -33,6 +34,18 @@ Criação dos mecanismos de funcionalidade das páginas
 
  <br>
  <img src="./Sprint 3 img.png" width="300px">
+
+ <h2>🎬Vídeo demonstrativo</h2>
+ 
+ <a name="video"></a>
+ 
+>Vídeo de fácil entendimento que demonstra como o site se comporta e de como será seu navegamento e como se procura suas informações.
+
+ <br>
+
+
+
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/79583088/9985114f-0aa7-404c-bdfc-109cb80ec623
 
 
 
