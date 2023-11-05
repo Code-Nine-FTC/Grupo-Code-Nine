@@ -19,11 +19,14 @@ input[type="file"] {
 .images {
     text-align: center;
 }
+img{
+    max-width: 500px;
+}
 
 .images img {
     display: inline-block;
     margin: 0 auto;
-    max-width: 100px;  /* Define a largura máxima para as imagens */
+    max-width: 400px;  /* Define a largura máxima para as imagens */
     height: auto;  /* Mantém a proporção original da imagem */
 }
 
