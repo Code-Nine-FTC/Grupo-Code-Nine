@@ -182,6 +182,8 @@ def faq():
 
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():
+    if 'user_email' == 'codenine@gmail.com':
+        return redirect('/admin')
     if 'user_email' in session:
         try:
             conn = mysql.connector.connect(**db)
@@ -198,7 +200,22 @@ def perfil():
             conn.close()
     else:
         return redirect(url_for('login'))
-    
+
+@app.route('/admin', methods = ['POST', 'GET'])
+def admin():
+    try:
+        conn = mysql.connector.connect(**db)
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM postagens")
+        postagens = cursor.fetchall()
+        return render_template('admin.html', postagens=postagens)
+    except mysql.connector.Error as err:
+        print(f"Erro no banco de dados: {err}")
+    finally:
+        cursor.close()
+        conn.close()
+    return render_template('admin.html')
+
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('user_email', None)

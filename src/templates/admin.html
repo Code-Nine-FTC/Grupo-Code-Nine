@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Administrador
+{% endblock %}
+
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
+{% endblock %}
+
+{% block content %}
+
+    <ul>
+        {% for post in postagens %}
+            <li>
+                <section id="postagem">
+                    <strong>{{ post.user_name }}</strong>
+                    <p class="limite">{{ post.texto }}</p>
+                    <br>
+                    <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
+                    <br>
+                    {% if post.imagem1 %}
+                        <img src="{{ post.imagem1 }}" alt="Imagem 1"><br>
+                    {% endif %}
+                    {% if post.imagem2 %}
+                        <img src="{{ post.imagem2 }}" alt="Imagem 2"><br>
+                    {% endif %}
+                    {% if post.imagem3 %}
+                        <img src="{{ post.imagem3 }}" alt="Imagem 3"><br>
+                    {% endif %}
+                    <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>
+                </section>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

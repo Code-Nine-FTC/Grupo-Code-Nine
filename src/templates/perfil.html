@@ -20,7 +20,8 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
             <p>Email: {{ user[1] }}</p>
             <p>CPF: {{ user[2] }}</p>
             <p>Profissão: {{ user[3] }}</p>
-            <p>Data de nascimento: {{ user[4] }}</p>
+            {% set dataparts = user[4].split('-') %}
+            <p>Data de nascimento: {{ dataparts[2] }}/{{ dataparts[1] }}/{{ dataparts[0] }}</p>
             <p>Parentesco: {{ user[5] }}</p>
             <p>Conheceu: {{ user[7] }}</p>
             <button id="logout">SAIR</button>
