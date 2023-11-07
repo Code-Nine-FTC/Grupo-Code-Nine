@@ -43,9 +43,10 @@ def login():
         if user: #caso a variável user seja verdadeira
             session['user_email']=email
             session['user_name']=user['username']
-            return redirect('/perfil')
+            return redirect(url_for('perfil'))
         else:
-            return 'Inválido'
+            flash('Dados inválidos.')
+            return redirect(url_for('login'))
     return render_template('login.html')
 
 @app.route('/cadastro', methods=['GET', 'POST']) #inicia a rota de get e post de dados no form html
@@ -58,22 +59,26 @@ def cadastro():
         prof = request.form['prof'] #adiciona o valor prof do form para a variável prof
         data_nasc = request.form['data_nasc'] #adiciona o valor data do form para a variavel data
         parentesco = request.form['parentesco'] #adiciona o valor parentesco do form para a variavel parentesco
+        
         if not cpf.isdigit or len(cpf) != 11:
-            return "CPF inválido"
+            flash('CPF inválido. Deve ter exatamente 11 dígitos.')
+            return(redirect(url_for('cadastro')))
+        
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor()
         cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf,))
         if cursor.fetchone():
             cursor.close()
             conn.close()
-            return "CPF ou email já em uso"
+            flash('Endereço de e-mail e/ou CPF já estão em uso.')
+            return(redirect(url_for('cadastro')))
         try:
             cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha,))
             conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
-            print(f'Erro no banco: {err}')
-            return 'Erro no cadastro'
+            print(f'Erro no banco de dados: {err}')
+            return redirect('/')
         finally:
             cursor.close()
             conn.close()
@@ -161,19 +166,20 @@ def perfil():
             return render_template('perfil.html', user=user)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
+            return redirect('/')
         finally:
             cursor.close()
             conn.close()
     else:
-        return redirect('/login')
+        return redirect(url_for('login'))
     
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('user_email', None)
     session.clear()
-    return redirect('/login')
+    return redirect(url_for('login'))
 
-@app.route('/create_post', methods=['POST'])
+@app.route('/create_post', methods=['POST', 'GET'])
 def create_post():
     if 'user_email' in session:
         if request.method == 'POST':
@@ -181,7 +187,8 @@ def create_post():
             user_name = session['user_name']
             texto = request.form['post_text']
             if len(texto) > 1500:
-                return 'Tamanho inválido.'
+                flash('Tamanho inválido de texto. O máximo é de 1500 dígitos.')
+                return redirect(url_for('create_post'))
             # Processar o upload de imagens
             image_urls = []
             for i in range(1, 4):
@@ -204,13 +211,14 @@ def create_post():
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:
                 print(f"Erro no banco de dados: {err}")
-                return 'Erro, tente novamente'
+                return redirect('/')
             finally:
                 cursor.close()
                 conn.close()
         # Resto do código para tratamento de erros e finalização
     else:
-        return "Você precisa estar conectado para fazer uma postagem."
+        flash('Você deve estar logado(a) para fazer uma postagem.')
+        return redirect(url_for('forum'))
 
 # Rota para a página de comentários de uma postagem
 @app.route('/post/<int:post_id>')
@@ -226,15 +234,16 @@ def post_comments(post_id):
             return render_template('pcoments.html', post=post, comentarios=comentarios)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
-            return 'Erro, tente novamente'
+            return redirect('/')
         finally:
             cursor.close()
             conn.close()
     else:
-        return "Você precisa estar conectado para acessar os comentários."
+        flash("Você precisa estar conectado para acessar os comentários.")
+        return redirect(url_for('forum'))
 
 # Rota para adicionar um comentário a uma postagem
-@app.route('/add_comment/<int:post_id>', methods=['POST'])
+@app.route('/add_comment/<int:post_id>', methods=['POST', 'GET'])
 def add_comment(post_id):
     if 'user_email' in session:
         if request.method == 'POST':
@@ -243,7 +252,8 @@ def add_comment(post_id):
             texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
-                return "O comentário excede o tamanho máximo de 300 caracteres."
+                flash("O comentário excede o tamanho máximo de 300 caracteres.")
+                return redirect(url_for('add_comment'))
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
@@ -254,14 +264,12 @@ def add_comment(post_id):
                 return redirect(url_for('post_comments', post_id=post_id))
             except mysql.connector.Error as err:
                 print(f"Erro no banco de dados: {err}")
-                return 'Erro, tente novamente'
+                return redirect('/')
             finally:
                 cursor.close()
                 conn.close()
-    else:
-        return "Você precisa estar conectado para fazer um comentário."
 
-@app.route('/criar_pergunta', methods=['POST'])
+@app.route('/criar_pergunta', methods=['POST', 'GET'])
 def criar_pergunta():
     if 'user_email' in session:
         if request.method == 'POST':
@@ -270,7 +278,8 @@ def criar_pergunta():
             texto = request.form['perg_text']  # Captura o conteúdo da pergunta
             # Verificação do tamanho da pergunta (até 300 caracteres)
             if len(texto) > 500:
-                return "A pergunta excede o tamanho máximo de 500 caracteres."
+                flash("A pergunta excede o tamanho máximo de 500 caracteres.")
+                return redirect('criar_pergunta')
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
@@ -281,12 +290,13 @@ def criar_pergunta():
                 return redirect(url_for('faq'))
             except mysql.connector.Error as err:
                 print(f"Erro no banco de dados: {err}")
-                return 'Erro, tente novamente'
+                return redirect('/')
             finally:
                 cursor.close()
                 conn.close()
     else:
-        return "Você precisa estar conectado para fazer uma pergunta."
+        flash("Você precisa estar conectado para fazer uma pergunta.")
+        return redirect('/faq')
 
 @app.route('/perg/<int:perg_id>')
 def post_comments2(perg_id):
@@ -301,12 +311,13 @@ def post_comments2(perg_id):
             return render_template('pcoments2.html', perg=perg, comentarios2=comentarios2)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
-            return 'Erro, tente novamente'
+            return redirect('/')
         finally:
             cursor.close()
             conn.close()
     else:
-        return "Você precisa estar conectado para acessar as respostas."
+        flash("Você precisa estar conectado para acessar as respostas.")
+        return redirect(url_for('faq'))
     
 # Rota para adicionar um comentário a uma pergunta
 @app.route('/add_comment2/<int:perg_id>', methods=['POST'])
@@ -318,7 +329,8 @@ def add_comment2(perg_id):
             texto = request.form['content']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
-                return "O comentário excede o tamanho máximo de 300 caracteres."
+                flash("O comentário excede o tamanho máximo de 300 caracteres.")
+                return redirect('/perg/<int:perg_id>')
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
@@ -329,12 +341,10 @@ def add_comment2(perg_id):
                 return redirect(url_for('post_comments2', perg_id=perg_id))
             except mysql.connector.Error as err:
                 print(f"Erro no banco de dados: {err}")
-                return 'Erro, tente novamente'
+                return redirect('/')
             finally:
                 cursor.close()
                 conn.close()
-    else:
-        return "Você precisa estar conectado para fazer um comentário."
 
 if __name__ == "__main__":
     app.secret_key = '8f2bdd84d7c4443215a42c84dabd52b21f9bdd596790cd61'

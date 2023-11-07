@@ -19,6 +19,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                 <input type="file" name="imagem2" accept="image/*"><br>
                 <input type="file" name="imagem3" accept="image/*"><br>
                 <button>Enviar</button>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="erro">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
             </form>
         </div>
         <h1>Fórum</h1>

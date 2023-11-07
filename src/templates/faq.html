@@ -17,6 +17,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
             <form action="/criar_pergunta" method="POST">
                 <textarea name="perg_text" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
                 <button>Enviar</button>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="erro">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
             </form>
         </div>
     <h1>Perguntas</h1>

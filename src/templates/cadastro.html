@@ -11,6 +11,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
     <section id="formulario">
         <h2>Cadastro</h2>
         <form action="#" method="post">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="erro">{{ message }}</p>
+                    {% endfor %}
+            {% endif %}
+            {% endwith %}
             <div class="form-group">
                 <input type="text" name="username" id="username" placeholder="Insira o seu nome de usuário" required>
             </div>

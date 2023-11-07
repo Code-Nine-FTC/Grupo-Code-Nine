@@ -12,6 +12,14 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
 {% block content %}
 <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
 <main class="localizacoes">
+    <p id="erro"></p>
+    {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="erro">{{ message }}</p>
+                    {% endfor %}
+        {% endif %}
+    {% endwith %}
     <section id="seletores">
         <label for="regiao"> Escolha sua região:</label>
         <select name="regiao" id="regiao" onchange="myFunction()">
@@ -37,13 +45,18 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
     <script>
         $(document).ready(function() {
             $("#submitBtn").click(function() {
+                var regiao = $("#regiao").val();
                 var formData = new FormData();
-                formData.append("regiao", $("#regiao").val());
+                formData.append("regiao", regiao);
                 formData.append("estado", $("#estado").val());
-
+                
+                if (regiao === ""){
+                    alert("Selecione uma região");
+                }
+                else {
                 $.ajax({
                     url: '/loccsv',
-                    type: 'POST',
+                    type: 'POST',   
                     data: formData,
                     contentType: false,
                     processData: false,
@@ -52,11 +65,13 @@ rel="stylesheet" href="{{ url_for('static', filename='css/localizacao.css') }}"
                         $("#tabelaloc").html(data.table);
                     },
                     error: function(xhr, status, error) {
+                        $("erro").html(data.erro)
                         console.log("Error:", error);
                     }
                 });
-            });
+            };
         });
+    });
     </script>
 
 </main>

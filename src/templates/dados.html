@@ -33,7 +33,7 @@ Crianças renais transplantadas, e em fila de espera.
             <section id="seletor">
                 <label for="dadosofc"> Escolha a informação: </label>
                 <select name="dadosofc" id="dadosofc">
-                    <option value="" disabled selected> Escolha um valor!</option>
+                    <option value=""> Escolha um valor!</option>
                     <option value="flespera2019">Fila de Espera para Transplante-2019</option>
                     <option value="flespera2020">Fila de Espera para Transplante-2020</option>
                     <option value="flespera2021">Fila de Espera para Transplante-2021</option>
@@ -80,23 +80,29 @@ Crianças renais transplantadas, e em fila de espera.
         <script>
             $(document).ready(function() {
                 $("#submitBtn").click(function() {
+                    var dadosofc = $("#dadosofc").val();
                     var formData = new FormData();
                     formData.append("dadosofc", $("#dadosofc").val());
-    
-                    $.ajax({
-                        url: '/dadoscsv',
-                        type: 'POST',
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        success: function(data) {
-                            console.log("Received data:", data);
-                            $("#tabelaloc").html(data.table);
-                        },
-                        error: function(xhr, status, error) {
-                            console.log("Error:", error);
-                        }
-                    });
+                    
+                    if (dadosofc === ''){
+                        alert('Escolha um tipo');
+                    }
+                    else {
+                        $.ajax({
+                            url: '/dadoscsv',
+                            type: 'POST',
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            success: function(data) {
+                                console.log("Received data:", data);
+                                $("#tabelaloc").html(data.table);
+                            },
+                            error: function(xhr, status, error) {
+                                console.log("Error:", error);
+                            }
+                        });
+                    };
                 });
             });
         </script>

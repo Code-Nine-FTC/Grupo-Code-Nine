@@ -17,6 +17,14 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
             <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail" required>
             <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
         </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="erro">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
         
         <button type="submit">Enviar</button>
     </form>
