@@ -195,3 +195,10 @@ th, td {
     margin-left:30%;
     text-align: center;
 } */
+
+.fontes {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 87.6vh;
+    max-height: fit-content;
+}

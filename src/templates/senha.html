@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Esqueci minha senha
+{% endblock %}
+
+{% block css %}
+rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
+{% endblock %}
+
+{% block content %}
+    <section id="esquecisenha">
+        <form class="esquecisenha" action="/senha" method="post">
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="cpf" id="cpf" placeholder="Coloque o seu CPF" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
+            </div>
+            <button type="submit">Enviar</button>
+    </section>
+{% endblock %}

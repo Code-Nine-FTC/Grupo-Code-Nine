@@ -41,7 +41,15 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
             <div class="form-group">
                 <input type="text" name="parentesco" id="parentesco" placeholder="Coloque o seu grau de parentesco" required>
             </div>
-
+            <div class="form-group">
+                <select name="conheceu" id="conheceu">
+                    <option value="" disabled selected> Como você conheceu o site? </option>
+                    <option value="internet"> Internet </option>
+                    <option value="redessociais"> Redes Sociais </option>
+                    <option value="amigo"> Por amigos </option>
+                    <option value="profissional"> Meios Profissionais </option>
+                </select>
+            </div>
             <div class="form-group">
                 <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
             </div>

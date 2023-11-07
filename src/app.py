@@ -59,11 +59,14 @@ def cadastro():
         prof = request.form['prof'] #adiciona o valor prof do form para a variável prof
         data_nasc = request.form['data_nasc'] #adiciona o valor data do form para a variavel data
         parentesco = request.form['parentesco'] #adiciona o valor parentesco do form para a variavel parentesco
-        
+        conheceu = request.form['conheceu'] #adicionar o valor de onde conhece o site do form para a variavel conheceu
+
         if not cpf.isdigit or len(cpf) != 11:
             flash('CPF inválido. Deve ter exatamente 11 dígitos.')
-            return(redirect(url_for('cadastro')))
-        
+            return redirect(url_for('cadastro'))
+        if len(senha) > 15:
+            flash('Senha inválida. Ela deve ter 15 dígitos no máximo.')
+            return redirect(url_for('cadastro'))
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor()
         cursor.execute("SELECT * from usuario WHERE email = %s or cpf = %s", (email, cpf,))
@@ -71,9 +74,9 @@ def cadastro():
             cursor.close()
             conn.close()
             flash('Endereço de e-mail e/ou CPF já estão em uso.')
-            return(redirect(url_for('cadastro')))
+            return redirect(url_for('cadastro')) 
         try:
-            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha) VALUES (%s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha,))
+            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha, conheceu) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha, conheceu))
             conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
@@ -83,6 +86,27 @@ def cadastro():
             cursor.close()
             conn.close()
     return render_template('cadastro.html')
+
+@app.route('/senha', methods=['GET', 'POST'])
+def senha():
+    if request.method=='POST':
+        email = request.form['email']
+        cpf = request.form['cpf']
+        senha = request.form['senha']
+        conn = mysql.connector.connect(**db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * from usuario WHERE email = %s and cpf = %s", (email, cpf,))
+        user = cursor.fetchone()
+        if user:
+            cursor.execute("UPDATE usuario SET senha = %s WHERE email = %s and cpf = %s", (senha, email, cpf,))
+            conn.commit()
+            flash('Senha alterada')
+        else:
+            flash('Usuário não cadastrado')
+        cursor.close()
+        conn.close()
+        return redirect('/login')
+    return render_template('senha.html')
 
 @app.route('/info')
 def info():
@@ -104,7 +128,9 @@ def dadoscsv():
     else:
         return jsonify({'error': 'No file part'})
     
-
+@app.route('/fontes')
+def fontes():
+    return render_template('fontes.html')
 
 @app.route('/localizacao')
 def localizacao():
@@ -279,7 +305,7 @@ def criar_pergunta():
             # Verificação do tamanho da pergunta (até 300 caracteres)
             if len(texto) > 500:
                 flash("A pergunta excede o tamanho máximo de 500 caracteres.")
-                return redirect('criar_pergunta')
+                return redirect(url_for('criar_pergunta'))
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
@@ -296,7 +322,7 @@ def criar_pergunta():
                 conn.close()
     else:
         flash("Você precisa estar conectado para fazer uma pergunta.")
-        return redirect('/faq')
+        return redirect(url_for('faq'))
 
 @app.route('/perg/<int:perg_id>')
 def post_comments2(perg_id):

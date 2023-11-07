@@ -8,7 +8,8 @@ cpf CHAR(11) NOT NULL UNIQUE,
 prof VARCHAR(50),
 data_nasc VARCHAR(30) NOT NULL,
 parentesco VARCHAR(50) NOT NULL,
-senha CHAR(16) NOT NULL
+senha CHAR(15) NOT NULL,
+conheceu VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS postagens(
