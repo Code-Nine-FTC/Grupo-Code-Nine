@@ -39,7 +39,9 @@ def login():
         cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,))
         user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
-
+        if email == 'ninecode.codek9@gmail.com' and senha == 'codenine123':
+            session['admin'] = True
+            return redirect('/admin')
         if user: #caso a variável user seja verdadeira
             session['user_email']=email
             session['user_name']=user['username']
@@ -201,20 +203,51 @@ def perfil():
     else:
         return redirect(url_for('login'))
 
+def is_admin():
+    return 'admin' in session and session['admin']
+
 @app.route('/admin', methods = ['POST', 'GET'])
 def admin():
-    try:
-        conn = mysql.connector.connect(**db)
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM postagens")
-        postagens = cursor.fetchall()
-        return render_template('admin.html', postagens=postagens)
-    except mysql.connector.Error as err:
-        print(f"Erro no banco de dados: {err}")
-    finally:
-        cursor.close()
-        conn.close()
-    return render_template('admin.html')
+    if not is_admin():
+        return redirect('/login')
+    
+    if request.method == 'POST':
+        action = request.form.get('action')
+        if action == 'publicar':
+            post_id = request.form.get('post_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('UPDATE postagens SET aprovado = 1 WHERE id = %s', (post_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+        elif action == 'deletar':
+            post_id = request.form.get('post_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('DELETE FROM postagens WHERE id = %s', (post_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+        elif action == 'deletar_usuario':
+            email = request.form.get('email')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('DELETE FROM usuario WHERE email = %s', (email,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            
+    conn = mysql.connector.connect(**db)
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute('SELECT * FROM postagens ORDER BY id DESC')
+    postagens = cursor.fetchall()
+    cursor.execute('SELECT email, username FROM usuario ORDER BY email')
+    usuarios = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render_template('admin.html', postagens = postagens, usuarios = usuarios)
 
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
@@ -229,6 +262,7 @@ def create_post():
             autor_email = session['user_email']
             user_name = session['user_name']
             texto = request.form['post_text']
+            title = request.form['post_title']
             if len(texto) > 1500:
                 flash('Tamanho inválido de texto. O máximo é de 1500 dígitos.')
                 return redirect(url_for('create_post'))
@@ -248,8 +282,8 @@ def create_post():
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto, imagem1, imagem2, imagem3, timestamp_brasil) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                               (autor_email, user_name, texto, image_urls[0] if len(image_urls) > 0 else None, image_urls[1] if len(image_urls) > 1 else None, image_urls[2] if len(image_urls) > 2 else None, timestamp_brasil,))
+                cursor.execute("INSERT INTO postagens (titulo, autor_email, user_name, texto, imagem1, imagem2, imagem3, timestamp_brasil) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                               (title, autor_email, user_name, texto, image_urls[0] if len(image_urls) > 0 else None, image_urls[1] if len(image_urls) > 1 else None, image_urls[2] if len(image_urls) > 2 else None, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:

@@ -12,8 +12,18 @@ senha CHAR(15) NOT NULL,
 conheceu VARCHAR(30) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS administrador(
+email VARCHAR(100) PRIMARY KEY NOT NULL,
+senha CHAR(15) NOT NULL
+);
+
+INSERT INTO administrador (email, senha) VALUES
+('ninecode.codek9@gmail.com', 'codenine123');
+
+
 CREATE TABLE IF NOT EXISTS postagens(
 id INT AUTO_INCREMENT PRIMARY KEY,
+titulo VARCHAR(30) NOT NULL
 autor_email VARCHAR(100) NOT NULL,
 user_name VARCHAR(100) NOT NULL,
 texto VARCHAR(1500) NOT NULL,
@@ -21,6 +31,7 @@ imagem1 VARCHAR(255) DEFAULT NULL,
 imagem2 VARCHAR(255) DEFAULT NULL,
 imagem3 VARCHAR(255) DEFAULT NULL,
 timestamp_brasil VARCHAR(50) NOT NULL,
+aprovado BOOLEAN default 0 NOT NULL,
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
 

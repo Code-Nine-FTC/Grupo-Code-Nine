@@ -9,29 +9,58 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 {% endblock %}
 
 {% block content %}
+    <h1> Postagens Pendentes</h1>
+    <form method="POST" action="{{ url_for('admin') }}">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Texto</th>
+                <th>Imagem 1</th>
+                <th>Imagem 2</th>
+                <th>Imagem 3</th>
+                <th>Aprovado</th>
+                <th>Ações</th>
+            </tr>
+            {% for post in postagens %}
+            {% if not post.publicado %}
+                <tr>
+                    <td>{{post.id}}</td>
+                    <td>{{post.titulo}}</td>
+                    <td>{{post.user_name}}</td>
+                    <td>{{post.texto}}</td>
+                    <td>{{post.imagem1}}</td>
+                    <td>{{post.imagem2}}</td>
+                    <td>{{post.imagem3}}</td>
+                    <td>{{'Sim' if post.publicado else'Não'}}</td>
+                    <td>
+                        <button type="submit" name="action" value="publicar">Publicar</button>
+                        <button type="submit" name="action" value="deletar">Deletar</button>
+                    </td>
+                    <input type="hidden" name="post_id" value="{{post.id}}">
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
 
-    <ul>
-        {% for post in postagens %}
-            <li>
-                <section id="postagem">
-                    <strong>{{ post.user_name }}</strong>
-                    <p class="limite">{{ post.texto }}</p>
-                    <br>
-                    <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
-                    <br>
-                    {% if post.imagem1 %}
-                        <img src="{{ post.imagem1 }}" alt="Imagem 1"><br>
-                    {% endif %}
-                    {% if post.imagem2 %}
-                        <img src="{{ post.imagem2 }}" alt="Imagem 2"><br>
-                    {% endif %}
-                    {% if post.imagem3 %}
-                        <img src="{{ post.imagem3 }}" alt="Imagem 3"><br>
-                    {% endif %}
-                    <strong><a href="/post/{{ post.id }}">Ver Comentários</a></strong>
-                </section>
-            </li>
+    <h1>Usuários</h1>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Nome</th>
+            <th> Ações</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.username}}</td>
+            <td>
+                <button type="submit" name="action" value="deletar_usuario">Deletar</button>
+            </td>
+            <input type="hidden" name="email" value="{{usuario.email}}">
+        </tr>
         {% endfor %}
-    </ul>
-
+    </table>
+</form>
 {% endblock %}
