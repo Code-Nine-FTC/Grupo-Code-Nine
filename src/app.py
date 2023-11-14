@@ -184,7 +184,7 @@ def faq():
 
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():
-    if 'user_email' == 'codenine@gmail.com':
+    if is_admin():
         return redirect('/admin')
     if 'user_email' in session:
         try:
@@ -217,7 +217,7 @@ def admin():
             post_id = request.form.get('post_id')
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
-            cursor.execute('UPDATE postagens SET aprovado = 1 WHERE id = %s', (post_id,))
+            cursor.execute('UPDATE postagens SET aprovado = true WHERE id = %s', (post_id,))
             conn.commit()
             cursor.close()
             conn.close()

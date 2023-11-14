@@ -33,7 +33,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         <!-- Lista de postagens -->
         <ul>
             {% for post in postagens %}
-                {% if post.publicado %}
+                {% if post.aprovado %}
                     <li>
                         <section id="postagem">
                             <strong>{{post.titulo}} {{ post.user_name }}</strong>

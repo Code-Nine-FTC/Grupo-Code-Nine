@@ -9,6 +9,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 {% endblock %}
 
 {% block content %}
+<section id="admin">
     <h1> Postagens Pendentes</h1>
     <form method="POST" action="{{ url_for('admin') }}">
         <table>
@@ -24,7 +25,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                 <th>Ações</th>
             </tr>
             {% for post in postagens %}
-            {% if not post.publicado %}
+            {% if not post.aprovado %}
                 <tr>
                     <td>{{post.id}}</td>
                     <td>{{post.titulo}}</td>
@@ -33,7 +34,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                     <td>{{post.imagem1}}</td>
                     <td>{{post.imagem2}}</td>
                     <td>{{post.imagem3}}</td>
-                    <td>{{'Sim' if post.publicado else'Não'}}</td>
+                    <td>{{'Sim' if post.aprovado else'Não'}}</td>
                     <td>
                         <button type="submit" name="action" value="publicar">Publicar</button>
                         <button type="submit" name="action" value="deletar">Deletar</button>
@@ -62,5 +63,42 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
         </tr>
         {% endfor %}
     </table>
-</form>
+    <h1>Todas as postagens</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Texto</th>
+                <th>Imagem 1</th>
+                <th>Imagem 2</th>
+                <th>Imagem 3</th>
+                <th>Aprovado</th>
+                <th>Ações</th>
+            </tr>
+            {% for post in postagens %}
+                <tr>
+                    <td>{{post.id}}</td>
+                    <td>{{post.titulo}}</td>
+                    <td>{{post.user_name}}</td>
+                    <td>{{post.texto}}</td>
+                    <td>{{post.imagem1}}</td>
+                    <td>{{post.imagem2}}</td>
+                    <td>{{post.imagem3}}</td>
+                    <td>{{'Sim' if post.aprovado else'Não'}}</td>
+                    <td>
+                        {% if not post.aprovado %}
+                            <button type="submit" name="action" value="publicar">Publicar</button>
+                        {% endif %}
+                        <button type="submit" name="action" value="deletar">Deletar</button>
+                    </td>
+                    <input type="hidden" name="post_id" value="{{post.id}}">
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <form method="GET" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+</section>
 {% endblock %}

@@ -58,7 +58,7 @@ img{
     width: 100%;
 }
 
-#criapost button {
+button {
     display: block;
     margin: 1% auto;
     padding: 5px 10px;
@@ -73,7 +73,7 @@ img{
     cursor: pointer;
 }
 
-#criapost button:hover {
+button:hover {
     background-color: rgb(21, 255, 0);
 }
 
@@ -167,4 +167,28 @@ li {
 
 .coments li {
     padding: 1%;
+}
+
+#admin{
+    width: fit-content;
+    font-size: 1em;
+    margin: auto;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+table {
+    border: 2px solid #000;
+    /* border-collapse: collapse; */
+    background-color: hsl(0, 0%, 91%); 
+    width: 60vw;
+    margin-bottom: 5%;
+}
+
+table, th, td {
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
 }

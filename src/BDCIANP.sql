@@ -65,3 +65,4 @@ timestamp_brasil VARCHAR(50) NOT NULL,
 FOREIGN KEY (perg_id) REFERENCES perguntas(id),
 FOREIGN KEY (autor_email) REFERENCES usuario(email)
 );
+
