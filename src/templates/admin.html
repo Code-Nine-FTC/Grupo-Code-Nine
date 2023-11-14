@@ -10,8 +10,9 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
 
 {% block content %}
 <section id="admin">
-    <h1> Postagens Pendentes</h1>
     <form method="POST" action="{{ url_for('admin') }}">
+
+        <h1>Postagens Pendentes</h1>
         <table>
             <tr>
                 <th>ID</th>
@@ -25,45 +26,27 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                 <th>Ações</th>
             </tr>
             {% for post in postagens %}
-            {% if not post.aprovado %}
-                <tr>
-                    <td>{{post.id}}</td>
-                    <td>{{post.titulo}}</td>
-                    <td>{{post.user_name}}</td>
-                    <td>{{post.texto}}</td>
-                    <td>{{post.imagem1}}</td>
-                    <td>{{post.imagem2}}</td>
-                    <td>{{post.imagem3}}</td>
-                    <td>{{'Sim' if post.aprovado else'Não'}}</td>
-                    <td>
-                        <button type="submit" name="action" value="publicar">Publicar</button>
-                        <button type="submit" name="action" value="deletar">Deletar</button>
-                    </td>
-                    <input type="hidden" name="post_id" value="{{post.id}}">
-                </tr>
-            {% endif %}
+                {% if not post.aprovado %}
+                    <tr>
+                        <td>{{post.id}}</td>
+                        <td>{{post.titulo}}</td>
+                        <td>{{post.nome_usuario}}</td>
+                        <td>{{post.texto}}</td>
+                        <td>{{post.imagem1}}</td>
+                        <td>{{post.imagem2}}</td>
+                        <td>{{post.imagem3}}</td>
+                        <td>{{'Sim' if post.aprovado else'Não'}}</td>
+                        <td>
+                            <button type="submit" name="action" value="publicar_postagens">Publicar</button>
+                            <button type="submit" name="action" value="deletar_postagens">Deletar</button>
+                        </td>
+                        <input type="hidden" name="post_id" value="{{post.id}}">
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
 
-    <h1>Usuários</h1>
-    <table>
-        <tr>
-            <th>Email</th>
-            <th>Nome</th>
-            <th> Ações</th>
-        </tr>
-        {% for usuario in usuarios %}
-        <tr>
-            <td>{{usuario.email}}</td>
-            <td>{{usuario.username}}</td>
-            <td>
-                <button type="submit" name="action" value="deletar_usuario">Deletar</button>
-            </td>
-            <input type="hidden" name="email" value="{{usuario.email}}">
-        </tr>
-        {% endfor %}
-    </table>
-    <h1>Todas as postagens</h1>
+        <h1>Todas as postagens</h1>
         <table>
             <tr>
                 <th>ID</th>
@@ -77,25 +60,98 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                 <th>Ações</th>
             </tr>
             {% for post in postagens %}
-                <tr>
-                    <td>{{post.id}}</td>
-                    <td>{{post.titulo}}</td>
-                    <td>{{post.user_name}}</td>
-                    <td>{{post.texto}}</td>
-                    <td>{{post.imagem1}}</td>
-                    <td>{{post.imagem2}}</td>
-                    <td>{{post.imagem3}}</td>
-                    <td>{{'Sim' if post.aprovado else'Não'}}</td>
-                    <td>
-                        {% if not post.aprovado %}
-                            <button type="submit" name="action" value="publicar">Publicar</button>
-                        {% endif %}
-                        <button type="submit" name="action" value="deletar">Deletar</button>
-                    </td>
-                    <input type="hidden" name="post_id" value="{{post.id}}">
-                </tr>
+                {% if post.aprovado %}
+                    <tr>
+                        <td>{{post.id}}</td>
+                        <td>{{post.titulo}}</td>
+                        <td>{{post.nome_usuario}}</td>
+                        <td>{{post.texto}}</td>
+                        <td>{{post.imagem1}}</td>
+                        <td>{{post.imagem2}}</td>
+                        <td>{{post.imagem3}}</td>
+                        <td>{{'Sim' if post.aprovado else 'Não'}}</td>
+                        <td>
+                            <button type="submit" name="action" value="deletar_postagens">Deletar</button>
+                        </td>
+                        <input type="hidden" name="post_id" value="{{post.id}}">
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
+
+        <h1>Perguntas Pendentes</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Autor</th>
+                <th>Texto</th>
+                <th>Aprovado</th>
+                <th>Ações</th>
+            </tr>
+            {% for perg in perguntas %}
+                {% if not perg.aprovado %}
+                    <tr>
+                        <td>{{perg.id}}</td>
+                        <td>{{perg.nome_usuario}}</td>
+                        <td>{{perg.texto}}</td>
+                        <td>{{'Sim' if perg.aprovado else 'Não'}}</td>
+                        <td>
+                            <button type="submit" name="action" value="publicar_perguntas">Publicar</button>
+                            <button type="submit" name="action" value="deletar_perguntas">Deletar</button>
+                        </td>
+                        <input type="hidden" name="perg_id" value="{{perg.id}}">
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+
+        <h1>Todas as perguntas</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Autor</th>
+                <th>Texto</th>
+                <th>Aprovado</th>
+                <th>Ações</th>
+            </tr>
+            {% for perg in perguntas %}
+                {% if perg.aprovado %}
+                    <tr>
+                        <td>{{perg.id}}</td>
+                        <td>{{perg.nome_usuario}}</td>
+                        <td>{{perg.texto}}</td>
+                        <td>{{'Sim' if perg.aprovado else 'Não'}}</td>
+                        <td>
+                            {% if not perg.aprovado %}
+                                <button type="submit" name="action" value="publicar_perguntas">Publicar</button>
+                            {% endif %}
+                            <button type="submit" name="action" value="deletar_perguntas">Deletar</button>
+                        </td>
+                        <input type="hidden" name="perg_id" value="{{perg.id}}">
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+
+        <h1>Usuários</h1>
+        <table>
+            <tr>
+                <th>Email</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.usuario}}</td>
+                <td>
+                    <button type="submit" name="action" value="deletar_usuario">Deletar</button>
+                </td>
+                <input type="hidden" name="email" value="{{usuario.email}}">
+            </tr>
+            {% endfor %}
+        </table>
+    
     </form>
     <form method="GET" action="/logout">
         <button type="submit">Logout</button>

@@ -15,7 +15,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
         <div id="criaperg">
             <h1>Criar Pergunta</h1>
             <form action="/criar_pergunta" method="POST">
-                <textarea name="perg_text" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
+                <textarea name="texto" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
                 <button>Enviar</button>
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -29,17 +29,19 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
     <h1>Perguntas</h1>
     <!-- Lista de postagens -->
     <ul>
-        {% for pergs in perg %}
-            <li>
-                <section id="pergunta">
-                    <strong>{{ pergs.user_name }}</strong>
-                    <p class="limite">{{ pergs.texto }}</p>
-                    <br>
-                    <p class="limite">Data e Hora: {{ pergs.timestamp_brasil }}</p>
-                    <br>
-                    <strong><a href="/perg/{{ pergs.id }}">Ver Respostas</a></strong>
-                </section>
-            </li>
+        {% for perg in perguntas %}
+            {% if perg.aprovado %}
+                <li>
+                    <section id="pergunta">
+                        <strong>{{ perg.nome_usuario }}</strong>
+                        <p class="limite">{{ perg.texto }}</p>
+                        <br>
+                        <p class="limite">Data e Hora: {{ perg.timestamp_brasil }}</p>
+                        <br>
+                        <strong><a href="/perg/{{ perg.id }}">Ver Respostas</a></strong>
+                    </section>
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </section>

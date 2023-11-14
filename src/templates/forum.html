@@ -36,7 +36,8 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                 {% if post.aprovado %}
                     <li>
                         <section id="postagem">
-                            <strong>{{post.titulo}} {{ post.user_name }}</strong>
+                            <strong>{{post.titulo}}</strong><br>
+                            <strong>{{ post.nome_usuario }}</strong>
                             <p class="limite">{{ post.texto }}</p>
                             <br>
                             <p class="limite">Data e Hora: {{ post.timestamp_brasil }}</p>
