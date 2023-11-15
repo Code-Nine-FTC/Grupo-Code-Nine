@@ -276,13 +276,18 @@ def admin():
 
     return render_template('admin.html', postagens = postagens, usuarios = usuarios, perguntas = perguntas)
 
-@app.route('/logout', methods = ['POST', 'GET'])
-def logout():
+@app.route('/logout_admin', methods = ['POST', 'GET'])
+def logout_admin():
     if is_admin():
         session.pop('admin', None)
+        session.clear()
+    return redirect(url_for('login'))
+
+@app.route('/logout', methods= ['POST', 'GET'])
+def logout():
     if 'email_usuario' in session:
         session.pop('email_usuario', None)
-    session.clear()
+        session.clear()
     return redirect(url_for('login'))
 
 @app.route('/create_post', methods=['POST', 'GET'])

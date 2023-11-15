@@ -12,10 +12,6 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
 <script src="{{ url_for('static', filename='js/filtro.js')}}"></script>
     <section id="containerinfo1">
         <form action="/logout" method="POST">
-            <!-- <label for="upload" class="image-upload">
-                <img id="user-image" src="#" alt="" />
-                <input type="file" id="upload" accept="image/*">
-            </label> -->
             <p>Nome de usuário: {{ user[0] }}</p>
             <p>Email: {{ user[1] }}</p>
             <p>CPF: {{ user[2] }}</p>
@@ -23,7 +19,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}"
             {% set dataparts = user[4].split('-') %}
             <p>Data de nascimento: {{ dataparts[2] }}/{{ dataparts[1] }}/{{ dataparts[0] }}</p>
             <p>Parentesco: {{ user[5] }}</p>
-            <p>Conheceu: {{ user[6] }}</p>
+            <p>Conheceu: {{ user[7] }}</p>
             <button id="logout">SAIR</button>
         </form>
     </section>
