@@ -269,7 +269,7 @@ def admin():
     postagens = cursor.fetchall()
     cursor.execute('SELECT email, usuario FROM usuario ORDER BY email')
     usuarios = cursor.fetchall()
-    cursor.execute('SELECT id, nome_usuario, texto, aprovado FROM perguntas ORDER BY id DESC')
+    cursor.execute('SELECT * FROM perguntas ORDER BY id DESC')
     perguntas = cursor.fetchall()
     cursor.close()
     conn.close()
