@@ -20,7 +20,7 @@ def allowed_file(filename):
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "fatec", #senha
+    'password': "root", #senha
     'database': "cianp", #qual banco de dados será utilizado
 } 
 
@@ -335,7 +335,7 @@ def create_post():
 # Rota para a página de comentários de uma postagem
 @app.route('/post/<int:post_id>')
 def post_comments(post_id):
-    if 'email_usuario' in session:
+    if 'email_usuario' in session or is_admin():
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
@@ -412,7 +412,7 @@ def criar_pergunta():
 
 @app.route('/perg/<int:perg_id>')
 def post_comments2(perg_id):
-    if 'email_usuario' in session:
+    if 'email_usuario' in session or is_admin():
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)

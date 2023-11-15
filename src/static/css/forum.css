@@ -192,3 +192,14 @@ table, th, td {
 th, td {
     padding: 10px;
 }
+
+#admin a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#admin a:hover{
+    color: #2cce78ec;
+}

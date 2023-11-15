@@ -31,7 +31,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                         <td>{{post.id}}</td>
                         <td>{{post.titulo}}</td>
                         <td>{{post.nome_usuario}}</td>
-                        <td>{{post.texto}}</td>
+                        <td><a href="/post/{{ post.id }}">Ver postagem</a></td>
                         <td>{{post.imagem1}}</td>
                         <td>{{post.imagem2}}</td>
                         <td>{{post.imagem3}}</td>
@@ -65,7 +65,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                         <td>{{post.id}}</td>
                         <td>{{post.titulo}}</td>
                         <td>{{post.nome_usuario}}</td>
-                        <td>{{post.texto}}</td>
+                        <td><a href="/post/{{ post.id }}">Ver postagem</a></td>
                         <td>{{post.imagem1}}</td>
                         <td>{{post.imagem2}}</td>
                         <td>{{post.imagem3}}</td>
@@ -93,7 +93,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                     <tr>
                         <td>{{perg.id}}</td>
                         <td>{{perg.nome_usuario}}</td>
-                        <td>{{perg.texto}}</td>
+                        <td><a href="/perg/{{ perg.id }}">Ver pergunta</a></td>
                         <td>{{'Sim' if perg.aprovado else 'Não'}}</td>
                         <td>
                             <button type="submit" name="action" value="publicar_perguntas">Publicar</button>
@@ -119,7 +119,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}"
                     <tr>
                         <td>{{perg.id}}</td>
                         <td>{{perg.nome_usuario}}</td>
-                        <td>{{perg.texto}}</td>
+                        <td><a href="/perg/{{ perg.id }}">Ver pergunta</a></td>
                         <td>{{'Sim' if perg.aprovado else 'Não'}}</td>
                         <td>
                             {% if not perg.aprovado %}
