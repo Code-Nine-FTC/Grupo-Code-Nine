@@ -84,4 +84,14 @@ button:hover {background-color: rgb(21, 255, 0);}
     width: 77%;
   }
 }
-    
+
+@media only screen and (min-width: 481px) and (max-width: 767px){
+  #conheceu{
+    width: 76%;
+}  
+}
+@media only screen and (min-width: 768px){
+    #conheceu{
+        width: 73.2%;
+    }
+}
