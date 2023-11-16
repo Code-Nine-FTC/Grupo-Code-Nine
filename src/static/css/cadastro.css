@@ -25,7 +25,7 @@
 .form-group {margin-bottom: 20px; text-align: center;}
 
 #conheceu {
-    width: 72.5%;
+    width: 71.5%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -79,3 +79,9 @@ button:hover {background-color: rgb(21, 255, 0);}
     max-width: 90%;
     width: 70%;;
 }
+@media only screen and (max-width: 480px){
+  #conheceu{
+    width: 77%;
+  }
+}
+    

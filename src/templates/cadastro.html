@@ -8,9 +8,10 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
 {% endblock %}
 
 {% block content %}
-    <section id="formulario">
-        <h2>Cadastro</h2>
-        <form action="#" method="post">
+    <section id="formulario" class="content-row">
+        <div class=".col-smartphone-12 {width: 100%;}.col-tablet-12 {width: 100%;}.col-12 {width: 100%;}">
+            <h2>Cadastro</h2>
+            <form action="#" method="post">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
@@ -62,5 +63,6 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
         <div class="bot">
             <a href="/login">Faça login com uma conta já existente.</a>
         </div>
+    </div>
     </section>
 {% endblock %}
