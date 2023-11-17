@@ -7,9 +7,17 @@ Informações
 {% block css %}
 rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"
 {% endblock %}
+{% block js %} src="{{ url_for('static', filename='js/sidebar.js') }}" {% endblock %}
 
 {% block content %}
 <main class="fontes">
+    <div id="hamburger-wrapper">
+        <div id="hamburger-menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
     <div id="sidebar">
         <ul class="sideitens">
             <li class="liside"><img id="ideiaicon" src="{{url_for('static', filename='img/vector.png')}}">

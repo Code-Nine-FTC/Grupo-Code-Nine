@@ -21,6 +21,7 @@ window.onload = function() {
         if (!sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
             // If the condition is true, remove the 'expanded' class from the sidebar
             sidebar.classList.remove('expanded');
+            hamburgerMenu.classList.remove('change');
         }
     });          
 }

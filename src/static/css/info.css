@@ -261,6 +261,27 @@ th, td {
     white-space: pre-wrap;      /* current browsers */
 }
 
+#go-to-start {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #bebebee0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    box-shadow: #000;
+}
+
+#go-to-start:hover {
+    background-color: #a09f9f;
+}
+
+.seta {
+    color: rgb(0, 0, 0);
+    font-size: 2.5em;
+    padding-top: 1%;
+}
 
 @media (max-width: 1000px) {
     #hamburger-menu {
