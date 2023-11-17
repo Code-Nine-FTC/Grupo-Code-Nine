@@ -1,4 +1,5 @@
 #sidebar {
+    position: relative;
     background-color: #D9D9D9;
     min-height: 87.6vh;
     min-width: 20%;
@@ -47,6 +48,45 @@
 .testehr{
     color: #ffffffb4;
     width: 100%;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer; /* Set the background color */
+    border-radius: 0 50% 50% 0;; /* Make the corners rounded */
+    width: 60%; /* Set the width */
+    height: 60px; /* Set the height */
+	/* transform: translate(-50%, -50%); */
+    z-index: 2;
+}
+
+#hamburger-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Same height as the hamburger menu */
+    left: 0;
+}
+
+#hamburger-menu div {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#hamburger-menu.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#hamburger-menu.change .bar2 {
+    opacity: 0;
+}
+
+#hamburger-menu.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .perguntas {
@@ -219,4 +259,30 @@ th, td {
     word-wrap: break-word;      /* IE 5.5-7 */
     white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
     white-space: pre-wrap;      /* current browsers */
+}
+
+
+@media (max-width: 1000px) {
+    #hamburger-menu {
+        display: block;
+    }
+
+    #sidebar {
+        padding-top: 50px;
+        opacity: 0;
+        width: 0; /* Set width to 0 when the sidebar is not visible */
+        transition: opacity 0.5s, transform 0.5s, width 0.5s;
+        transform: translateX(-100%);
+        z-index: 1;
+        position: absolute;
+        left: 0;
+    }
+
+    #sidebar.expanded {
+        opacity: 1;
+        width: 250px; /* Desired width when the sidebar is visible */
+        min-height: 100vh;
+        max-height: inherit;
+        transform: translateX(0);
+    }
 }
