@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link{% block css %}{% endblock %}>
-    <script {% block js %} {% endblock %}></script>
-    <script src="{{url_for('static', filename='js/navbar.js')}}"></script>
-</head>
-<body>
-<header>
-    <div id="navbar">
-        <div class="esquerda">
-            <div id="logo">
-                <img id="fotologo" src="{{url_for('static', filename='img/logocianp.png')}}">
-                <h1 id="textologo">CIANP</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        <link{% block css %}{% endblock %}>
+        <script {% block js %} {% endblock %}></script>
+        <script src="{{url_for('static', filename='js/navbar.js')}}"></script>
+    </head>
+    <body>
+        <header>
+            <div id="navbar">
+                <div class="esquerda">
+                    <div id="logo">
+                        <img id="fotologo" src="{{url_for('static', filename='img/logocianp.png')}}">
+                        <h1 id="textologo">CIANP</h1>
+                    </div>
+                </div>
+                <ul class="listanav" id="navtoogle">
+                    <li><a class="botoesnav" href="/">Home</a></li>
+                    <li><a class="botoesnav" href="/info">Informações</a></li>
+                    <li><a class="botoesnav" href="/localizacao">Localizações</a></li>
+                    <li><a class="botoesnav" href="/forum">Fórum</a></li>
+                    <li><a class="botoesnav" href="/faq">FAQ</a></li>
+                    <li id="itemperfil"><a href="/perfil"><img width="30px" height="30px" src="{{url_for('static', filename='img/perfilicon.png')}}"></a></li>
+                </ul>
             </div>
-        </div>
-        <ul class="listanav" id="navtoogle">
-            <li><a class="botoesnav" href="/">Home</a></li>
-            <li><a class="botoesnav" href="/info">Informações</a></li>
-            <li><a class="botoesnav" href="/localizacao">Localizações</a></li>
-            <li><a class="botoesnav" href="/forum">Fórum</a></li>
-            <li><a class="botoesnav" href="/faq">FAQ</a></li>
-            <li id="itemperfil"><a href="/perfil"><img width="30px" height="30px" src="{{url_for('static', filename='img/perfilicon.png')}}"></a></li>
-        </ul>
-    </div>
-    <div id="hamburger-wrappernav">
-        <div id="hamburger-menunav">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-    </div>
-</header>
+            <div id="hamburger-wrappernav">
+                <div id="hamburger-menunav">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+        </header>
 
-    {% block content %}
-    {% endblock %}
-    <footer>
-        <div class="rodape">
-            <div class="gitacess">
-                <a id="linkgit" href="https://github.com/Code-Nine-FTC/Grupo-Code-Nine" target="_blank"> Acesse nosso GitHub
-                <img id="gitlogo" src="{{url_for('static', filename='img/icongit.png')}}"> </a>
+        {% block content %}
+        {% endblock %}
+        
+        <footer>
+            <div class="rodape">
+                <div class="gitacess">
+                    <a id="linkgit" href="https://github.com/Code-Nine-FTC/Grupo-Code-Nine" target="_blank"> Acesse nosso GitHub
+                    <img id="gitlogo" src="{{url_for('static', filename='img/icongit.png')}}"> </a>
+                </div>
+            <h5 id="direitos">©Todos os direitos reservados. Code Nine ™</h5>
             </div>
-        <h5 id="direitos">©Todos os direitos reservados. Code Nine ™</h5>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>

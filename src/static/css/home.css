@@ -1,77 +1,54 @@
-/* Estilos para a seção conteudo1 */
-#conteudo1 {
-  max-width: 90%; /* Largura máxima */
+/* Estilos para as seções content1 e content2 */
+.content-section {
+  max-width: 90%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: center;
   align-items: center;
   background-color: #ffffff;
   padding: 2%;
-  margin: 2% auto; /* Centraliza verticalmente e ajusta a largura */
+  margin: 2% auto;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.textos {
+.text-section {
   width: 48%;
   padding: 2%;
 }
 
-.textos p {
+.text-section p {
   margin-bottom: 2%;
   font-size: 1.2em;
   line-height: 1.6;
 }
 
-.imgrim {
-  width: 48%;
+.image-section {
+  width: 50%;
   text-align: center;
 }
 
-.rim {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Estilos para a seção conteudo2 */
-#conteudo2 {
-  max-width: 90%; /* Largura máxima */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;
-  background-color: #ffffff;
-  padding: 2%;
-  margin: 2% auto; /* Centraliza verticalmente e ajusta a largura */
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.foto {
-  width: 48%;
-  text-align: center;
-}
-
+.rim,
 .fotos {
   max-width: 50%;
   height: auto;
 }
 
-/* Estilos para o botão centralizado */
-#botao {
+/* Estilos para o botão */
+.button-section {
   position: relative;
   text-align: center;
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
-.bot a {
+.button-section a {
   display: inline-block;
   padding: 1% 2%;
   background-color: #2cce78ec;
   color: #fff;
-  text-decoration: none; /* Remova o sublinhado */
-  border: none; /* Remove a borda do link */
+  text-decoration: none;
+  border: none;
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -79,6 +56,72 @@
   cursor: pointer;
 }
 
-.bot a:hover {
+.button-section a:hover {
   background-color: rgb(21, 255, 0);
+}
+
+/* Media Queries para responsividade */
+
+/* Configurar colunas: */
+[class*="col-"] {width: 100%; float: center; box-sizing: border-box;}
+
+.content {padding: 2rem;}
+
+.row::after {content: ""; clear: both; display: table;}
+
+/* Para smartphones: */
+@media only screen and (max-width: 480px) {
+  .col-smartphone-1 {width: 8.33%;}
+  .col-smartphone-2 {width: 16.66%;}
+  .col-smartphone-3 {width: 25%;}
+  .col-smartphone-4 {width: 33.33%;}
+  .col-smartphone-5 {width: 41.66%;}
+  .col-smartphone-6 {width: 50%;}
+  .col-smartphone-7 {width: 58.33%;}
+  .col-smartphone-8 {width: 66.66%;}
+  .col-smartphone-9 {width: 75%;}
+  .col-smartphone-10 {width: 83.33%;}
+  .col-smartphone-11 {width: 91.66%;}
+  .col-smartphone-12 {width: 100%;}
+  .image-section,
+  .text-section {
+    width: 100%;
+  }
+  .rim,
+  .fotos {
+    max-width: 100%;
+  }
+  }
+
+/* Para tablets: */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .col-tablet-1 {width: 8.33%;}
+  .col-tablet-2 {width: 16.66%;}
+  .col-tablet-3 {width: 25%;}
+  .col-tablet-4 {width: 33.33%;}
+  .col-tablet-5 {width: 41.66%;}
+  .col-tablet-6 {width: 50%;}
+  .col-tablet-7 {width: 58.33%;}
+  .col-tablet-8 {width: 66.66%;}
+  .col-tablet-9 {width: 75%;}
+  .col-tablet-10 {width: 83.33%;}
+  .col-tablet-11 {width: 91.66%;}
+  .col-tablet-12 {width: 100%;}
+  }
+
+
+/* Para desktop: */
+@media only screen and (min-width: 768px) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
 }

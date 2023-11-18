@@ -5,13 +5,12 @@ Home
 {% endblock %}
 
 {% block css %}
-rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
-
 {% block content %}
-<section id="conteudo1">
-    <div class="textos">
+<section class="content-section">
+    <div class="text-section col-8 col-tablet-12 col-smartphone-12">
         <p>
             A doença renal crônica é uma diminuição lenta e progressiva (durante meses ou anos) da capacidade dos rins de filtrar os resíduos metabólicos do sangue, a diabetes e hipertensão arterial estão entre as principais causas para o desenvolvimento da doença em adultos, no caso das crianças as malformações congênitas no sistema urinário e doenças renais hereditárias estão entre os diagnósticos mais frequentes.
         </p>
@@ -23,16 +22,16 @@ rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"
         </p>
     </div>
 
-    <div class="imgrim">
+    <div class="image-section col-4 col-tablet-12 col-smartphone-12">
         <img class="rim" src="{{ url_for('static', filename='img/rim.png') }}" alt="Rim">
     </div>
 </section>
 
-<section id="conteudo2">
-    <div class="foto">
+<section class="content-section">
+    <div class="image-section col-4 col-tablet-12 col-smartphone-12">
         <img class="fotos" src="{{ url_for('static', filename='img/doctor.png') }}" alt="doutor">
     </div>
-    <div class="textos">
+    <div class="text-section col-8 col-tablet-12 col-smartphone-12">
         <p>
             A doença renal crônica é sempre secundária a uma questão de saúde anterior, podendo ser uma infecção urinária de repetição, um rim que não se formou direito, uma glomerulopatia que vem de repente ou uma criança com infecção muito grave que ocasionou um choque séptico.
         </p>
@@ -42,8 +41,8 @@ rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"
     </div>
 </section>
 
-<section id="botao">
-    <div class="bot">
+<section class="button-section">
+    <div class="button-section col-smartphone-12 col-tablet-12 col-12">
         <a href="/cadastro">Crie sua conta!</a>
     </div>
 </section>
