@@ -16,6 +16,7 @@ body {
     align-items: center;
     background-color: #2cce78ec;
     justify-content: flex-end;
+    transition: opacity 0.5s, transform 0.5s, width 0.5s, height 0.5s;
 }
 
 .listanav{
@@ -49,6 +50,44 @@ ul li a{
     color: rgb(0, 0, 0);
     outline: none;
     text-decoration: none;
+}
+
+#hamburger-menunav {
+    display: none;
+    cursor: pointer; 
+    width: 60%; 
+    height: 60px; 
+    z-index: 2;
+}
+
+#hamburger-wrappernav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; 
+    top: 2px;
+    right: 25px;
+}
+
+#hamburger-menunav div {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#hamburger-menunav.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#hamburger-menunav.change .bar2 {
+    opacity: 0;
+}
+
+#hamburger-menunav.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .esquerda {
@@ -183,4 +222,50 @@ h5 {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}
+
+@media screen and (max-width: 820px) {
+    .listanav {
+        opacity: 0;
+        height: 0;
+        transition: opacity 0.5s, transform 0.5s, width 0.5s, height 0.5s;
+        transform: translateY(-100%);
+        z-index: 1;
+        position: absolute;
+        overflow: hidden;
+    }
+    #hamburger-menunav {
+        display: block;
+    }
+    .listanav.expanded {
+        opacity: 1;
+        transform: translateY(0);
+        height: auto;
+        width: 80%;
+        top: 60px;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .listanav.expanded li {
+        padding-top: 1%;
+    }
+
+    #navbar.expanded {
+        height: 165px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 520px)  {
+    #navbar.expanded {
+        height: 200px;
+    }
+    .listanav.expanded li {
+        padding-top: 3%;
+    }
 }

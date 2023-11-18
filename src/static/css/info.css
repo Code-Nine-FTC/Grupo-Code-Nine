@@ -52,11 +52,10 @@
 
 #hamburger-menu {
     display: none;
-    cursor: pointer; /* Set the background color */
-    border-radius: 0 50% 50% 0;; /* Make the corners rounded */
-    width: 60%; /* Set the width */
-    height: 60px; /* Set the height */
-	/* transform: translate(-50%, -50%); */
+    cursor: pointer; 
+    border-radius: 0 50% 50% 0;; 
+    width: 60%; 
+    height: 60px; 
     z-index: 2;
 }
 
@@ -65,7 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px; /* Same height as the hamburger menu */
+    height: 80px; 
     left: 0;
 }
 
@@ -97,6 +96,7 @@
 
 #direitaperguntas {
     margin-left: 0;
+    flex: 1 0 auto;
 }
 
 #conteudoperguntas {
@@ -291,7 +291,7 @@ th, td {
     #sidebar {
         padding-top: 50px;
         opacity: 0;
-        width: 0; /* Set width to 0 when the sidebar is not visible */
+        width: 0;
         transition: opacity 0.5s, transform 0.5s, width 0.5s;
         transform: translateX(-100%);
         z-index: 1;
@@ -301,9 +301,7 @@ th, td {
 
     #sidebar.expanded {
         opacity: 1;
-        width: 250px; /* Desired width when the sidebar is visible */
-        min-height: 100vh;
-        max-height: inherit;
+        width: 250px; 
         transform: translateX(0);
     }
 }
