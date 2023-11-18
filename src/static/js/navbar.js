@@ -13,6 +13,7 @@ window.addEventListener('load', function() {
     document.addEventListener('click', function(event) {
         if (!navbar.contains(event.target) && !hamburgerMenunav.contains(event.target)) {
             navbar.classList.remove('expanded');
+            navbarreal.classList.remove('expanded');
             hamburgerMenunav.classList.remove('change');
             navbarreal.style.height = "";
             navbarreal.style.overflow = "";
