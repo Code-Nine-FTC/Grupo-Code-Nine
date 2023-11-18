@@ -36,7 +36,7 @@
 
 
 #regiao {
-    width: 15vw;
+    width: fit-content;
     font-size: 1em;
     margin: 10px;
     padding: 5px;
@@ -44,7 +44,7 @@
 }
 
 #estado {
-    width: 15vw;
+    width: fit-content;
     font-size: 1em;
     margin: 10px;
     padding: 5px;
@@ -68,4 +68,18 @@ table, th, td {
 
 th, td {
     padding: 10px;
+}
+
+@media screen and (min-width:490px) and (max-width:600px){
+    table {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width:489px){
+    table {
+        width: 2vw;
+        font-size: 0.7em;
+        overflow: scroll;
+    }
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link{% block css %}{% endblock %}>
     <script {% block js %} {% endblock %}></script>
+    <script src="{{url_for('static', filename='js/navbar.js')}}"></script>
 </head>
 <body>
 <header>
@@ -17,7 +18,7 @@
                 <h1 id="textologo">CIANP</h1>
             </div>
         </div>
-        <ul class="listanav">
+        <ul class="listanav" id="navtoogle">
             <li><a class="botoesnav" href="/">Home</a></li>
             <li><a class="botoesnav" href="/info">Informações</a></li>
             <li><a class="botoesnav" href="/localizacao">Localizações</a></li>
@@ -25,6 +26,13 @@
             <li><a class="botoesnav" href="/faq">FAQ</a></li>
             <li id="itemperfil"><a href="/perfil"><img width="30px" height="30px" src="{{url_for('static', filename='img/perfilicon.png')}}"></a></li>
         </ul>
+    </div>
+    <div id="hamburger-wrappernav">
+        <div id="hamburger-menunav">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
     </div>
 </header>
 

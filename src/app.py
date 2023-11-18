@@ -20,7 +20,7 @@ def allowed_file(filename):
 db = {
     'host': "localhost", #host = ip, no caso localhost
     'user': "root", #usuario para logar
-    'password': "fatec", #senha
+    'password': "root", #senha
     'database': "cianp", #qual banco de dados será utilizado
 } 
 
@@ -31,18 +31,20 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        email = request.form['email'] #requisita os valores dos campos username e password do form de login
+        email = request.form['email'] #requisita os valores dos campos usuario e password do form de login
         senha = request.form['senha']
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
-        # Check if the username and password match
+        # Checa se o e-mail e a senha batem
         cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,))
-        user = cursor.fetchone() #verifica se os valores das variaveis username e password coincidem com os valores salvos no banco de dados
+        user = cursor.fetchone() #verifica se os valores das variaveis usuario e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
-
+        if email == 'ninecode.codek9@gmail.com' and senha == 'codenine123':
+            session['admin'] = True
+            return redirect('/admin')
         if user: #caso a variável user seja verdadeira
-            session['user_email']=email
-            session['user_name']=user['username']
+            session['email_usuario']=email
+            session['nome_usuario']=user['usuario']
             return redirect(url_for('perfil'))
         else:
             flash('Dados inválidos.')
@@ -52,7 +54,7 @@ def login():
 @app.route('/cadastro', methods=['GET', 'POST']) #inicia a rota de get e post de dados no form html
 def cadastro():
     if request.method == 'POST': 
-        username = request.form['username'] #adiciona o valor username do form para a variavel username
+        usuario = request.form['usuario'] #adiciona o valor usuario do form para a variavel usuario
         senha = request.form['senha'] #adiciona o valor password do form para a variavel password
         email = request.form['email'] #adiciona o valor email do form para a variavel email
         cpf = request.form['cpf'] #adiciona o valor cpf do form para a variável cpf
@@ -76,8 +78,8 @@ def cadastro():
             flash('Endereço de e-mail e/ou CPF já estão em uso.')
             return redirect(url_for('cadastro')) 
         try:
-            cursor.execute("INSERT INTO usuario (username, email, cpf, prof, data_nasc, parentesco, senha, conheceu) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (username, email, cpf, prof, data_nasc, parentesco, senha, conheceu))
-            conn.commit() #insere os valores das variaveis username e password para suas respectivas colunas na tabela users
+            cursor.execute("INSERT INTO usuario (usuario, email, cpf, prof, data_nasc, parentesco, senha, conheceu) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (usuario, email, cpf, prof, data_nasc, parentesco, senha, conheceu))
+            conn.commit() #insere os valores das variaveis usuario e password para suas respectivas colunas na tabela users
             return redirect(url_for('login')) #retorna o usuário para a tela de login
         except mysql.connector.Error as err:
             print(f'Erro no banco de dados: {err}')
@@ -170,8 +172,8 @@ def faq():
         conn = mysql.connector.connect(**db)
         cursor = conn.cursor(dictionary=True)
         cursor.execute("SELECT * FROM perguntas")
-        perg = cursor.fetchall()
-        return render_template('faq.html', perg=perg)
+        perguntas = cursor.fetchall()
+        return render_template('faq.html', perguntas=perguntas)
     except mysql.connector.Error as err:
         print(f"Erro no banco de dados: {err}")
     finally:
@@ -182,13 +184,13 @@ def faq():
 
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():
-    if 'user_email' == 'codenine@gmail.com':
+    if is_admin():
         return redirect('/admin')
-    if 'user_email' in session:
+    if 'email_usuario' in session:
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor()
-            email = session['user_email']
+            email = session['email_usuario']
             cursor.execute("SELECT * FROM usuario WHERE email = %s", (email,))
             user = cursor.fetchone()
             return render_template('perfil.html', user=user)
@@ -201,34 +203,101 @@ def perfil():
     else:
         return redirect(url_for('login'))
 
+def is_admin():
+    return 'admin' in session and session['admin']
+
 @app.route('/admin', methods = ['POST', 'GET'])
 def admin():
-    try:
-        conn = mysql.connector.connect(**db)
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM postagens")
-        postagens = cursor.fetchall()
-        return render_template('admin.html', postagens=postagens)
-    except mysql.connector.Error as err:
-        print(f"Erro no banco de dados: {err}")
-    finally:
-        cursor.close()
-        conn.close()
-    return render_template('admin.html')
+    if not is_admin():
+        return redirect('/login')
+    
+    if request.method == 'POST':
+        action = request.form.get('action')
+        if action == 'publicar_postagens':
+            post_id = request.form.get('post_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('UPDATE postagens SET aprovado = True WHERE id = %s', (post_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+        elif action == 'deletar_postagens':
+            post_id = request.form.get('post_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('DELETE FROM comentarios WHERE post_id = %s', (post_id,))
+            cursor.execute('DELETE FROM postagens WHERE id = %s', (post_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
 
-@app.route('/logout', methods = ['POST', 'GET'])
+        elif action == 'publicar_perguntas':
+            perg_id = request.form.get('perg_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('UPDATE perguntas SET aprovado = True WHERE id = %s', (perg_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+
+        elif action == 'deletar_perguntas':
+            perg_id = request.form.get('perg_id')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('DELETE FROM respostas WHERE perg_id = %s', (perg_id,))
+            cursor.execute('DELETE FROM perguntas WHERE id = %s', (perg_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+
+        elif action == 'deletar_usuario':
+            email = request.form.get('email')
+            conn = mysql.connector.connect(**db)
+            cursor = conn.cursor()
+            cursor.execute('DELETE FROM comentarios WHERE autor_email = %s', (email,))
+            cursor.execute('DELETE FROM postagens WHERE autor_email = %s', (email,))
+            cursor.execute('DELETE FROM respostas WHERE autor_email = %s', (email,))
+            cursor.execute('DELETE FROM perguntas WHERE autor_email = %s', (email,))
+            cursor.execute('DELETE FROM usuario WHERE email = %s', (email,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            
+    conn = mysql.connector.connect(**db)
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute('SELECT * FROM postagens ORDER BY id DESC')
+    postagens = cursor.fetchall()
+    cursor.execute('SELECT email, usuario FROM usuario ORDER BY email')
+    usuarios = cursor.fetchall()
+    cursor.execute('SELECT * FROM perguntas ORDER BY id DESC')
+    perguntas = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render_template('admin.html', postagens = postagens, usuarios = usuarios, perguntas = perguntas)
+
+@app.route('/logout_admin', methods = ['POST', 'GET'])
+def logout_admin():
+    if is_admin():
+        session.pop('admin', None)
+        session.clear()
+    return redirect(url_for('login'))
+
+@app.route('/logout', methods= ['POST', 'GET'])
 def logout():
-    session.pop('user_email', None)
-    session.clear()
+    if 'email_usuario' in session:
+        session.pop('email_usuario', None)
+        session.clear()
     return redirect(url_for('login'))
 
 @app.route('/create_post', methods=['POST', 'GET'])
 def create_post():
-    if 'user_email' in session:
+    if 'email_usuario' in session:
         if request.method == 'POST':
-            autor_email = session['user_email']
-            user_name = session['user_name']
+            autor_email = session['email_usuario']
+            nome_usuario = session['nome_usuario']
             texto = request.form['post_text']
+            title = request.form['post_title']
             if len(texto) > 1500:
                 flash('Tamanho inválido de texto. O máximo é de 1500 dígitos.')
                 return redirect(url_for('create_post'))
@@ -245,11 +314,11 @@ def create_post():
 
             # Resto do código para inserir no banco de dados
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor()
             try:
-                cursor.execute("INSERT INTO postagens (autor_email, user_name, texto, imagem1, imagem2, imagem3, timestamp_brasil) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                               (autor_email, user_name, texto, image_urls[0] if len(image_urls) > 0 else None, image_urls[1] if len(image_urls) > 1 else None, image_urls[2] if len(image_urls) > 2 else None, timestamp_brasil,))
+                conn = mysql.connector.connect(**db)
+                cursor = conn.cursor()
+                cursor.execute("INSERT INTO postagens (titulo, autor_email, nome_usuario, texto, imagem1, imagem2, imagem3, timestamp_brasil) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                               (title, autor_email, nome_usuario, texto, image_urls[0] if len(image_urls) > 0 else None, image_urls[1] if len(image_urls) > 1 else None, image_urls[2] if len(image_urls) > 2 else None, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('forum'))
             except mysql.connector.Error as err:
@@ -266,7 +335,7 @@ def create_post():
 # Rota para a página de comentários de uma postagem
 @app.route('/post/<int:post_id>')
 def post_comments(post_id):
-    if 'user_email' in session:
+    if 'email_usuario' in session or is_admin():
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
@@ -288,21 +357,21 @@ def post_comments(post_id):
 # Rota para adicionar um comentário a uma postagem
 @app.route('/add_comment/<int:post_id>', methods=['POST', 'GET'])
 def add_comment(post_id):
-    if 'user_email' in session:
+    if 'email_usuario' in session:
         if request.method == 'POST':
-            autor_email = session['user_email']
-            user_name = session['user_name']
-            texto = request.form['content']  # Captura o conteúdo do comentário
+            autor_email = session['email_usuario']
+            nome_usuario = session['nome_usuario']
+            texto = request.form['texto']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 flash("O comentário excede o tamanho máximo de 300 caracteres.")
                 return redirect(url_for('add_comment'))
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor(dictionary=True)
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
-                cursor.execute("INSERT INTO comentarios (post_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
-                               (post_id, autor_email, user_name, texto, timestamp_brasil,))
+                conn = mysql.connector.connect(**db)
+                cursor = conn.cursor(dictionary=True)
+                cursor.execute("INSERT INTO comentarios (post_id, autor_email, nome_usuario, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
+                               (post_id, autor_email, nome_usuario, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('post_comments', post_id=post_id))
             except mysql.connector.Error as err:
@@ -314,21 +383,21 @@ def add_comment(post_id):
 
 @app.route('/criar_pergunta', methods=['POST', 'GET'])
 def criar_pergunta():
-    if 'user_email' in session:
+    if 'email_usuario' in session:
         if request.method == 'POST':
-            autor_email = session['user_email']
-            user_name = session['user_name']
-            texto = request.form['perg_text']  # Captura o conteúdo da pergunta
+            autor_email = session['email_usuario']
+            nome_usuario = session['nome_usuario']
+            texto = request.form['texto']  # Captura o conteúdo da pergunta
             # Verificação do tamanho da pergunta (até 300 caracteres)
             if len(texto) > 500:
                 flash("A pergunta excede o tamanho máximo de 500 caracteres.")
                 return redirect(url_for('criar_pergunta'))
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor()
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
-                cursor.execute("INSERT INTO perguntas (autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
-                               (autor_email, user_name, texto, timestamp_brasil,))
+                conn = mysql.connector.connect(**db)
+                cursor = conn.cursor()
+                cursor.execute("INSERT INTO perguntas (autor_email, nome_usuario, texto, timestamp_brasil) VALUES (%s, %s, %s, %s)",
+                               (autor_email, nome_usuario, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('faq'))
             except mysql.connector.Error as err:
@@ -343,15 +412,15 @@ def criar_pergunta():
 
 @app.route('/perg/<int:perg_id>')
 def post_comments2(perg_id):
-    if 'user_email' in session:
+    if 'email_usuario' in session or is_admin():
         try:
             conn = mysql.connector.connect(**db)
             cursor = conn.cursor(dictionary=True)
             cursor.execute("SELECT * FROM perguntas WHERE id = %s", (perg_id,))
             perg = cursor.fetchone()
             cursor.execute("SELECT * FROM respostas WHERE perg_id = %s", (perg_id,))
-            comentarios2 = cursor.fetchall()
-            return render_template('pcoments2.html', perg=perg, comentarios2=comentarios2)
+            respostas = cursor.fetchall()
+            return render_template('pcoments2.html', perg=perg, respostas=respostas)
         except mysql.connector.Error as err:
             print(f"Erro no banco de dados: {err}")
             return redirect('/')
@@ -365,21 +434,21 @@ def post_comments2(perg_id):
 # Rota para adicionar um comentário a uma pergunta
 @app.route('/add_comment2/<int:perg_id>', methods=['POST'])
 def add_comment2(perg_id):
-    if 'user_email' in session:
+    if 'email_usuario' in session:
         if request.method == 'POST':
-            autor_email = session['user_email']
-            user_name = session['user_name']
-            texto = request.form['content']  # Captura o conteúdo do comentário
+            autor_email = session['email_usuario']
+            nome_usuario = session['nome_usuario']
+            texto = request.form['texto']  # Captura o conteúdo do comentário
             # Verificação do tamanho do comentário (até 300 caracteres)
             if len(texto) > 300:
                 flash("O comentário excede o tamanho máximo de 300 caracteres.")
                 return redirect('/perg/<int:perg_id>')
-            conn = mysql.connector.connect(**db)
-            cursor = conn.cursor(dictionary=True)
             timestamp_brasil = datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
             try:
-                cursor.execute("INSERT INTO respostas (perg_id, autor_email, user_name, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
-                               (perg_id, autor_email, user_name, texto, timestamp_brasil,))
+                conn = mysql.connector.connect(**db)
+                cursor = conn.cursor(dictionary=True)
+                cursor.execute("INSERT INTO respostas (perg_id, autor_email, nome_usuario, texto, timestamp_brasil) VALUES (%s, %s, %s, %s, %s)",
+                               (perg_id, autor_email, nome_usuario, texto, timestamp_brasil,))
                 conn.commit()
                 return redirect(url_for('post_comments2', perg_id=perg_id))
             except mysql.connector.Error as err:

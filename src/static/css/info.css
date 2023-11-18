@@ -1,4 +1,5 @@
 #sidebar {
+    position: relative;
     background-color: #D9D9D9;
     min-height: 87.6vh;
     min-width: 20%;
@@ -49,6 +50,44 @@
     width: 100%;
 }
 
+#hamburger-menu {
+    display: none;
+    cursor: pointer; 
+    border-radius: 0 50% 50% 0;; 
+    width: 60%; 
+    height: 60px; 
+    z-index: 2;
+}
+
+#hamburger-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; 
+    left: 0;
+}
+
+#hamburger-menu div {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#hamburger-menu.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#hamburger-menu.change .bar2 {
+    opacity: 0;
+}
+
+#hamburger-menu.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
 .perguntas {
     display: flex;
     justify-content: flex-end;
@@ -57,6 +96,7 @@
 
 #direitaperguntas {
     margin-left: 0;
+    flex: 1 0 auto;
 }
 
 #conteudoperguntas {
@@ -161,7 +201,7 @@ label {
 
 
 #dadosofc{
-    width: 25vw;
+    width: fit-content;
     font-size: 1em;
     margin: 10px;
     padding: 5px;
@@ -201,4 +241,73 @@ th, td {
     justify-content: flex-start;
     min-height: 87.6vh;
     max-height: fit-content;
+}
+
+#conteudofontes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.limite {
+    width: 95%;
+}
+
+#direitadados a {
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+    text-decoration: none;
+    color: black;
+}
+
+#direitadados a:hover {
+    color: #1f7a49ec;
+}
+
+#go-to-start {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #bebebee0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    box-shadow: #000;
+}
+
+#go-to-start:hover {
+    background-color: #a09f9f;
+}
+
+.seta {
+    color: rgb(0, 0, 0);
+    font-size: 2.5em;
+    padding-top: 1%;
+}
+
+@media (max-width: 1000px) {
+    #hamburger-menu {
+        display: block;
+    }
+
+    #sidebar {
+        padding-top: 50px;
+        opacity: 0;
+        width: 0;
+        transition: opacity 0.5s, transform 0.5s, width 0.5s;
+        transform: translateX(-100%);
+        z-index: 1;
+        position: absolute;
+        left: 0;
+    }
+
+    #sidebar.expanded {
+        opacity: 1;
+        width: 250px; 
+        transform: translateX(0);
+    }
 }
