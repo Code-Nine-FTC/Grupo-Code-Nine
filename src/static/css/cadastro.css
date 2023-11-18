@@ -10,22 +10,28 @@
 
 #formulario2 {
     background-color: #ffffff;
-    padding: 2%;
+    padding: 3%;
     margin: auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    width: 30%;
+    width: 70%;
 }
 
 #formulario h2 {text-align: center;}
 
 #formulario2 h2 {text-align: center;}
 
+#esquecisenha h2 {text-align: center;}
+
+#esquecisenha button {
+    margin-bottom: 10%;
+}
+
 .form-group {margin-bottom: 20px; text-align: center;}
 
 #conheceu {
-    width: 71.5%;
+    width: 78%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -33,11 +39,11 @@
 }
 
 input {
-    width: 70%;
+    width: 75%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: auto;
+    margin: 1% auto;
 }
 
 button {
@@ -72,26 +78,34 @@ button:hover {background-color: rgb(21, 255, 0);}
 
 #esquecisenha {
     background-color: #ffffff;
-    padding: 2%;
-    margin: 2% auto;
+    padding: 5% 5%;
+    margin: auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    width: 70%;;
+    width: 40%;
 }
 @media only screen and (max-width: 480px){
   #conheceu{
-    width: 77%;
+    width: 85%;
   }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px){
   #conheceu{
-    width: 76%;
+    width: 80%;
 }  
 }
 @media only screen and (min-width: 768px){
-    #conheceu{
-        width: 73.2%;
+    #formulario2 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    #esquecisenha {
+        max-width: 90%;
+        width: 70%;
+        padding-top: 10%;
     }
 }

@@ -201,7 +201,7 @@ label {
 
 
 #dadosofc{
-    width: 25vw;
+    width: fit-content;
     font-size: 1em;
     margin: 10px;
     padding: 5px;
@@ -259,6 +259,12 @@ th, td {
     word-wrap: break-word;      /* IE 5.5-7 */
     white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
     white-space: pre-wrap;      /* current browsers */
+    text-decoration: none;
+    color: black;
+}
+
+#direitadados a:hover {
+    color: #1f7a49ec;
 }
 
 #go-to-start {

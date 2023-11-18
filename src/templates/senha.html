@@ -10,6 +10,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
 
 {% block content %}
     <section id="esquecisenha">
+        <h2> Esqueci a senha </h2>
         <form class="esquecisenha" action="/senha" method="post">
             <div class="form-group">
                 <input type="email" name="email" id="email" placeholder="Coloque o seu endereço de e-mail" required>
@@ -21,5 +22,8 @@ rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}"
                 <input type="password" name="senha" id="senha" placeholder="Insira a sua senha" required>
             </div>
             <button type="submit">Enviar</button>
+            <div class="bot">
+                <a href="/login">Faça login com uma conta já existente.</a>
+            </div>
     </section>
 {% endblock %}
