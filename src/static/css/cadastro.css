@@ -100,6 +100,9 @@ button:hover {background-color: rgb(21, 255, 0);}
     #formulario2 {
         width: 50%;
     }
+    #conheceu{
+        width: 76.5%;
+    }
 }
 
 @media screen and (max-width: 660px) {
