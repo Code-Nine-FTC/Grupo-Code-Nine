@@ -10,9 +10,9 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
 
 {% block content %}
 
-<section id="faq">
+<main id="faq">
     <div id="conteudofaq">
-        <div id="criaperg">
+        <div id="criaperg" class="col-12 col-tablet-12 col-smartphone-12">
             <h1>Criar Pergunta</h1>
             <form action="/criar_pergunta" method="POST">
                 <textarea name="texto" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
@@ -28,7 +28,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
         </div>
     <h1>Perguntas</h1>
     <!-- Lista de postagens -->
-    <ul>
+    <ul class="pergunta">
         {% for perg in perguntas %}
             {% if perg.aprovado %}
                 <li>

@@ -45,17 +45,21 @@ img{
     justify-content: center;
     background-color: #d9d9d9;
     padding: 2%;
-    margin: 2% auto;
+    margin: 2% 5%;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    width: 50%;
+    width: 60%;
+    overflow: hidden;
 }
 
 #criapost textarea {
     border-radius: 20px;
     padding: 1%;
     width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    resize: none;
 }
 
 button {
@@ -101,8 +105,11 @@ button:hover {
     font-weight: bold;
 }
 
-ul {
+
+.postagem {
+    margin: auto;
     width: 60%;
+    padding-left: 0;
 }
 li {
     list-style: none;
@@ -202,4 +209,19 @@ th, td {
 
 #admin a:hover{
     color: #2cce78ec;
+}
+
+@media screen and (max-width:480px) {
+    #criapost textarea {
+        padding: 3%;
+    }
+    .limite{
+        font-size: 0.9em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    #postagem strong {
+        font-size: 1em;
+    }
 }
