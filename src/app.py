@@ -24,6 +24,8 @@ db = {
     'database': "cianp", #qual banco de dados será utilizado
 } 
 
+adminlog = ['ninecode.codek9@gmail.com', 'criancarenal23@gmail.com']
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -39,7 +41,7 @@ def login():
         cursor.execute("SELECT * FROM usuario WHERE email = %s AND senha = %s", (email, senha,))
         user = cursor.fetchone() #verifica se os valores das variaveis usuario e password coincidem com os valores salvos no banco de dados
         #e insere na variavel user o valor True se os dados coincidirem, caso contrário insere False
-        if email == 'ninecode.codek9@gmail.com' and senha == 'codenine123':
+        if email in adminlog and senha == 'codenine123':
             session['admin'] = True
             return redirect('/admin')
         if user: #caso a variável user seja verdadeira

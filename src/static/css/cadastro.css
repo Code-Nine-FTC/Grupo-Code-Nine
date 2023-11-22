@@ -79,7 +79,7 @@ button:hover {background-color: rgb(21, 255, 0);}
 #esquecisenha {
     background-color: #ffffff;
     padding: 5% 5%;
-    margin: auto;
+    margin: 3% auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;

@@ -15,7 +15,7 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
         <div id="criaperg" class="col-12 col-tablet-12 col-smartphone-12">
             <h1>Criar Pergunta</h1>
             <form action="/criar_pergunta" method="POST">
-                <textarea name="texto" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
+                <textarea id="rolamento" name="texto" rows="5" cols="50" placeholder="Insira sua pergunta (até 300 caracteres)" required></textarea> <br>
                 <button>Enviar</button>
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -44,6 +44,12 @@ rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}"
             {% endif %}
         {% endfor %}
     </ul>
-</section>
-
+</main>
+<script>
+    const textarea = document.getElementById("rolamento");
+    textarea.addEventListener('input', function(){
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
+</script>
 {% endblock %}
