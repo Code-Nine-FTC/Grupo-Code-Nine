@@ -183,6 +183,10 @@ def faq():
         conn.close()
     return render_template('faq.html')
 
+@app.route("/quemsomos")
+def quem():
+    return render_template("quemsomos.html")
+
 
 @app.route('/perfil', methods = ['POST', 'GET'])
 def perfil():

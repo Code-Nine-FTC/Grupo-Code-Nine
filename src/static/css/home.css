@@ -55,6 +55,10 @@
   font-size: 1.2em;
   cursor: pointer;
 }
+.negrito{
+  font-weight: bold;
+  text
+}
 
 .button-section a:hover {
   background-color: rgb(21, 255, 0);
