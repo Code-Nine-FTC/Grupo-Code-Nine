@@ -27,3 +27,11 @@
     font-size: 1.2em;
 }
   
+@media screen and (max-width: 767px) {
+    #containerinfo1 {
+        margin: 5% auto;
+        min-width: fit-content;
+        width: 50%;
+        padding: 4%;
+    }
+}
