@@ -134,7 +134,7 @@ ul {
 .dados {
     display: flex;
     justify-content: flex-start;
-    min-height: 87.6vh;
+    min-height: 92.5vh;
     max-height: fit-content;
 }
 

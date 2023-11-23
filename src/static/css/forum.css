@@ -110,6 +110,7 @@ button:hover {
     width: 60%;
     padding-left: 0;
 }
+
 li {
     list-style: none;
 }
@@ -232,9 +233,23 @@ th, td {
     #comentarios form textarea {
         padding: 3%;
     }
+    .postagem {
+        margin: auto;
+        width: 90%;
+        padding-left: 0;
+    }
+    #criapost {
+        width: 90%;
+    }
+    #comentarios {
+    width: 70%;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    #criapost textarea {
+        padding: 2%;
+    }
     .oculto {
         display: none;
     }
@@ -244,5 +259,8 @@ th, td {
     td button {
         font-size: 0.8em;
         padding: 6px;
+    }
+    #comentarios form textarea {
+        padding: 2%;
     }
 }

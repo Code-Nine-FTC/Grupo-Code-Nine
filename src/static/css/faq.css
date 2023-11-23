@@ -160,4 +160,19 @@ li {
     #pergunta strong {
         font-size: 1em;
     }
+    .pergunta {
+        width: 90%;
+    }
+    #criaperg {
+        width: 80%;
+    }
+    #comentarios {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #criaperg textarea {
+        padding: 2%;
+    }
 }
