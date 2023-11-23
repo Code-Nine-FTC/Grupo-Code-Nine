@@ -188,18 +188,21 @@ li {
 
 table {
     border: 2px solid #000;
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
     background-color: hsl(0, 0%, 91%); 
-    width: 60vw;
-    margin-bottom: 5%;
-}
-
-table, th, td {
-    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
 }
 
 th, td {
-    padding: 10px;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+
+.colunas {
+    min-width: 8%;
 }
 
 #admin a {
@@ -228,5 +231,18 @@ th, td {
     }
     #comentarios form textarea {
         padding: 3%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .oculto {
+        display: none;
+    }
+    th, td {
+        font-size: 0.8em;
+    }
+    td button {
+        font-size: 0.8em;
+        padding: 6px;
     }
 }
