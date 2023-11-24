@@ -24,7 +24,7 @@ db = {
     'database': "cianp", #qual banco de dados será utilizado
 } 
 
-adminlog = ['ninecode.codek9@gmail.com', 'criancarenal23@gmail.com']
+adminlog = ['nine.code.codek9@gmail.com', 'criancarenal23@gmail.com']
 
 @app.route('/')
 def home():
