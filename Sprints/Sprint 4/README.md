@@ -22,10 +22,9 @@
 | :----: | :--------: | :--------: | :--------------: |
 |   #01   |   Correção de Erros  | "Eu, como cliente, gostaria de navegar pelo site sem problemas e erros" | Média |   4 | 
 |   #02   |   Otimizações                             | "Eu, como cliente, gostaria de um site fácil e simples de navegar" | Baixa |   4   |
-|   #03  |   Página FAQ  | "Eu, como cliente, gostaria de uma página FAQ para maior facilidade do usuário ao acessar as perguntas mais frequentes" | Alta |   4   |
-|   #04   |   Melhora nas informações inseridas  | "Eu, como cliente, gostaria de ver informações limpas, sem obstáculos na leitura" | Baixa |   4   |
-|   #05  |   Melhorias segundo às criticas  | "Eu, como cliente, gostaria do site pronto sem erros" | Baixa |   4   |
-   #06  |   Testes finais  | "Eu, como cliente, gostaria do site que atendam as necessidades" | Baixa |   4   |
+|   #03   |   Melhora nas informações inseridas  | "Eu, como cliente, gostaria de ver informações limpas, sem obstáculos na leitura" | Baixa |   4   |
+|   #04  |   Melhorias segundo às criticas  | "Eu, como cliente, gostaria do site pronto sem erros" | Baixa |   4   |
+   #05  |   Testes finais  | "Eu, como cliente, gostaria do site que atendam as necessidades" | Baixa |   4   |
 
 
 <br>
