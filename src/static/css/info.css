@@ -314,3 +314,18 @@ th, td {
         transform: translateX(0);
     }
 }
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.3em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    p {
+        font-size: 1.1em;
+    }
+    #tam-font {
+        font-size: 100%;
+    }
+}
