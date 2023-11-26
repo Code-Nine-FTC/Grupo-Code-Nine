@@ -53,4 +53,8 @@ https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142221456/3259dc4a-82b0-
 
 
 
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/142221456/75e10c93-9560-4919-ac08-1fa7208d27ff
+
+
+
 
