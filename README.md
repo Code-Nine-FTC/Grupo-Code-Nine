@@ -60,8 +60,8 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 | :----: | :--------: | :--------: | :---------------------------------------------------------------------------------: | :----: |
 |   01   | 04/09/2023 | 24/09/2023 | <a href="./Sprints/Sprint 1/README.md"> 1° Relatório </a> |    ✅   |
 |   02   | 25/09/2023 | 15/10/2023 | <a href="./Sprints/Sprint 2/README.md">  2° Relatório </a> |  ✅  |
-|   03   | 16/10/2023 | 05/11/2023 | <a href="./Sprints/Sprint 3/README.md"> 3° Relatório </a> |    ❌   |
-|   04   | 06/11/2023 | 26/11/2023 | Em breve |    ❌   |
+|   03   | 16/10/2023 | 05/11/2023 | <a href="./Sprints/Sprint 3/README.md"> 3° Relatório </a> |    ✅   |
+|   04   | 06/11/2023 | 26/11/2023 | <a href="./Sprints/Sprint 4/README.md"> 4° Relatório </a> |  ✅   |
 <br>
 
 <h2>🖥 Como Executar o Projeto </h2><a name="executar">
@@ -69,6 +69,10 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum, um método á
 | Saiba Como Executar o Projeto em Seu Computador |
 | :------------------------------------------: |
 | <a href="./src/">Clique Aqui </a>   |
+
+| Relatório do Projeto |
+| :------------------------------------------: |
+| <a href="./Sprints/">Clique Aqui </a>   |
 
 <h2> 🗒Product Backlog </h2><a name="backlog"></a>
 
