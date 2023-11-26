@@ -45,7 +45,7 @@ Adaptação para Mobile e aprimoramento das páginas
 
 
 
-https://github.com/Code-Nine-FTC/Grupo-Code-Nine/assets/79583088/9985114f-0aa7-404c-bdfc-109cb80ec623
+https://github.com/Code-Nine-FTC/Grupo-Code-Nine/blob/main/Sprints/Sprint%204/Vídeo%20sp4/sprint4mobile.mp4
 
 
 
